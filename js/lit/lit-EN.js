@@ -1,6 +1,6 @@
 var webTitle = "Mundocero - SensePi Project";
 var webHeader = "SensePi - Web Applications";
-var arduinoRasPiHeader = "Arduino Sensors & Raspberry Pi";
+var arduinoRasPiHeader = "Arduino Sensors & placa Raspberry Pi";
 var navHome = "Home";
 var navTeam = "Team";
 var navHardware = "Hardware";
