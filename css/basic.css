@@ -28,18 +28,20 @@ a{
   text-decoration: none;
   color: inherit;
 }
-li{
+#MenuBar li{
   display : inline-block;
   font-family: verdana;
   font-size: 15px;
   letter-spacing: 2px;
   text-align: center;
+  width: 100px;
+  bottom: 100px;
 
   background-color: black;
   border: 1px solid #ff7a05;
 }
 
-li:hover{
+#MenuBar li:hover{
   background-color: #2e2e2e;
 }
 
