@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+     <!--<link rel="icon" type="image/png" href="../images/icons/zero.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../css/details.css"/>
+    <script type="text/javascript" src="../js/basic.js"></script>
+    <script type="text/javascript" src="../js/details.js"></script>
+    <script type="text/javascript" src="../js/lit/lit-EN.js"></script> >/!-->
+    <title id="webTitle"></title>
+  </head>
+
+  <body>
+<!--     <h1 id="webHeader"></h1>
+    <h2 id="arduinoRasPiHeader"></h2>
+    
+    <div id="MenuBar">
+      <li>
+        <li>
+          <a id="navHome" href="../index.html"></a>
+        </li>
+        <li>
+          <a id="navTeam" href="../views/equipo.html"></a>
+        </li>
+        <li>
+          <a id="navDetails" href="#"></a>
+        </li>
+        <li>
+          <a id="navLog" href="../views/bitacora.html"></a>
+        </li>
+        <li>
+          <a id="navContact" href="../views/contacto.html"></a>
+        </li>
+        <li>
+          <a id="navLogIn" href="../views/login.html"></a>
+        </li>
+      </li>
+    </div> -->
+    <h1>
+      Practica 1
+    </h1>
+    <h2>
+      ¿Qué es PiSense?
+    </h2>
+    <p>
+     PiSense es un proyecto que busca crear una aplicacion web que proporcione datos utiles a los alumnos de FDI-UCM orientados a ayudarles a conocer el estado de los distintos espacios de la facultad.
+    </p>
+
+    <h2>
+      ¿Cómo funciona PiSense?
+    </h2>
+
+    <p>
+      Mediante nuestra estación de recopilacion de datos EMMA (Estacion Movil de Medicion Medioambiental) que esta compuesta por una raspberry, un arduino y distintos sensores de medición obtendremos datos que serán almacenados en una BBDD. Esta dará servicio a la aplicación web que administrará, para que mediante un entorno amigable y accesible, los usuarios puedan consultarlos.
+      Ofreceremos mapas, estadísticas, gráficos, tablas, etc. Que tendrán distintos grados de visibilidad según el usuario.
+      <p>
+        Ofreceremos información sobre la temperatura, humedad y población de cada espacio. Para que el usuario pueda interpretarla.
+      </p>
+    </p>
+
+    <h2>
+      Tipos de Usuarios.
+    </h2>
+    <p>
+      En términos generales la aplicación será accesible públicamente, pero sólo los estudiantes, profesores y personal institucional de la UCM podrán disfrutar de todas sus funcionalidades. Así, se requiere definir ciertos roles para separar funciones:
+        <p>
+          Visitantes: Acceso al contenido común, como la portada, la descripción de proyecto, la bitácora y el registro de usuarios. Podrán tener una vista muy limitada de la función principal de la página.
+        </p>
+
+        <p>
+          Usuarios: Tras el proceso de registro podrán disponer de toda la información arrojada por EMMA en las diferentes estancias del edificio, además dispondrán de un perfil que podrán editar, incluyendo sus búsquedas preferidas y gráficas de evolución de los datos que quieran consultar.
+         </p>
+
+        <p>
+          Gestor: Un Back-End para que los responsables de la aplicación puedan editar valores manualmente sobre la BBDD de EMMA en caso de fallo o inoperatividad mediante el fabuloso “Algoritmo de Predicción Ambiental” [APA] (aún en fase de concepto).
+        </p>
+    </p>
+
+
+    <h2>
+      ¿Qué nos hace diferentes?
+    </h2>
+    <p>
+      <p>
+        Somos un grupo de futuros ingenieros informáticos, innovadores.
+        Usamos técnicas y métodos propios de empresas profesionales como la tecnología REST que es un estilo de arquitectura de software aplicable en la web. Llamando REST a una interface para universalizar la comunicación de un servicio web basado en HTTPS con cualquier otro dispositivo que quiera obtener datos de este, independientemente del lenguaje o metodologia que utilice el emisor.
+      </p>
+
+      <p>
+        Tenemos un serio compromiso con la protección de los datos personales segun el Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo  de la Ley Orgánica 15/1999, de protección de datos de carácter personal (DCPs).
+      </p>
+
+      <p>
+       Utilizamos hardaware físico para acercar nuestro proyecto al movimiento actual del <i> Internet Of The Things </i>
+      </p>
+
+      <p>
+       Seguimos las bases del <i> Web Content Accessibility Guideline </i> buscando un equilibrio entre la funcionalidad y la accesibilidad de nuestra web.
+      </p>
+
+      <p>
+       Nuestros servicios se encuentran en un entorno de produccion y disponemos de nuestro propio dominio e infraestructura.
+      </p>
+
+      <p>
+      Tenemos nuestro propio logotipo y organización
+      </p>
+
+      <p>
+       Ofrecemos una conexion cifrada TLS con certificado de autoridad firmado por terceros a nuestro servicio
+      </p>
+    </p>
+
+    <h2>
+      Vistas
+    </h2>
+    <p>
+       Las distintas vistas del proyecto son:
+      <ul>
+        <li>
+          Usuario: Compuesta por un cuadro de búsqueda de salas, una tabla con las ubicaciones favoritas del usuario, y ciertas recomendaciones generadas automáticamente por EMMA.
+        </li>
+
+        <li>
+          Equipo: Incluye una descripción de cada uno de los creadores y métodos para contactar con él.
+        </li>
+
+        <li>
+          Proyecto: Incluye una descripción de las tecnologías utilizadas para desarrollar la aplicación.
+        </li>
+
+        <li>
+          Login: Tiene un formulario para registrarse en la web.
+        </li>
+
+        <li>
+          Index: Muestra un mapa interactivo del edificio. En el podemos consultar datos de las salas que aparecen.
+        </li>
+
+        <li>
+          Contacto: Muestra un formulario de contacto con los administradores de la web.
+        </li>
+
+        <li>
+          Admin: Compuesta por un cuadro de búsqueda de sensores. Una vista detallada del sensor encontrado por la búsqueda.
+          Un formulario de registro de nuevos sensores. Y una tabla de los sensores que administra ese usuario.
+        </li>
+      </ul>
+    </p>
+    
+  </body>
+
+  <footer>
+   <!-- ><a href="https://www.mundocero.tech/" target="_self"><img src="../images/icons/zero.png"></a>
+    <p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
+  </!-->
+  </footer>
+
+</html>
