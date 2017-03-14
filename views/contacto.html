@@ -43,7 +43,53 @@
       </ul>
     </div>
 
-    VISTA DE CONTACTO
+    <div class="group">
+      <fieldset>
+         <legend>Personal information:</legend>
+      <form class="contactForm" action=mailto:"dvalbuen@ucm.es" method="post">
+        <div class="group">
+          <input type="text" name="textNameContact"
+                id="nameContac" class="field"
+                required autofocus>
+          <span class="highlight"></span><span class="bar"></span>
+          <label id="nickLabel"></label>
+        </div>
+
+        <div class="group">
+          <input type="text" name="textEmailContact"
+                id="emailContact" class="field"
+                required>
+          <span class="highlight"></span><span class="bar"></span>
+          <label id="emailLabel"></label>
+          </fieldset>
+        </div>
+
+
+        <div class="group">
+          <fieldset>
+            <legend>Type of contact:</legend>
+          <input type="radio" name="radioClass" class="field" value="male" checked><span id="evaluation"></span>
+          <input type="radio" name="radioClass" class="field" value="male"><span id="suggest"></span>
+          <input type="radio" name="radioClass" class="field" value="male"><span id="review"></span>
+          </fieldset>
+        </div>
+
+        <div class="group">
+          <textarea id="emailText" name="textEmailText"
+                    maxlength="300"
+                    rows="10" cols="30"
+                    placeholder="We want to read your opinion!!"
+                    required>
+          </textarea>
+        </div>
+
+        <div class="group">
+          <input type="checkbox" name="conform" value="conformity" required=""/><span id="accordance" ></span><br>
+        </div>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
 
   </body>
 
