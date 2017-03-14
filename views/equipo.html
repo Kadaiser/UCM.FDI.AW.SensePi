@@ -10,7 +10,6 @@
     <script type="text/javascript" src="../js/equipo.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
     <title id="webTitle"></title>
-	<?php $recibe_pagina=$_GET['pagina']; ?>
   </head>
 
   <body>
@@ -44,32 +43,38 @@
       </ul>
     </div>
 
-    
-<td > <div ><a href="equipo.php?pagina=link1">Diego</a></div></td>
-<td ><div ><a href="equipo.php?pagina=link2" >Azahara</a></div></td>
-<td ><div ><a href="equipo.php?pagina=link3" >Sergio</a></div></td>
-<td ><div ><a href="equipo.php?pagina=link4" >Javier</a></div></td>
-<td ><div ><a href="equipo.php?pagina=link5" >Enrique Julio</a></div></td>
-<div id="informacion"><?php  switch ($recibe_pagina){ 
- case "link1":
-   include ("diego.html"); 
-break;
-case "link2":
-  include ("azahara.html"); 
-break; 
-case "link3":
-  include ("sergio.html"); 
-break; 
-case "link4":
-  include ("javier.html"); 
-break; 
-case "link5":
-  include ("julio.html"); 
-break; 
-default:
-include ("defecto.html");
-}
- ?></div>
+  <ul>  
+<li ><a href="#diego">Diego</a></li>
+<li ><a href="#azahara" >Azahara</a></li>
+<li ><a href="#sergio" >Sergio</a></li>
+<li ><a href="#javier" >Javier</a></li>
+<li ><a href="#julio" >Enrique Julio</a></li>
+</ul>
+	<h3 id="diego">Diego Valbuena Pineda</h3>
+	<p>dvalbuen@ucm.es</p>
+	<IMG SRC="../images/diego.jpg">
+	<p>Intereses: Videojuegos, guitarra, tecnologias web, hardware e IoT y programaci&oacute;n en arduino.</p>
+
+	<h3 id="azahara">Azahara Fern&aacute;ndez Notario</h3>
+	<p>azaferna@ucm.es</p>
+	<IMG SRC="../images/azahara.jpg">
+	<p>Intereses: Aplicaciones web y terminar la carrera.</p>
+
+	<h3 id="sergio">Sergio Calero Robles</h3>
+	<p>secalero@ucm.es</p>
+	<IMG SRC="../images/sergio.jpg">
+	<p>Intereses: Desarrollo de aplicaciones web, desarrollo de videojuegos, baloncesto y libros de ciencia ficci&oacute;n.</p>
+  
+	<h3 id="javier">Javier de la Oliva S&aacute;nchez-Valladares</h3>
+	<p>jaoliva@ucm.es</p>
+	<IMG SRC="../images/javier.jpg">
+	<p>Intereses: Aplicaciones web, m&uacute;sica y terminar la carrera.</p>
+	
+	<h3 id="julio">Enrique Julio de la Cruz Valderrama</h3>
+	<p>endela01@ucm.es</p>
+	<IMG SRC="../images/julio.jpg">
+	<p>Intereses: Aplicaciones web y terminar la carrera.</p>
+	
   </body>
   
 
