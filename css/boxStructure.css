@@ -6,19 +6,28 @@ html, body{
 	background: #000000;
 }
 
+a, a:active, a:visited, a:hover{
+	text-decoration: none;
+	outline: none;
+}
+
 #wrapper{
 min-height:100%;
 position:relative;
 }
 
 #header{
+	display: inline;
 	position: fixed;
+	float: left;
 	width: 100%;
 	top: 0;
 	height: 70px;
-	text-align: center;
-	background: #cc6600;
+	margin: 0 auto;
+	background: black;
 	z-index: 2;
+	border-top: medium solid #cc6600;
+	border-bottom: medium solid #cc6600;
 }
 
 #sidebar{
@@ -50,4 +59,45 @@ position:relative;
 	text-align: center;
 	background: #cc6600;
 	z-index: 2;
+}
+
+/*HEADER CONTENT*/
+
+.fila{
+	width: 100%;
+	min-width: 600px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.mainNav ul li a{
+	text-decoration: none;
+	color:#cc6600;
+	-webkit-transition: 0.25s ease-out;
+	transition: 0.25s ease-out;
+}
+
+.mainNav ul li a:hover{
+	text-decoration: none;
+	text-shadow: #cc7700 1px 1px 0;
+}
+
+.mainNav ul li{
+	clear: right;
+	float: left;
+}
+
+.mainNav div{
+	height: 50px;
+	padding: 0 15px 0 15px;
+	border-right: thin solid black;
+	border-left: thin solid grey;
+}
+
+.rightNav{
+	float: right;
+}
+
+
+#navLogIn{
 }
