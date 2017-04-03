@@ -1,5 +1,4 @@
 window.onload = function() {
-  basicLoad();
   this.init(/*param1,param2*/);
 };
 
