@@ -6,28 +6,20 @@ html, body{
 	background: #000000;
 }
 
-a, a:active, a:visited, a:hover{
-	text-decoration: none;
-	outline: none;
-}
-
 #wrapper{
 min-height:100%;
 position:relative;
 }
 
 #header{
-	display: inline;
 	position: fixed;
-	float: left;
 	width: 100%;
+	min-width: 400px
 	top: 0;
-	height: 70px;
-	margin: 0 auto;
+	height: 60px;
 	background: black;
 	z-index: 2;
-	border-top: medium solid #cc6600;
-	border-bottom: medium solid #cc6600;
+	border: medium solid #cc6600;
 }
 
 #sidebar{
@@ -36,15 +28,15 @@ position:relative;
 	width: 15%;
 	background: #0d0d0d;
 	color: orange;
-	padding-top: 70px;	/* Height of the header*/
+	padding-top: 60px;	/* Height of the header*/
 	padding-bottom:30px; /* Height of the header*/
 	z-index: 1;
 }
 
 #content{
 	margin: auto;
-	padding-top: 70px;	/* Height of the header*/
-	padding-bottom:30px; /* Height of the header*/
+	padding-top: 100px;	/* Height of the header + desplazamiento*/
+	padding-bottom:30px; /* Height of the footer*/
 	padding-left: 15%;
 	background: #1f1f1f;
 	color: #bfbfbf;
@@ -63,41 +55,34 @@ position:relative;
 
 /*HEADER CONTENT*/
 
-.fila{
-	width: 100%;
-	min-width: 600px;
-	margin: 0 auto;
-	overflow: hidden;
+.mainNav div{
+	height: 50px;
+	padding: 0 15px 0 15px;
 }
 
-.mainNav ul li a{
+.mainNav li{
+	float: left;
+	list-style:none;
+	border-right: medium solid #cc6600;
+}
+
+.mainNav a{
 	text-decoration: none;
 	color:#cc6600;
 	-webkit-transition: 0.25s ease-out;
-	transition: 0.25s ease-out;
+	transition: 0.25s ease-out
+
 }
 
-.mainNav ul li a:hover{
+.mainNav a:hover{
 	text-decoration: none;
 	text-shadow: #cc7700 1px 1px 0;
 }
 
-.mainNav ul li{
-	clear: right;
-	float: left;
-}
-
-.mainNav div{
-	height: 50px;
-	padding: 0 15px 0 15px;
-	border-right: thin solid black;
-	border-left: thin solid grey;
-}
-
-.rightNav{
+.rightNav ul li{
 	float: right;
 }
 
-
 #navLogIn{
+	border-left: medium solid #cc6600;
 }
