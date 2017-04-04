@@ -8,10 +8,13 @@
     <link rel="icon" type="image/png" href="./images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="./css/home.css"/>
     <link rel="stylesheet" type="text/css" href="./css/basic.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="./js/basic.js"></script>
     <script type="text/javascript" src="./js/home.js"></script>
   </head>
 
   <body>
+
     <canvas id='myCanvas'></canvas>
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
@@ -84,6 +87,9 @@
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="delegacionA" alt="Delegación de Alumnos" title="Delegación de Alumnos" href="#" shape="rect" coords="944,166,992,273" target="_self"/>
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="pasillosPB" alt="Pasillos Planta Baja" title="Pasillos Planta Baja" href="#" shape="poly" coords="10,328,10,266,198,267,199,28,223,28,224,46,285,47,285,28,305,29,304,132,560,133,560,172,465,172,465,268,913,268,913,115,943,115,943.25,138,960,138,960,163,942,163,942,275,961,274,962,307,944,307,944,330,921,331,920,307,275,307,275,353,244,353,243,328,90,329,88,463,46,463,58,327"  target="_self">
                 </map>
+
+      	    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+
   				</div>
 
           <!-- SIDEBAR CLASS -->
@@ -101,6 +107,12 @@
   			<!-- END WRAPPER CLASS -->
   			</div>
 
+			<!-- OLDER VERSION OF FOOTER
+				<footer>
+					<a href="https://www.mundocero.tech/" target="_self"><img src="./images/icons/zero.png"></a>
+					<p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
+				</footer>
+			-->
 
   </body>
 </html>
