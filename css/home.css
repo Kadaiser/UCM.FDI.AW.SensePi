@@ -1,0 +1,51 @@
+canvas{
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    position: absolute;
+}
+
+
+.Map{
+  text-align: center;
+}
+
+.span{
+  position: absolute;
+  z-index: -1;
+  width: 490px;
+  height: 390px;
+  left: 450px;
+  top: 120px;
+  background: #1b1b1b;
+  border: 10px double #cc6600;
+  border-radius: 15px;
+  overflow: visible;
+  text-align: left;
+  padding: 10px;
+}
+
+.span button{
+  background: #d98f34;
+  background-image: -webkit-linear-gradient(top, #d98f34, #d98f34);
+  background-image: -moz-linear-gradient(top, #d98f34, #d98f34);
+  background-image: -ms-linear-gradient(top, #d98f34, #d98f34);
+  background-image: -o-linear-gradient(top, #d98f34, #d98f34);
+  background-image: linear-gradient(to bottom, #d98f34, #d98f34);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  text-shadow: 1px 2px 3px #666666;
+  color: #000000;
+  font-size: 15px;
+  padding: 4px 12px 4px 12px;
+  text-decoration: none;
+}
+
+.spam button:hover {
+  background: #f5c387;
+  background-image: -webkit-linear-gradient(top, #f5c387, #f5c387);
+  background-image: -moz-linear-gradient(top, #f5c387, #f5c387);
+  background-image: -ms-linear-gradient(top, #f5c387, #f5c387);
+  background-image: -o-linear-gradient(top, #f5c387, #f5c387);
+  background-image: linear-gradient(to bottom, #f5c387, #f5c387);
+  text-decoration: none;
+}
