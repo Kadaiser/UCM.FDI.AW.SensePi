@@ -60,8 +60,7 @@ function drawChart() {
     hAxis: {
       title: 'Día',
       titleTextStyle: {color: '#bfbfbf'},
-      textSize: '10px',
-      textStyle:{color: '#bfbfbf'},
+      textStyle:{color: '#bfbfbf', fontSize: 12},
       gridlines: {color: '#808080', count: 30},
       format:"dd"
     },

@@ -14,49 +14,64 @@
   </head>
 
   <body>
-    
-    <div class="">
-      <h1 id="webHeader"></h1>
-    </div>
-    <div class="">
-      <h2 id="arduinoRasPiHeader"></h2>
-    </div>
-    <div id="MenuBar">
-      <ul>
-        <li>
-          <a id="navHome" href="#">holi</a>
-        </li>
-        <li>
-          <a id="navTeam" href="./views/equipo.html"></a>
-        </li>
-        <li>
-          <a id="navDetails" href="./views/details.html"></a>
-        </li>
-        <li>
-          <a id="navLog" href="./views/bitacora.html"></a>
-        </li>
-        <li>
-          <a id="navContact" href="./views/contacto.html"></a>
-        </li>
-        <li>
-          <a id="navLogIn" href="./views/login.html"></a>
-        </li>
-      </ul>
-    </div>
+  	<!-- WRAPPER CLASS -->
+  	<div id="wrapper">
 
-    <div id="contenido">
+  		<!-- HEADER CLASS -->
+  		<div id="header">
+  			<nav class="mainNav">
+  				<ul>
+  					<li>
+							<a href="#"><div id="navHome">HOME
+							</div></a>
+						</li>
+						<li>
+							<a href="./views/equipo.html"><div id="navTeam">TEAM
+							</div></a>
+						</li>
+						<li>
+							<a href="./views/details.html"><div id="navDetails">PROJECT
+							</div></a>
+						</li>
+						<li>
+							<a href="./views/contacto.html"><div id="navContact">CONTACT
+							</div></a>
+						</li>
+  				</ul>
+  			</nav>
 
-      <div id="map_div"></div>
+  			<nav class="mainNav rightNav">
+					<ul>
+						<li>
+							<a href="./views/login.html"><div id="navLogIn">LOGIN
+							</div></a>
+						</li>
+					</ul>
+  			</nav>
+  		</div>
 
-      <div id="chart_div" style="width: 100%; height: 500px;"></div>
 
-    </div>
+  				<!-- CONTENT CLASS -->
+  		<div id="content">
+
+      	<div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+  		</div>
+
+			<!-- FOOTER CLASS -->
+			<div id="footer">
+				<a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html">SensePi</a>
+				<a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">, un proyecto de alumnos para la FdI</a>
+			</div>
+			<!-- OLDER VERSION OF FOOTER
+				<footer>
+					<a href="https://www.mundocero.tech/" target="_self"><img src="./images/icons/zero.png"></a>
+					<p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
+				</footer>
+			-->
+
+  	<!-- END WRAPPER CLASS -->
+  	</div>
 
   </body>
-
-  <footer>
-    <a href="https://www.mundocero.tech/" target="_self"><img src="./images/icons/zero.png"></a>
-    <p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
-  </footer>
-
 </html>
