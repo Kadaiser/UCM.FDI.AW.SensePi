@@ -1,0 +1,42 @@
+#barraImagenes li{
+	bottom: 100px;
+	display : inline-block;
+	font-family: verdana;
+	font-size: 15px;
+	text-align: center;
+	width: 100px;
+}
+
+#Imagenes li{
+	letter-spacing: 10px;
+	text-align: center;
+}
+
+
+#nombresImagenes li{
+	list-style-type: none;
+}
+
+#descripcionPersonal {
+	border: 5px solid;
+	border-color: orange;
+    border-radius: 25px;
+	margin: 70px;
+	padding: 10px;
+	
+}
+
+#descripcionPersonal li{
+	display : inline-block;
+	font-family: verdana;
+	font-size: 15px;
+	margin-top: 100px;
+	list-style-type: none;
+	text-align: center;
+
+}
+#descripcionPersonal img{
+	margin-right: 25px; 
+	height: 60px;
+	width: 60px;
+}
