@@ -49,3 +49,7 @@ canvas{
   background-image: linear-gradient(to bottom, #f5c387, #f5c387);
   text-decoration: none;
 }
+
+#PBMap{
+  text-align: center;
+}
