@@ -2,10 +2,14 @@
 
 <html>
 <head>
-	<title>Box Structure</title>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="../css/team.css">
+  <link rel="icon" type="image/png" href="./images/icons/zero.png"/>
 	<link rel="stylesheet" type="text/css" href="../css/basic.css">
+	<link rel="stylesheet" type="text/css" href="../css/team.css">
+	<script type="text/javascript" src="../js/basic.js"></script>
+	<script type="text/javascript" src="../js/team.js"></script>
+	<script type="text/javascript" src="../js/lit/lit-EN.js"></script>
+	<title>Team</title>
 </head>
 
 <body>
@@ -17,19 +21,19 @@
 					<nav class="mainNav">
 					<ul>
 						<li>
-						  <a href="#"><div id="navHome">HOME
+						  <a href="../index.html"><div id="navHome">HOME
 						  </div></a>
 						</li>
 						<li>
-						  <a href="./views/equipo.html"><div id="navTeam">TEAM
+						  <a href="#"><div id="navTeam">TEAM
 						  </div></a>
 						</li>
 						<li>
-						  <a href="./views/details.html"><div id="navDetails">PROJECT
+						  <a href="./details.html"><div id="navDetails">PROJECT
 						  </div></a>
 						</li>
 						<li>
-						  <a href="./views/contacto.html"><div id="navContact">CONTACT
+						  <a href="./contacto.html"><div id="navContact">CONTACT
 						  </div></a>
 						</li>
 					  </ul>
@@ -37,7 +41,7 @@
 					  <nav class="mainNav rightNav">
 						<ul>
 						  <li>
-							<a href="./views/login.html"><div id="navLogIn">LOGIN
+							<a href="./login.html"><div id="navLogIn">LOGIN
 							</div></a>
 						  </li>
 						</ul>
@@ -53,16 +57,16 @@
 
 				<!-- CONTENT CLASS -->
 				<div id="content">
-					<div id = "barraImagenes">
-						<ul id = "Imagenes">
-			  				<li> <img src="../images/azahara.png"> </li>
-			    			<li> <img src="../images/diego.png"> </li>
-			    			<li> <img src="../images/javier.png"> </li>
-			   				<li> <img src="../images/julio.png"> </li>
-			    			<li> <img src="../images/sergio.png"> </li>
+					<div id="barraImagenes">
+						<ul id="Imagenes">
+			  				<li> <button onclick="switchMemberClick('Azahara')"><img src="../images/azahara.png"></button> </li>
+			    			<li> <button onclick="switchMemberClick('Diego')"><img src="../images/diego.png"></button> </li>
+			    			<li> <button onclick="switchMemberClick('Javier')"><img src="../images/javier.png"></button> </li>
+			   				<li> <button onclick="switchMemberClick('Julio')"><img src="../images/julio.png"></button> </li>
+			    			<li> <button onclick="switchMemberClick('Sergio')"><img src="../images/sergio.png"></button> </li>
 						</ul>
 
-						<ul id = "nombresImagenes"> 	 
+						<ul id="nombresImagenes"> 	 
 			    			<li><a href="#azahara">Azahara</a></li>
 			    			<li><a href="#diego">Diego</a></li>
 			    			<li><a href="#javier">Javier</a></li>
@@ -71,10 +75,10 @@
 						</ul>
 					</div>
 
-					<div id = "descripcionPersonal">
+					<div id="Azahara" class="descripcionPersonal" style="display: none">
 						<!-- Falta un script que cambie el texto segun la persona seleccionada -->
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							Azahara Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
 							at.
 						</p>
 
@@ -91,7 +95,7 @@
 							at.
 						</p>
 
-						<ul id = "contactIcons">
+						<ul id="contactIcons">
 			  				<li> 
 			  				 <a  href="https://github.com/RedParabola" target = "_blank">
 			  				    <img src="../images/icons/git_icon.png" > 
@@ -106,6 +110,150 @@
 						</ul>
 
 					</div>
+
+					<div id ="Diego" class="descripcionPersonal" style="display: none">
+						<!-- Falta un script que cambie el texto segun la persona seleccionada -->
+						<p>
+							Diego Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<p>
+							Maecenas ipsum neque, sagittis id porta ornare, convallis vehicula felis. Donec magna felis, volutpat eget feugiat ac, fermentum quis dui. Proin est augue, aliquet elementum orci sit amet, feugiat iaculis ante. Donec ante dolor, maximus cursus accumsan ac, ornare sed libero. Pellentesque tristique et sem non commodo.
+						</p>
+
+						<p>
+							Duis eu nunc enim. Donec at nunc id tellus malesuada pharetra. Fusce ut leo vehicula, lacinia nunc at, mattis libero. Vivamus in orci mi. Proin nibh nibh, pharetra a fermentum vitae, laoreet quis nisi. Etiam lorem magna, hendrerit interdum ante vel, placerat convallis nunc. Cras eleifend ligula a augue bibendum, vitae pellentesque velit luctus. Phasellus porttitor aliquet est et cursus. Morbi cursus, orci a elementum vestibulum, odio tellus tristique tellus, vel lobortis enim nibh et tellus. Cras sit amet tincidunt eros, quis vulputate mauris. Morbi commodo bibendum ligula vel venenatis.
+						</p>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<ul id="contactIcons">
+			  				<li> 
+			  				 <a  href="https://github.com/RedParabola" target = "_blank">
+			  				    <img src="../images/icons/git_icon.png" > 
+			  				</a>  
+			  				</li> 
+			  				
+			  				<li> 
+			  				 <a  href="https://www.facebook.com/search/str/Sergio%2BCalero%2BRobles/keywords_top"target = "_blank" >   <img src="../images/icons/fb_icon.png" > 
+			  				 </a>  
+			  				</li> 
+
+						</ul>
+
+					</div>
+
+					<div id="Javier" class="descripcionPersonal" style="display: none">
+						<!-- Falta un script que cambie el texto segun la persona seleccionada -->
+						<p>
+							Javier Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<p>
+							Maecenas ipsum neque, sagittis id porta ornare, convallis vehicula felis. Donec magna felis, volutpat eget feugiat ac, fermentum quis dui. Proin est augue, aliquet elementum orci sit amet, feugiat iaculis ante. Donec ante dolor, maximus cursus accumsan ac, ornare sed libero. Pellentesque tristique et sem non commodo.
+						</p>
+
+						<p>
+							Duis eu nunc enim. Donec at nunc id tellus malesuada pharetra. Fusce ut leo vehicula, lacinia nunc at, mattis libero. Vivamus in orci mi. Proin nibh nibh, pharetra a fermentum vitae, laoreet quis nisi. Etiam lorem magna, hendrerit interdum ante vel, placerat convallis nunc. Cras eleifend ligula a augue bibendum, vitae pellentesque velit luctus. Phasellus porttitor aliquet est et cursus. Morbi cursus, orci a elementum vestibulum, odio tellus tristique tellus, vel lobortis enim nibh et tellus. Cras sit amet tincidunt eros, quis vulputate mauris. Morbi commodo bibendum ligula vel venenatis.
+						</p>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<ul id="contactIcons">
+			  				<li> 
+			  				 <a  href="https://github.com/RedParabola" target = "_blank">
+			  				    <img src="../images/icons/git_icon.png" > 
+			  				</a>  
+			  				</li> 
+			  				
+			  				<li> 
+			  				 <a  href="https://www.facebook.com/search/str/Sergio%2BCalero%2BRobles/keywords_top"target = "_blank" >   <img src="../images/icons/fb_icon.png" > 
+			  				 </a>  
+			  				</li> 
+
+						</ul>
+
+					</div>
+
+					<div id="Julio" class="descripcionPersonal" style="display: none">
+						<!-- Falta un script que cambie el texto segun la persona seleccionada -->
+						<p>
+							Julio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<p>
+							Maecenas ipsum neque, sagittis id porta ornare, convallis vehicula felis. Donec magna felis, volutpat eget feugiat ac, fermentum quis dui. Proin est augue, aliquet elementum orci sit amet, feugiat iaculis ante. Donec ante dolor, maximus cursus accumsan ac, ornare sed libero. Pellentesque tristique et sem non commodo.
+						</p>
+
+						<p>
+							Duis eu nunc enim. Donec at nunc id tellus malesuada pharetra. Fusce ut leo vehicula, lacinia nunc at, mattis libero. Vivamus in orci mi. Proin nibh nibh, pharetra a fermentum vitae, laoreet quis nisi. Etiam lorem magna, hendrerit interdum ante vel, placerat convallis nunc. Cras eleifend ligula a augue bibendum, vitae pellentesque velit luctus. Phasellus porttitor aliquet est et cursus. Morbi cursus, orci a elementum vestibulum, odio tellus tristique tellus, vel lobortis enim nibh et tellus. Cras sit amet tincidunt eros, quis vulputate mauris. Morbi commodo bibendum ligula vel venenatis.
+						</p>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<ul id="contactIcons">
+			  				<li> 
+			  				 <a  href="https://github.com/RedParabola" target = "_blank">
+			  				    <img src="../images/icons/git_icon.png" > 
+			  				</a>  
+			  				</li> 
+			  				
+			  				<li> 
+			  				 <a  href="https://www.facebook.com/search/str/Sergio%2BCalero%2BRobles/keywords_top"target = "_blank" >   <img src="../images/icons/fb_icon.png" > 
+			  				 </a>  
+			  				</li> 
+
+						</ul>
+
+					</div>
+
+					<div id="Sergio" class="descripcionPersonal" style="display: none">
+						<!-- Falta un script que cambie el texto segun la persona seleccionada -->
+						<p>
+							Sergio Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<p>
+							Maecenas ipsum neque, sagittis id porta ornare, convallis vehicula felis. Donec magna felis, volutpat eget feugiat ac, fermentum quis dui. Proin est augue, aliquet elementum orci sit amet, feugiat iaculis ante. Donec ante dolor, maximus cursus accumsan ac, ornare sed libero. Pellentesque tristique et sem non commodo.
+						</p>
+
+						<p>
+							Duis eu nunc enim. Donec at nunc id tellus malesuada pharetra. Fusce ut leo vehicula, lacinia nunc at, mattis libero. Vivamus in orci mi. Proin nibh nibh, pharetra a fermentum vitae, laoreet quis nisi. Etiam lorem magna, hendrerit interdum ante vel, placerat convallis nunc. Cras eleifend ligula a augue bibendum, vitae pellentesque velit luctus. Phasellus porttitor aliquet est et cursus. Morbi cursus, orci a elementum vestibulum, odio tellus tristique tellus, vel lobortis enim nibh et tellus. Cras sit amet tincidunt eros, quis vulputate mauris. Morbi commodo bibendum ligula vel venenatis.
+						</p>
+
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+							at.
+						</p>
+
+						<ul id="contactIcons">
+			  				<li> 
+			  				 <a  href="https://github.com/RedParabola" target = "_blank">
+			  				    <img src="../images/icons/git_icon.png" > 
+			  				</a>  
+			  				</li> 
+			  				
+			  				<li> 
+			  				 <a  href="https://www.facebook.com/search/str/Sergio%2BCalero%2BRobles/keywords_top"target = "_blank" >   <img src="../images/icons/fb_icon.png" > 
+			  				 </a>  
+			  				</li> 
+
+						</ul>
+
+					</div>																				
 				</div>
 
 

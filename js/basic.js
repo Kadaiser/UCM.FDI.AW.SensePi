@@ -1,4 +1,5 @@
 function basicLoad(){
+  /*
   document.getElementById("webTitle").innerHTML=webTitle;
   document.getElementById("webHeader").innerHTML=webHeader;
   document.getElementById("arduinoRasPiHeader").innerHTML=arduinoRasPiHeader;
@@ -10,6 +11,7 @@ function basicLoad(){
   document.getElementById("navContact").innerHTML=navContact;
   document.getElementById("footerLink").innerHTML=footerLink;
   document.getElementById("footerSentence").innerHTML=footerSentence;
+  */
 }
 
 
