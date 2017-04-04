@@ -51,12 +51,19 @@
 
   				<!-- CONTENT CLASS -->
   				<div id="content">
+            <div class="span" id="Span">
+                <h1>CAFETERIA</h1>
+                <p>Temperatura:     25cº</p>
+                <p>Humedad:         40%</p>
+                <p>Ruido:           40dB</p>
+                <button type="button" name="button" onclick="mySpanHide()">Return</button>
+            </div>
             <canvas id='myCanvas'></canvas>
                 <img src="./planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
                   <map name="PB">
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="SalaGrados" alt="Sala de Grados" title="Sala de Grados" href="#" shape="rect" coords="10,6,199,264"  target="_self">
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="wcBiblioteca" alt="W.C Biblioteca" title="W.C Biblioteca" href="#" shape="rect" coords="90,383,125,442"  target="_self">
-                    <area onmouseover='myHover(this);' onmouseout='myLeave();' id="Cafeta" alt="Cafetería" title="Cafetería" href="login.html" shape="rect" coords="561,30,909,171" >
+                    <area onmouseover='myHover(this);' onmouseout='myLeave();' onclick='mySpanAppear();' id="Cafeta" alt="Cafetería" title="Cafetería" href="#" shape="rect" coords="561,30,909,171" >
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A1" alt="Aula1" title="Aula1" href="#" shape="rect" coords="307,310,429,461" target="_self">
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A2" alt="Aula2" title="Aula2" href="#" shape="rect" coords="430,310,554,461" target="_self">
                     <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A3" alt="Aula3" title="Aula3" href="#" shape="rect" coords="553,310,675,461" target="_self">

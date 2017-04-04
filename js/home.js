@@ -75,12 +75,16 @@ function drawPoly(coOrdStr)
 function drawRect(coOrdStr)
 {
     var mCoords = coOrdStr.split(',');
+    hdc.lineWidth = 0;
     var top, left, bot, right;
     left = mCoords[0];
     top = mCoords[1];
     right = mCoords[2];
     bot = mCoords[3];
-    hdc.strokeRect(left,top,right-left,bot-top);
+    for (var i = 0; i < 8; i++) {
+      hdc.lineWidth = i;
+      setTimeout(hdc.strokeRect(left,top,right-left,bot-top), 1000);
+    }
 }
 
 function myHover(element)
@@ -105,4 +109,14 @@ function myLeave()
 {
     var canvas = byId('myCanvas');
     hdc.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function mySpanAppear()
+{
+  document.getElementById("Span").style.zIndex = "2";
+}
+
+function mySpanHide()
+{
+  document.getElementById("Span").style.zIndex = "-1";
 }
