@@ -1,29 +1,44 @@
-#contenedor{
+#peticion{
+	width: 20%;
+	order: 1;
+}
 
-	border: 1px solid green;
+#getInfo{
+	order: 2;
+	width: 20%;
 }
 
 #search{
-border: 1px solid blue;
+	display: flex;
+	flex-direction: row;
 }
-/*
-#getInfo{
-width: 20%;
-float:left;
-}*/
+
+#getRegister{
+	width: 20%;
+	order: 1;
+}
+
+#registerOk{
+	order: 2;
+	width: 20%;
+}
 
 #register{
-	border: 1px solid blue;
-
-
+	display: flex;
+	flex-direction: row;
 }
+#getRemove{
+	width: 20%;
+	order: 1;
+}
+
+#removeOk{
+	order: 2;
+	width: 20%;
+}
+
 #remove{
-	border: 1px solid blue;
-
-
+	display: flex;
+	flex-direction: row;
 }
-#actualizacion{
-	border: 1px solid blue;
 
-
-}
