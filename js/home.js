@@ -96,7 +96,7 @@ function drawChart() {
     hAxis: {
       title: 'Día',
       titleTextStyle: {color: '#bfbfbf'},
-      textStyle:{color: '#bfbfbf', fontSize: 12},
+      textStyle:{color: '#bfbfbf', fontSize: 8},
       gridlines: {color: '#808080', count: 30},
       format:"dd"
     },
@@ -120,7 +120,7 @@ function drawChart() {
         format:"#%"
       },
     },
-    
+
     series: {
       0: {color: '#FF3333', lineWidth: 5, targetAxisIndex:0},
       1: {color: '#3366FF', lineWidth: 1, targetAxisIndex:1},
