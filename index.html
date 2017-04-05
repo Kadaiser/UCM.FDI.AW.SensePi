@@ -1,53 +1,95 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
+    <title>PiSense Portal</title>
     <link rel="icon" type="image/png" href="./images/icons/zero.png"/>
-    <link rel="stylesheet" type="text/css" href="./css/basic.css"/>
     <link rel="stylesheet" type="text/css" href="./css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/basic.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="./js/basic.js"></script>
     <script type="text/javascript" src="./js/home.js"></script>
-    <script type="text/javascript" src="./js/lit/lit-EN.js"></script>
-    <title id="webTitle"></title>
   </head>
 
   <body>
-    
-    <div class="">
-      <h1 id="webHeader"></h1>
-    </div>
-    <div class="">
-      <h2 id="arduinoRasPiHeader"></h2>
-    </div>
-    <div id="MenuBar">
-      <ul>
-        <li>
-          <a id="navHome" href="#">holi</a>
-        </li>
-        <li>
-          <a id="navTeam" href="./views/equipo.html"></a>
-        </li>
-        <li>
-          <a id="navDetails" href="./views/details.html"></a>
-        </li>
-        <li>
-          <a id="navLog" href="./views/bitacora.html"></a>
-        </li>
-        <li>
-          <a id="navContact" href="./views/contacto.html"></a>
-        </li>
-        <li>
-          <a id="navLogIn" href="./views/login.html"></a>
-        </li>
-      </ul>
+
+    <canvas id='myCanvas'></canvas>
+  	<!-- WRAPPER CLASS -->
+  	<div id="wrapper">
+
+      <!-- HEADER CLASS -->
+      <div id="header">
+
+        <nav class="mainNav">
+          <ul>
+            <li id="navHome">
+              <a href="#"><span>HOME</span></a>
+            </li>
+            <li id="navTeam">
+              <a href="./views/equipo.html"><span>TEAM</span></a>
+            </li>
+            <li id="navDetails">
+              <a href="./views/details.html"><span>PROJECT</span></a>
+            </li>
+            <li id="navContact">
+              <a href="./views/contacto.html"><span>CONTACT</span></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mainNav rightNav">
+          <ul>
+            <li id="navLogIn">
+              <a href="./views/login.html"><span>LOGIN</span></a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarLeft">
+      </div>
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarRight">
+      </div>
+
+      <!-- CONTENT CLASS -->
+      <div id="content">
+
+        <div class="span" id="Span">
+          <h1>CAFETERIA</h1>
+          <p>Ruido:           40dB</p>
+          <div id="chart_div"></div>
+          <button type="button" name="button" onclick="mySpanHide()">Return</button>
+        </div>
+
+        <img src="./planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
+        <map name="PB">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="SalaGrados" alt="Sala de Grados" title="Sala de Grados" href="#" shape="rect" coords="10,6,199,264"  target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="wcBiblioteca" alt="W.C Biblioteca" title="W.C Biblioteca" href="#" shape="rect" coords="90,383,125,442"  target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' onclick='mySpanAppear();' id="Cafeta" alt="Cafetería" title="Cafetería" href="#" shape="rect" coords="561,30,909,171" >
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A1" alt="Aula1" title="Aula1" href="#" shape="rect" coords="307,310,429,461" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A2" alt="Aula2" title="Aula2" href="#" shape="rect" coords="430,310,554,461" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A3" alt="Aula3" title="Aula3" href="#" shape="rect" coords="553,310,675,461" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A4" alt="Aula4" title="Aula4" href="#" shape="rect" coords="676,310,800,460" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="A5" alt="Aula5" title="Aula5" href="#" shape="rect" coords="801,310,918,459" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="wcS" alt="W.C Sur" title="W.C Sur" href="#" shape="rect" coords="945,310,993,416" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="wcN" alt="W.C Norte" title="W.C Norte" href="#" shape="rect" coords="945,30,994,136" target="_self">
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="delegacionA" alt="Delegación de Alumnos" title="Delegación de Alumnos" href="#" shape="rect" coords="944,166,992,273" target="_self"/>
+          <area onmouseover='myHover(this);' onmouseout='myLeave();' id="pasillosPB" alt="Pasillos Planta Baja" title="Pasillos Planta Baja" href="#" shape="poly" coords="10,328,10,266,198,267,199,28,223,28,224,46,285,47,285,28,305,29,304,132,560,133,560,172,465,172,465,268,913,268,913,115,943,115,943.25,138,960,138,960,163,942,163,942,275,961,274,962,307,944,307,944,330,921,331,920,307,275,307,275,353,244,353,243,328,90,329,88,463,46,463,58,327"  target="_self">
+        </map>
+
+      </div>
+
+      <!-- FOOTER CLASS -->
+      <div id="footer">
+        <a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html">SensePi</a>
+        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">, un proyecto de alumnos para la FdI</a>
+      </div>
+
+    <!-- END WRAPPER CLASS -->
     </div>
 
   </body>
-
-  <footer>
-    <a href="https://www.mundocero.tech/" target="_self"><img src="./images/icons/zero.png"></a>
-    <p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
-  </footer>
-
 </html>

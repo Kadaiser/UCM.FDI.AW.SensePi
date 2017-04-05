@@ -1,5 +1,4 @@
 window.onload = function() {
-  basicLoad();
   this.init(/*param1,param2*/);
 };
 
@@ -11,7 +10,7 @@ function init(/*param1,param2*/){
   document.getElementById("suggest").innerHTML=suggest;
   document.getElementById("review").innerHTML=review;
   document.getElementById("accordance").innerHTML=accordance;
-  document.getElementById("textArea").innerHTML=texAreaContact;
+  document.getElementById("emailText").innerHTML=texAreaContact;
 }
 
 var isAccordance = false;
