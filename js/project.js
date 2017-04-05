@@ -5,9 +5,8 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
-  var shownMember = 'Hardware';
-}
 
+}
 
 /*DIRECT METHODS*/
 function switchProjectClick(selectedProject) {

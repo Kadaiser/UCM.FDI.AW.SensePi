@@ -5,9 +5,8 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
-  var shownMember = 'Azahara';
-}
 
+}
 
 /*DIRECT METHODS*/
 function switchMemberClick(selectedMember) {

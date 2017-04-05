@@ -1,9 +1,9 @@
-#sidebar ul{
+.sidebarLeft ul{
 	list-style-position: inside;
 	height: 100%;
 	padding-left: 0%; 
 }
-#sidebar button{
+.sidebarLeft button{
 	background: transparent;
 	border: none;
 	border-radius: 45%;
@@ -16,17 +16,17 @@
 	font-family: verdana;
 	font-size: 100%;
 	height: 25%;	
-
 }
 
-#sidebar button:hover{
+.sidebarLeft button:hover{
 	background: orange;
 	color: black;
 }
-#sidebar li{
-	list-style-type: none;
 
+.sidebarLeft li{
+	list-style-type: none;
 }
+
 .projectElem{
 	border: solid orange 5px;
 	border-radius: 40px;
