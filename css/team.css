@@ -1,5 +1,10 @@
 
+#barraImagenes{
+	margin: 10%;
+}
+
 #barraImagenes li{
+	padding: 1%;
 	bottom: 100px;
 	display : inline-block;
 	font-family: verdana;
@@ -11,8 +16,9 @@
 	width: 100px;
 }
 #barraImagenes button{
+    outline: none;
 	background: #1f1f1f;
-	border: none;
+	border: dotted transparent 3px;
 	/*border: solid orange 5px;*/
 }
 #barraImagenes button:hover{
@@ -23,6 +29,8 @@
 		-webkit-transform : scale(1.1); /* Chrome - Safari */
 		-o-transform : scale(1.1); /* Opera */
 		-ms-transform : scale(1.1); /* IE9 */
+	-webkit-transition: 0.25s ease-out;
+	transition: 0.25s ease-out;
 	/*border: solid orange 5px;*/
 }
 
