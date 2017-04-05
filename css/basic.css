@@ -17,7 +17,7 @@ position:relative;
 	position: fixed;
 	left: 0;
 	height: 100%;
-	width: 10%;
+	width: 12%;
 	background: #1f1f1f;
 	color: orange;
 	padding-top: 60px;	/* Height of the header*/
@@ -29,7 +29,7 @@ position:relative;
 	position: fixed;
 	right: 0;
 	height: 100%;
-	width: 10%;
+	width: 12%;
 	background: #1f1f1f;
 	color: orange;
 	padding-top: 60px;	/* Height of the header*/
@@ -41,8 +41,8 @@ position:relative;
 #content{
 	padding-top: 100px;	/* Height of the header + desplazamiento*/
 	padding-bottom:30px; /* Height of the footer*/
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 12%;
+	padding-right: 12%;
 	background: #1f1f1f;
 	color: #bfbfbf;
 	z-index: 0;

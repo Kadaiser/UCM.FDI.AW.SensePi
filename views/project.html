@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Project</title>
+    <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../css/project.css">
+    <script type="text/javascript" src="../js/basic.js"></script>
+    <script type="text/javascript" src="../js/project.js"></script>
+    <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
+  </head>
+
+  <body>
+
+    <!-- WRAPPER CLASS -->
+    <div id="wrapper">
+
+      <!-- HEADER CLASS -->
+      <div id="header">
+
+        <nav class="mainNav">
+          <ul>
+            <li id="navHome">
+              <a href="../index.html"><span>HOME</span></a>
+            </li>
+            <li id="navTeam">
+              <a href="./team.html"><span>TEAM</span></a>
+            </li>
+            <li id="navProject">
+              <a href="#"><span>PROJECT</span></a>
+            </li>
+            <li id="navContact">
+              <a href="./contacto.html"><span>CONTACT</span></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mainNav rightNav">
+          <ul>
+            <li id="navLogIn">
+              <a href="./login.html"><span>LOGIN</span></a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- SIDEBAR CLASS -->
+		<div class="sidebarLeft">
+        <ul>
+          <li>
+            <button onclick="switchProjectClick('Hardware')">
+                Hardware
+            </button>
+          </li>
+          <li>
+            <button onclick="switchProjectClick('Servicios')">
+                Servicios
+            </button>
+          </li>
+          <li>
+            <button onclick="switchProjectClick('Configuraciones')">
+                Configuraciones
+            </button> 
+          </li>
+          <li>
+            <button onclick="switchProjectClick('Tecnologias')">
+              Tecnologias
+            </button>    
+          </li>
+        </ul>
+      </div>
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarRight">
+      </div>
+
+      <!-- CONTENT CLASS -->
+      <div id="content">
+
+          <div id="Hardware" class="projectElem" style="display: none">
+            <h1>Hardware</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+            </p>
+          </div>
+
+          <div id="Servicios" class="projectElem" style="display: none">
+            <h1>Servicios</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+            </p>
+          </div>
+
+          <div id="Configuraciones" class="projectElem" style="display: none">
+            <h1>Configuraciones</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+            </p>
+          </div>
+
+          <div id="Tecnologias" class="projectElem" style="display: none">
+            <h1>Tecnologias</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut nunc eu dui ullamcorper accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac est eu orci rhoncus viverra eu eget leo. Donec fermentum sagittis nibh a eleifend. Phasellus interdum ante eros, tincidunt tristique nisl venenatis vitae. Fusce egestas sem et ex consectetur, in convallis leo condimentum. Aliquam erat volutpat. Proin iaculis, neque non egestas efficitur, neque dolor rutrum orci, ac sollicitudin nisi quam non erat. Fusce vulputate id ante vitae tristique. Maecenas a purus vestibulum, ullamcorper massa at, porta nisi. Nunc rutrum luctus tortor, quis sollicitudin sem suscipit eget. Nulla consectetur erat eu ornare pharetra. Suspendisse in faucibus est. Donec dignissim tortor dolor, eget commodo turpis vulputate
+            </p>
+          </div>
+
+      </div>
+
+      <!-- FOOTER CLASS -->
+      <div id="footer">
+        <a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html">SensePi</a>
+        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">, un proyecto de alumnos para la FdI</a>
+      </div>
+
+    <!-- END WRAPPER CLASS -->
+    </div>
+
+  </body>
+</html>

@@ -1,4 +1,5 @@
 function basicLoad(){
+
   /* TODO: readapt language switch version
   document.getElementById("webTitle").innerHTML=webTitle;
   document.getElementById("webHeader").innerHTML=webHeader;
