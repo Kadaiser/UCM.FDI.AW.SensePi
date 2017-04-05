@@ -1,29 +1,25 @@
 #contenedor{
-
 	border: 1px solid green;
 }
 
 #search{
-border: 1px solid blue;
+	border: 1px solid blue;
 }
+
 /*
-#getInfo{
-width: 20%;
-float:left;
+#getInfo {
+	width: 20%;
+	float:left;
 }*/
 
 #register{
 	border: 1px solid blue;
-
-
 }
+
 #remove{
 	border: 1px solid blue;
-
-
 }
+
 #actualizacion{
 	border: 1px solid blue;
-
-
 }

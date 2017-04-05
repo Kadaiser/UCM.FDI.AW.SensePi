@@ -1,146 +1,165 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
+    <title id="webTitle">Administration</title>
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css" />
     <link rel="stylesheet" type="text/css" href="../css/adminView.css"/>
     <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/adminView.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
-    <title id="webTitle"></title>
   </head>
 
   <body>
-  <div id="contenedor">
-      <div class="">
-      <h2 id="arduinoRasPiHeader"></h2>
-    </div>
-    <div id="MenuBar">
-      <ul>
-                <li>
-          <a id="navHome" href="../index.html"></a>
-        </li>
-        <li>
-          <a id="navTeam" href="./equipo.html"></a>
-        </li>
-        <li>
-          <a id="navDetails" href="./details.html"></a>
-        </li>
-        <li>
-          <a id="navLog" href="./bitacora.html"></a>
-        </li>
-        <li>
-          <a id="navContact" href="./contacto.html"></a>
-        </li>
-        <li>
-          <a id="navLogIn" href="./login.html"></a>
-        </li>
-      </ul>
+
+  	<!-- WRAPPER CLASS -->
+  	<div id="wrapper">
+
+      <!-- HEADER CLASS -->
+      <div id="header">
+
+        <nav class="mainNav">
+          <ul>
+            <li id="navHome">
+              <a href="../index.html"><span>HOME</span></a>
+            </li>
+            <li id="navTeam">
+              <a href="./team.html"><span>TEAM</span></a>
+            </li>
+            <li id="navDetails">
+              <a href="./project.html"><span>PROJECT</span></a>
+            </li>
+            <li id="navContact">
+              <a href="./contacto.html"><span>CONTACT</span></a>
+            </li>
+            <li id="navContact">
+              <a href="./adminView.html"><span>ADMIN</span></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mainNav rightNav">
+          <ul>
+            <li id="navLogIn">
+              <a href="./login.html"><span>LOGIN</span></a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarLeft">
+      </div>
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarRight">
+      </div>
+
+      <!-- CONTENT CLASS -->
+      <div id="content">
+
+        <div id="search">
+          <h5>SEARCH</h5>
+          <p>
+            <select name="numero">
+            <option>#1</option>
+            <option>#2</option>
+            <option>#3</option>
+            </select>
+          </p>
+          <p>
+            <select name="nombre">
+            <option>CAFETERIA</option>
+            <option>BIBLIOTECA</option>
+            <option>HALL</option>
+            </select>
+          </p>
+          <p>
+            <input  onclick="getInfoClick()" type="submit" value="GET" />
+          </p>
+          <div id="getInfo" style="display: none">
+            <p>LOCATION: CAFETERIA</p>
+            <p>SINCE: 21/03/2017</p>
+            <p>MOVED BY: AZAHARA</p>
+            <p>REGS X DAY: 2.5</p>
+          </div>
+        </div>
+
+        <div id="register">
+          <h5>Register New SensePi</h5>
+          <p> Register By: <input type="text" name="nombreadmin"></p>
+          <p> Location: <input type="text" name="location"></p>
+          <p> Expected regs: <input type="text" name="register"></p>
+          <p> Technical: <input type="text" name="technical"></p>
+          <input  onclick="registerClick()" type="submit" value="PROCESS" />
+          <div id="registerOk" style="display: none">
+            <p>The SensePi has been registered</p>
+          </div>
+        </div>
+
+        <div id="remove">
+          <h5>Remove SensePi</h5>
+          <p> Location: 
+            <select name="nombre">
+            <option>CAFETERIA</option>
+            <option>BIBLIOTECA</option>
+            <option>HALL</option>
+            </select>
+          </p>
+          <p>Number SensePi
+            <select name="numero">
+            <option>#1</option>
+            <option>#2</option>
+            <option>#3</option>
+            </select>
+          </p>
+          <input  onclick="removeClick()" type="submit" value="PROCESS" />
+          <div id="removeOk" style="display: none">
+            <p>The SensePi has been removed</p>
+          </div> 
+        </div>
+
+        <div id="actualizacion">
+          <table class="tg">
+            <tr>
+              <th class="tg-yw4l">DASHBOARD</th>
+              <th class="tg-baqh">LOCATION</th>
+              <th class="tg-yw4l">LAST UPDATE</th>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">#1</td>
+              <td class="tg-nke0">CAFETERIA</td>
+              <td class="tg-yw4l">18/03/2017 14:30</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">#2</td>
+              <td class="tg-nke0">AULA 8</td>
+              <td class="tg-yw4l">20/03/2017 11:00</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">#3</td>
+              <td class="tg-nke0">BIBLIOTECA P1</td>
+              <td class="tg-yw4l">19/03/2017 17:20</td>
+            </tr>
+            <tr>
+              <td class="tg-yw4l">#4</td>
+              <td class="tg-nke0">PASILLOS</td>
+              <td class="tg-yw4l">17/03/2007 12:50</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- FOOTER CLASS -->
+      <div id="footer">
+        <a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html">SensePi</a>
+        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">, un proyecto de alumnos para la FdI</a>
+      </div>
+
+    <!-- END WRAPPER CLASS -->
     </div>
 
-    
-    
-
-	<div id="search">
-			<h5>SEARCH</h5>
-			<p>
-			   <select name="numero">
-				 <option>#1</option>
-				 <option>#2</option>
-				 <option>#3</option>
-			   </select>
-			</p>
-			<p>
-			   <select name="nombre">
-				 <option>CAFETERIA</option>
-				 <option>BIBLIOTECA</option>
-				 <option>HALL</option>
-			   </select>
-			</p>
-			<p>
-			<input  onclick="getInfoClick()" type="submit" value="GET" />
-			</p>
-		<div id="getInfo" style="display: none">
-			<p>LOCATION: CAFETERIA</p>
-			<p>SINCE: 21/03/2017</p>
-			<p>MOVED BY: AZAHARA</p>
-			<p>REGS X DAY: 2.5</p>
-		</div>
-			
-	</div>
-	<div id="register">
-		<h5>Register New SensePi</h5>
-		<p> Register By: <input type="text" name="nombreadmin"></p>
-		<p> Location: <input type="text" name="location"></p>
-		<p> Expected regs: <input type="text" name="register"></p>
-		<p> Technical: <input type="text" name="technical"></p>
-		<input  onclick="registerClick()" type="submit" value="PROCESS" />
-		<div id="registerOk" style="display: none">
-			<p>The SensePi has been registered</p>
-		</div>
-			
-	</div>
-	<div id="remove">
-		<h5>Remove SensePi</h5>
-		<p> Location: 
-				<select name="nombre">
-				 <option>CAFETERIA</option>
-				 <option>BIBLIOTECA</option>
-				 <option>HALL</option>
-			   </select>
-		</p>
-			<p>Number SensePi
-			   <select name="numero">
-				 <option>#1</option>
-				 <option>#2</option>
-				 <option>#3</option>
-			   </select>
-			</p>
-		<input  onclick="removeClick()" type="submit" value="PROCESS" />
-		<div id="removeOk" style="display: none">
-			<p>The SensePi has been removed</p>
-		</div>
-			
-	</div>
-	<div id="actualizacion">
-		<table class="tg">
-  <tr>
-    <th class="tg-yw4l">DASHBOARD</th>
-    <th class="tg-baqh">LOCATION</th>
-    <th class="tg-yw4l">LAST UPDATE</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#1</td>
-    <td class="tg-nke0">CAFETERIA</td>
-    <td class="tg-yw4l">18/03/2017 14:30</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#2</td>
-    <td class="tg-nke0">AULA 8</td>
-    <td class="tg-yw4l">20/03/2017 11:00</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#3</td>
-    <td class="tg-nke0">BIBLIOTECA P1</td>
-    <td class="tg-yw4l">19/03/2017 17:20</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#4</td>
-    <td class="tg-nke0">PASILLOS</td>
-    <td class="tg-yw4l">17/03/2007 12:50</td>
-  </tr>
-</table>
-			
-	</div>
-</div>
   </body>
-  
-
-  <footer>
-    <a href="https://www.mundocero.tech/" target="_self"><img src="../images/icons/zero.png"></a>
-    <p><a id="footerLink" href="https://www.mundocero.tech/views/bitacora.html"></a><a id="footerSentence" href="https://informatica.ucm.es/" target="_blank"></a></p>
-  </footer>
-
 </html>
