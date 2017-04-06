@@ -23,7 +23,7 @@
 
 .sidebarLeft button:hover{
 	background: #1f1f1f;
-	border: dotted rgb(204, 102, 0) 3px;
+	border: solid rgb(204, 102, 0) 3px;
 	transform : scale(1.1);
 		-moz-transform : scale(1.1); /* Firefox */
 		-webkit-transform : scale(1.1); /* Chrome - Safari */
