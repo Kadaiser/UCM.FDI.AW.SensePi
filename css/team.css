@@ -1,5 +1,11 @@
 
+#barraImagenes{
+	margin: 10%;
+}
+
 #barraImagenes li{
+	letter-spacing: none;
+	padding: 1%;
 	bottom: 100px;
 	display : inline-block;
 	font-family: verdana;
@@ -11,29 +17,46 @@
 	width: 100px;
 }
 #barraImagenes button{
+	color: transparent;
+    outline: none;
 	background: #1f1f1f;
-	border: none;
+	border: dotted transparent 3px;
 	/*border: solid orange 5px;*/
 }
 #barraImagenes button:hover{
-	border: dotted orange 3px;
-	border-radius: 45px;
+	color: #bfbfbf;
+	
 	transform : scale(1.1);
 		-moz-transform : scale(1.1); /* Firefox */
 		-webkit-transform : scale(1.1); /* Chrome - Safari */
 		-o-transform : scale(1.1); /* Opera */
 		-ms-transform : scale(1.1); /* IE9 */
+		-webkit-transition: 0.25s ease-out;
+	transition: 0.35s ease-out;
 	/*border: solid orange 5px;*/
 }
 
+#im{
+	border: solid transparent 1px;
+	border-radius: 60px;
+	margin: 6px;
+}
+#im:hover{
+	border: solid rgb(204, 102, 0) 5px;
 
-#barraImagenes span{
-	color: #bfbfbf;
+	transform : scale(1.1);
+		-moz-transform : scale(1.1); /* Firefox */
+		-webkit-transform : scale(1.1); /* Chrome - Safari */
+		-o-transform : scale(1.1); /* Opera */
+		-ms-transform : scale(1.1); /* IE9 */
+		-webkit-transition: 0.25s ease-out;
+	transition: 0.35s ease-out;
+	/*border: solid orange 5px;*/
 }
 
 .descripcionPersonal {
 	border: 5px solid;
-	border-color: orange;
+	border-color: rgb(204, 102, 0);
     border-radius: 25px;
 	margin: 70px;
 	padding: 10px;
@@ -50,7 +73,7 @@
 
 }
 .descripcionPersonal img{
-	border-image: solid orange 5px;
+	border-image: solid rgb(204, 102, 0) 5px;
 	margin-right: 25px; 
 	height: 60px;
 	width: 60px;
