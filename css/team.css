@@ -38,12 +38,12 @@
 	font-size: 20px;
 
 }
-#im{
+.im{
 	border: solid transparent 5px;
 	border-radius: 80px;
 	margin: 6px;
 }
-#im:hover{
+.im:hover{
 	border: solid rgb(204, 102, 0) 5px;
 
 	transform : scale(1.1);
