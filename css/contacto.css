@@ -1,17 +1,23 @@
-.group fieldset {
-    display: block;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 4px groove (internal value);
+.group{
+  margin-top: 25px;
+  min-width: 200px;
+  width: 200px;
 }
 
-.group legend {
-    display: block;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: none;
+.groupType{
+  margin-top: 25px;
+  min-width: 400px;
+  width: 400px;
+}
+
+.groupConform{
+  margin-top: 25px;
+  min-width: 500px;
+}
+
+.groupText{
+  margin-top: 25px;
+  min-width: 260px;
+  width: 260px;
+  border: 10px ridge  grey;
 }
