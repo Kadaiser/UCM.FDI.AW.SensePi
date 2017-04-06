@@ -199,10 +199,20 @@ function myLeave()
 
 function mySpanAppear()
 {
-  document.getElementById("Span").style.zIndex = "2";
+  var fog = document.getElementById('Fog');
+  fog.style.visibility = "visible";
+  fog.style.transition = "opacity 1s linear";
+  var div = document.getElementById("Span");
+  div.style.visibility = 'visible';
+  div.style.opacity = "1";
+  div.style.transition = "opacity 1s linear";
 }
 
 function mySpanHide()
 {
-  document.getElementById("Span").style.zIndex = "-1";
+  var fog = document.getElementById('Fog');
+  fog.style.visibility = "collapse";
+  var div = document.getElementById("Span");
+  div.style.visibility = 'collapse';
+  div.style.opacity = "0";
 }
