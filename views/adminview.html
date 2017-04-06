@@ -35,7 +35,10 @@
           <a id="navContact" href="./contacto.html"></a>
         </li>
         <li>
-          <a id="navLogIn" href="./login.html"></a>
+          <a id="navAdmin" href="#"></a>
+        </li>
+        <li>
+          <a id="navLogOut" href="./login.html"></a>
         </li>
       </ul>
     </div>
@@ -45,23 +48,25 @@
 
 	<div id="search">
 		<div id="peticion">
-			<h5>SEARCH</h5>
+			<p>SEARCH</p>
 			<p>
-			   <select name="numero">
-				 <option>#1</option>
-				 <option>#2</option>
-				 <option>#3</option>
+			   <select class="mySearch" name="numero">
+				 <option>- Nº SensePi -</option>				
+				  <option value="1">#1</option>
+				 <option value="2">#2</option>
+				 <option value="3">#3</option>
 			   </select>
 			</p>
 			<p>
-			   <select name="nombre">
-				 <option>CAFETERIA</option>
-				 <option>BIBLIOTECA</option>
-				 <option>HALL</option>
+			   <select class="mySearch" name="nombre">
+				 <option>- Location -</option>
+				 <option value="cafeteria">CAFETERIA</option>
+				 <option value="biblioteca">BIBLIOTECA</option>
+				 <option value="hall">HALL</option>
 			   </select>
 			</p>
 			<p>
-			<input  onclick="getInfoClick()" type="submit" value="GET" />
+			<input  onclick="getInfoClick()" type="submit" value="Search" />
 			</p>
 		</div>
 		<div id="getInfo" style="display: none">
@@ -72,71 +77,93 @@
 		</div>		
 	</div>
 	<div id="register">
+		<div id="nameRegister">
+			<p>Register New SensePi</p>
+			<p> Register By:	</p>
+			<p> Location: </p>
+			<p> Expected regs: </p>
+			<p> Technical: </p>
+			
+		</div>
 		<div id="getRegister">
-			<h5>Register New SensePi</h5>
-			<p> Register By: <input type="text" name="nombreadmin"></p>
-			<p> Location: <input type="text" name="location"></p>
-			<p> Expected regs: <input type="text" name="register"></p>
-			<p> Technical: <input type="text" name="technical"></p>
-			<input  onclick="registerClick()" type="submit" value="PROCESS" />
+			<pre> </pre>
+			<p><input class="myRegister" type="text" name="nombreadmin"></p>
+			<p><input class="myRegister" type="text" name="location"></p>
+			<p><input class="myRegister" type="text" name="register"></p>
+			<p><input class="myRegister" type="text" name="technical"></p>
 		</div>
-		<div id="registerOk" style="display: none">
-			<p>The SensePi has been registered</p>
-		</div>
+		<div id="submitRegister">
+			<div id="processRegister">
+				<input  onclick="registerClick()" type="submit" value="PROCESS" />
+			</div>
+			<div id="registerOk" style="display: none">
+				<p>The SensePi has been registered</p>
+			</div>
+	  </div>
 			
 	</div>
 	<div id="remove">
-		<div id="getRemove">
-			<h5>Remove SensePi</h5>
-			<p> Location: 
-					<select name="nombre">
-					 <option>CAFETERIA</option>
-					 <option>BIBLIOTECA</option>
-					 <option>HALL</option>
-				   </select>
-			</p>
-				<p>Number SensePi
-				   <select name="numero">
-					 <option>#1</option>
-					 <option>#2</option>
-					 <option>#3</option>
-				   </select>
-				</p>
-			<input  onclick="removeClick()" type="submit" value="PROCESS" />
+		<div id="nameRemove">
+			<p>Remove SensePi</p>
+			<p> Location: </p>
+			<p> Number SensePi: </p>
+			
 		</div>
-		<div id="removeOk" style="display: none">
-			<p>The SensePi has been removed</p>
+		<div id="getRemove">
+			<pre> </pre>
+			<p> 
+				<select class="myRemove" name="nombre">
+				 <option value="cafeteria">CAFETERIA</option>
+				 <option value="biblioteca">BIBLIOTECA</option>
+				 <option value="hall">HALL</option>
+			   </select>
+			</p>
+			<p>
+			   <select class="myRemove" name="numero">
+				 <option value="1">#1</option>
+				 <option value="2">#2</option>
+				 <option value="3">#3</option>
+			   </select>
+			</p>
+		</div>
+		<div id="submitRemove">
+			<div id="processRemove">
+				<input  onclick="removeClick()" type="submit" value="PROCESS" />
+			</div>
+			<div id="removeOk" style="display: none">
+				<p>The SensePi has been removed</p>
+			</div>
 		</div>
 			
 	</div>
 	<div id="actualizacion">
-		<table class="tg">
-  <tr>
-    <th class="tg-yw4l">DASHBOARD</th>
-    <th class="tg-baqh">LOCATION</th>
-    <th class="tg-yw4l">LAST UPDATE</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#1</td>
-    <td class="tg-nke0">CAFETERIA</td>
-    <td class="tg-yw4l">18/03/2017 14:30</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#2</td>
-    <td class="tg-nke0">AULA 8</td>
-    <td class="tg-yw4l">20/03/2017 11:00</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#3</td>
-    <td class="tg-nke0">BIBLIOTECA P1</td>
-    <td class="tg-yw4l">19/03/2017 17:20</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">#4</td>
-    <td class="tg-nke0">PASILLOS</td>
-    <td class="tg-yw4l">17/03/2007 12:50</td>
-  </tr>
-</table>
+		<table id="tg">
+		  <tr>
+			<th id="t1">DASHBOARD</th>
+			<th id="t1">LOCATION</th>
+			<th id="t1">LAST UPDATE</th>
+		  </tr>
+		  <tr>
+			<td id="t2">#1</td>
+			<td id="t3">CAFETERIA</td>
+			<td id="t4">18/03/2017 14:30</td>
+		  </tr>
+		  <tr>
+			<td id="t2">#2</td>
+			<td id="t3">AULA 8</td>
+			<td id="t4">20/03/2017 11:00</td>
+		  </tr>
+		  <tr>
+			<td id="t2">#3</td>
+			<td id="t3">BIBLIOTECA P1</td>
+			<td id="t4">19/03/2017 17:20</td>
+		  </tr>
+		  <tr>
+			<td id="t2">#4</td>
+			<td id="t3">PASILLOS</td>
+			<td id="t4">17/03/2007 12:50</td>
+		  </tr>
+		</table>
 			
 	</div>
 </div>
