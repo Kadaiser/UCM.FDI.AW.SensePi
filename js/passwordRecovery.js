@@ -14,20 +14,20 @@ function init(){
   document.getElementById("alternativeButton").innerHTML=SignUpButtonText;
   document.getElementById("accountMessage").innerHTML=noAccountMessage;
 
-  this.tryNumber = 0;
-  this.loginMatch = false;
-  this.loginDisabled = false;
-  this.isInputLocked = false;
-  this.isSignUpForm = false;
+  var tryNumber = 0;
+  var loginMatch = false;
+  var loginDisabled = false;
+  var isInputLocked = false;
+  var isSignUpForm = false;
 
-  this.userNickname = "";
-  this.userPhone = "";
-  this.userEmail = "";
-  this.userPassword = "";
-  this.userConfirmPassword = "";
+  var userNickname = "";
+  var userPhone = "";
+  var userEmail = "";
+  var userPassword = "";
+  var userConfirmPassword = "";
   //TODO: User and password must be requested to user DB.
-  this.dbUser = "prueba1";
-  this.dbPassword = "prueba1pw";
+  var dbUser = "tontomoco";
+  var dbPassword = "penegrande";
   //TODO: Phone number and email are not required ftm.
 }
 
@@ -35,7 +35,7 @@ function init(){
 /*DIRECT METHODS*/
 
 function mainButtonClick() {
-  if(this.isSignUpForm){
+  if(isSignUpForm){
     this.userSignUp();
   }else{
     this.userLogin();
@@ -72,22 +72,15 @@ function switchForms() {
 /* INSIDE METHODS*/
 
 function userLogin() {
-  //this.inputLock();
-  //TODO: Don't check credentials for this sprint ("only" views html & css)
-  //this.checkCredentials();
-  //if(!this.loginDisabled) this.inputUnlock();
-  if(document.getElementById("userNickname").value=="admin"){
-    window.location.href="./adminView.html";
-  }else{
-    window.location.href="./userView.html";
-  }
+  this.inputLock();
+  this.checkCredentials();
+  if(!this.loginDisabled) this.inputUnlock();
 }
 
 function userSignUp() {
-  //this.inputLock();
-  //TODO: Don't check field data for this sprint ("only" views html & css)
-  //this.checkFieldData();
-  //this.inputUnlock();
+  this.inputLock();
+  this.checkFieldData();
+  this.inputUnlock();
 }
 
 function checkCredentials() {
