@@ -12,45 +12,58 @@
   </head>
 
   <body>
-  <div id="contenedor">
-      <div class="">
-      <h2 id="arduinoRasPiHeader"></h2>
-    </div>
-    <div id="MenuBar">
-      <ul>
-                <li>
-          <a id="navHome" href="../index.html"></a>
-        </li>
-        <li>
-          <a id="navTeam" href="./equipo.html"></a>
-        </li>
-        <li>
-          <a id="navDetails" href="./details.html"></a>
-        </li>
-        <li>
-          <a id="navLog" href="./bitacora.html"></a>
-        </li>
-        <li>
-          <a id="navContact" href="./contacto.html"></a>
-        </li>
-        <li>
-          <a id="navAdmin" href="#"></a>
-        </li>
-        <li>
-          <a id="navLogOut" href="./login.html"></a>
-        </li>
-      </ul>
-    </div>
+    <!-- WRAPPER CLASS -->
+  <div id="wrapper">
+
+    <!-- HEADER CLASS -->
+      <div id="header">
+
+        <nav class="mainNav">
+          <ul>
+            <li id="navHome">
+              <a href="../index.html"><span>HOME</span></a>
+            </li>
+            <li id="navTeam">
+              <a href="equipo.html"><span>TEAM</span></a>
+            </li>
+            <li id="navDetails">
+              <a href="details.html"><span>PROJECT</span></a>
+            </li>
+            <li id="navContact">
+              <a href="contacto.html"><span>CONTACT</span></a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="mainNav rightNav">
+          <ul>
+            <li id="navLogOut">
+              <a href="login.html"><span>LOGOUT</span></a>
+            </li>
+			<li id="navLogIn">
+              <a href="#"><span>Pepe Admin</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+        <!-- SIDEBAR CLASS -->
+        <div class="sidebarLeft">
+        </div>
+        <!-- SIDEBAR CLASS -->
+        <div class="sidebarRight">
+        </div>
 
     
     
-
+<div id="content">
 	<div id="search">
 		<div id="peticion">
-			<p>SEARCH</p>
+		<fieldset>
+			<legend>SEARCH</legend>
 			<p>
 			   <select class="mySearch" name="numero">
-				 <option>- Nº SensePi -</option>				
+				 <option>- N? SensePi -</option>				
 				  <option value="1">#1</option>
 				 <option value="2">#2</option>
 				 <option value="3">#3</option>
@@ -67,6 +80,7 @@
 			<p>
 			<input  onclick="getInfoClick()" type="submit" value="Search" />
 			</p>
+			</fieldset>
 		</div>
 		<div id="getInfo" style="display: none">
 			<p>LOCATION: CAFETERIA</p>
@@ -136,36 +150,38 @@
 			
 	</div>
 	<div id="actualizacion">
-		<table id="tg">
+		<table class="tg">
 		  <tr>
-			<th id="t1">DASHBOARD</th>
-			<th id="t1">LOCATION</th>
-			<th id="t1">LAST UPDATE</th>
+			<th class="t1">DASHBOARD</th>
+			<th class="t1">LOCATION</th>
+			<th class="t1">LAST UPDATE</th>
 		  </tr>
 		  <tr>
-			<td id="t2">#1</td>
-			<td id="t3">CAFETERIA</td>
-			<td id="t4">18/03/2017 14:30</td>
+			<td class="t2">#1</td>
+			<td class="t3">CAFETERIA</td>
+			<td class="t4">18/03/2017 14:30</td>
 		  </tr>
 		  <tr>
-			<td id="t2">#2</td>
-			<td id="t3">AULA 8</td>
-			<td id="t4">20/03/2017 11:00</td>
+			<td class="t2">#2</td>
+			<td class="t3">AULA 8</td>
+			<td class="t4">20/03/2017 11:00</td>
 		  </tr>
 		  <tr>
-			<td id="t2">#3</td>
-			<td id="t3">BIBLIOTECA P1</td>
-			<td id="t4">19/03/2017 17:20</td>
+			<td class="t2">#3</td>
+			<td class="t3">BIBLIOTECA P1</td>
+			<td class="t4">19/03/2017 17:20</td>
 		  </tr>
 		  <tr>
-			<td id="t2">#4</td>
-			<td id="t3">PASILLOS</td>
-			<td id="t4">17/03/2007 12:50</td>
+			<td class="t2">#4</td>
+			<td class="t3">PASILLOS</td>
+			<td class="t4">17/03/2007 12:50</td>
 		  </tr>
 		</table>
 			
 	</div>
 </div>
+</div>
+
  
       <!-- FOOTER CLASS -->
       <div id="footer">
