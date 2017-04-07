@@ -48,6 +48,18 @@ function init(/*param1,param2*/){
 
 /*DIRECT METHODS*/
 
+function switchToMapView() {
+  document.getElementById("PBMap").style.display = "block";
+  document.getElementById("PB").style.display = "block";
+  document.getElementById("galleryBlock").style.display = "none";
+}
+
+function switchToGalleryView() {
+  document.getElementById("galleryBlock").style.display = "block";
+  document.getElementById("PBMap").style.display = "none";
+  document.getElementById("PB").style.display = "none";
+}
+
 /* INSIDE METHODS*/
 
 var dataFromDB = [
