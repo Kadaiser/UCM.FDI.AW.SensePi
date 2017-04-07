@@ -43,6 +43,15 @@ function init(/*param1,param2*/){
   //Chart initialization
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
+
+  //Gallery view floor state
+  this.showFloor = {
+    fpb: false,
+    fp1: false,
+    fp2: false,
+    fp3: false,
+    fp4: false,
+  }
 }
 
 
@@ -213,11 +222,11 @@ function mySpanAppear()
 {
   var fog = document.getElementById('Fog');
   fog.style.visibility = "visible";
-  fog.style.transition = "opacity 1s linear";
+  fog.style.transition = "opacity 0.4s ease-out";
   var div = document.getElementById("Span");
-  div.style.visibility = 'visible';
+  div.style.visibility = "visible";
+  div.style.transition = "opacity 0.7s ease-out";
   div.style.opacity = "1";
-  div.style.transition = "opacity 1s linear";
 }
 
 function mySpanHide()
@@ -225,6 +234,19 @@ function mySpanHide()
   var fog = document.getElementById('Fog');
   fog.style.visibility = "collapse";
   var div = document.getElementById("Span");
-  div.style.visibility = 'collapse';
   div.style.opacity = "0";
+  div.style.visibility = "hidden";
+}
+
+function switchFloorState(chosenFloor) {
+  var element = document.getElementById(chosenFloor);
+  if(this.showFloor[chosenFloor]==false){
+    this.showFloor[chosenFloor]=true;
+    element.style.transition = "opacity 0.4s ease-out";
+    element.style.opacity = "1";
+  }else{
+    this.showFloor[chosenFloor]=false;
+    element.style.transition = "opacity 0.4s ease-out";
+    element.style.opacity = "0";
+  }
 }

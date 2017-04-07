@@ -93,11 +93,11 @@
         <div id="galleryBlock">
           <div class="galleryRow disabled" id="galleryP2">
             <!-- NOT YET ACCESSIBLE -->
-            <div class="galleryFloor">
+            <div class="galleryFloor" onclick="switchFloorState('fp2');">
               <img src="./images/gallery/p2.png" alt="Planta 2"/>
               <span>Planta 2</span>
             </div>
-            <div class="galleryFloorList">
+            <div class="galleryFloorList" id="fp2">
               <ul>
                 <li class="galleryFloorElement">
                   <img src="./images/gallery/coming-soon.png" alt="Próxima apertura"/>
@@ -108,11 +108,11 @@
           </div>
           <div class="galleryRow disabled" id="galleryP1">
             <!-- NOT YET ACCESSIBLE -->
-            <div class="galleryFloor">
+            <div class="galleryFloor" onclick="switchFloorState('fp1');">
               <img src="./images/gallery/p1.png" alt="Planta 1"/>
               <span>Planta 1</span>
             </div>
-            <div class="galleryFloorList">
+            <div class="galleryFloorList" id="fp1">
               <ul>
                 <li class="galleryFloorElement">
                   <img src="./images/gallery/coming-soon.png" alt="Próxima apertura"/>
@@ -122,62 +122,63 @@
             </div>
           </div>
           <div class="galleryRow" id="galleryPB">
-            <div class="galleryFloor">
+            <div class="galleryFloor" onclick="switchFloorState('fpb');">
               <img src="./images/gallery/PB.png" alt="Planta Baja"/>
               <span>Planta Baja</span>
             </div>
-            <div class="galleryFloorList">
+            <div class="galleryFloorList" id="fpb">
               <ul>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/coffee.png" alt="Cafetería"/>
                   <span>Cafetería</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/conference.png" alt="Sala de Grados"/>
                   <span>Sala de Grados</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/pasillos.png" alt="Pasillos"/>
                   <span>Pasillos</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/wc.png" alt="W.C Biblioteca"/>
                   <span>W.C Biblioteca</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/wc.png" alt="W.C Norte"/>
                   <span>W.C Norte</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/wc.png" alt="W.C Sur"/>
                   <span>W.C Sur</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/aula.png" alt="Aula 1"/>
                   <span>Aula 1</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/aula.png" alt="Aula 2"/>
                   <span>Aula 2</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/aula.png" alt="Aula 3"/>
                   <span>Aula 3</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/aula.png" alt="Aula 4"/>
                   <span>Aula 4</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/aula.png" alt="Aula 5"/>
                   <span>Aula 5</span>
                 </li>
-                <li class="galleryFloorElement">
+                <li class="galleryFloorElement" onclick="mySpanAppear();">
                   <img src="./images/gallery/delegacion.png" alt="Delegación"/>
                   <span>Delegación</span>
                 </li>
               </ul>
             </div>
+            <!-- <div class="galleryFloorOverPanel"><p>Click here to show all available rooms in this floor</p></div> -->
           </div>
         </div>
 
