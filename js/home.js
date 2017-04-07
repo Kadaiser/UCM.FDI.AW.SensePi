@@ -212,6 +212,7 @@ function myHover(element)
     }
 }
 
+
 function myLeave()
 {
     var canvas = byId('myCanvas');
@@ -255,4 +256,13 @@ function switchFloorState(chosenFloor) {
     element.style.zIndex="-1";
 
   }
+}
+
+function myHoverImg(element){
+  element.src= "./images/icons/xOn.png";
+}
+
+function myLeaveImg(element){
+  element.src= "./images/icons/xOff.png";
+
 }
