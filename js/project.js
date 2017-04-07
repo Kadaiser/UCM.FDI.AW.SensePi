@@ -12,14 +12,25 @@ function init(/*param1,param2*/){
 function switchProjectClick(selectedProject) {
   nombre=selectedProject;
       num=0;
-      document.getElementById('Hardware').style.opacity=0;
+      document.getElementById('About').style.opacity=0;
+	  document.getElementById('Hardware').style.opacity=0;
       document.getElementById('Servicios').style.opacity=0;
       document.getElementById('Configuraciones').style.opacity=0;
       document.getElementById('Tecnologias').style.opacity=0;
+	  
       
 
   switch(selectedProject){
+	case 'About':
+	  document.getElementById("About").style.display="block";
+      document.getElementById("Hardware").style.display="none";     
+      document.getElementById("Servicios").style.display="none";
+      document.getElementById("Configuraciones").style.display="none";
+      document.getElementById("Tecnologias").style.display="none";
+      a=setInterval(open,30);
+      break;
     case 'Hardware':
+	  document.getElementById("About").style.display="none";
       document.getElementById("Hardware").style.display="block";     
       document.getElementById("Servicios").style.display="none";
       document.getElementById("Configuraciones").style.display="none";
@@ -27,6 +38,7 @@ function switchProjectClick(selectedProject) {
       a=setInterval(open,30);
       break;
     case 'Servicios':
+	  document.getElementById("About").style.display="none";
 	  document.getElementById("Hardware").style.display="none";     
       document.getElementById("Servicios").style.display="block";
       document.getElementById("Configuraciones").style.display="none";
@@ -34,6 +46,7 @@ function switchProjectClick(selectedProject) {
       a=setInterval(open,30);
       break;
     case 'Configuraciones':
+	  document.getElementById("About").style.display="none";
       document.getElementById("Hardware").style.display="none";     
       document.getElementById("Servicios").style.display="none";
       document.getElementById("Configuraciones").style.display="block";
@@ -41,6 +54,7 @@ function switchProjectClick(selectedProject) {
       a=setInterval(open,30);
       break;
     case 'Tecnologias':
+	  document.getElementById("About").style.display="none";
       document.getElementById("Hardware").style.display="none";     
       document.getElementById("Servicios").style.display="none";
       document.getElementById("Configuraciones").style.display="none";
@@ -49,6 +63,7 @@ function switchProjectClick(selectedProject) {
       break;
   
     default:
+	  document.getElementById("About").style.display="none";
       document.getElementById("Hardware").style.display="none";     
       document.getElementById("Servicios").style.display="none";
       document.getElementById("Configuraciones").style.display="none";

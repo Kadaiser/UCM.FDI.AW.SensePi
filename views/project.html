@@ -49,6 +49,11 @@
       <!-- SIDEBAR CLASS -->
 		<div class="sidebarLeft">
         <ul>
+		  <li>
+            <button onclick="switchProjectClick('About')">
+              About Us
+            </button>    
+          </li>
           <li>
             <button onclick="switchProjectClick('Hardware')">
                 Hardware
@@ -77,6 +82,12 @@
 
       <!-- CONTENT CLASS -->
       <div id="content">
+		  <div id="About" class="projectElem" style="display: none">
+            <h1>About Us</h1>
+            <p>
+			Somos un grupo de estudiantes del grado de ingeniería informática de la universidad complutense. Nos encontramos cursando la asignatura Aplicaciones web, para la que es este proyecto.
+            </p>
+          </div>
 
           <div id="Hardware" class="projectElem" style="display: none">
             <h1>Hardware</h1>
