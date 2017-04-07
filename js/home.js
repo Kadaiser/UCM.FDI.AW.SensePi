@@ -1,11 +1,9 @@
 window.onload = function() {
-    this.init(/*param1,param2*/);
+  this.init(/*param1,param2*/);
 };
 
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
-    fillTable();
-    fillSelect();
 
   // get the target image
   var img = byId('PBMap');
@@ -177,6 +175,41 @@ function drawPoly(coOrdStr)
     {
         hdc.lineTo(mCoords[i], mCoords[i+1]);
     }
+    hdc.lineTo(mCoords[0], mCoords[1]);
+    hdc.stroke();
+}
+
+function drawRect(coOrdStr)
+{
+    var mCoords = coOrdStr.split(',');
+    hdc.lineWidth = 0;
+    var top, left, bot, right;
+    left = mCoords[0];
+    top = mCoords[1];
+    right = mCoords[2];
+    bot = mCoords[3];
+    for (var i = 0; i < 8; i++) {
+      hdc.lineWidth = i;
+      setTimeout(hdc.strokeRect(left,top,right-left,bot-top), 1000);
+    }
+}
+
+function myHover(element)
+{
+    var hoveredElement = element;
+    var coordStr = element.getAttribute('coords');
+    var areaType = element.getAttribute('shape');
+
+    switch (areaType)
+    {
+        case 'polygon':
+        case 'poly':
+            drawPoly(coordStr);
+            break;
+
+        case 'rect':
+            drawRect(coordStr);
+    }
 }
 
 function myLeave()
@@ -216,5 +249,10 @@ function switchFloorState(chosenFloor) {
     element.style.transition = "opacity 0.4s ease-out";
     element.style.opacity = "0";
   }
+  if(this.showFloor[chosenFloor]==true){
+    element.style.zIndex="1";
+  }else{
+    element.style.zIndex="-1";
 
+  }
 }
