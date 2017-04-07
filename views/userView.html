@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/userView.css"/>
-    <script type="text/javascript" src="../js/basic.js"></script>
+    <script type="text/javascript" src="../js/userView.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
@@ -58,57 +58,53 @@
 
       <!-- CONTENT CLASS -->
       <div id="content">
-
         <div class="sort">
-          <label>Sort By:</label>
-          <select>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-            <option value="option4">Option 4</option>
-          </select>
+            <label>Sort By:</label>
+            <select id="sort">
+                <option value="">Sort by</option>
+                <option value="1">Favorites</option>
+                <option value="2">Temp.</option>
+                <option value="3">Hum.</option>
+                <option value="4">Pop.</option>
+                <option value="5">Last update</option>
+            </select>
         </div>
 
         <div class="datatable">
-          <table id="data">
-            <thead>
-              <tr>
-                <th>Favorites</th>
-                <th>Temp.</th>
-                <th>Hum.</th>
-                <th>Pop.</th>
-                <th>Last update</th>
-              </tr>
-            </thead>
-          </table>
+            <table id="data">
+                <thead>
+                    <th>Favorites</th>
+                    <th>Temp.</th>
+                    <th>Hum.</th>
+                    <th>Pop.</th>
+                    <th>Last update</th>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
 
         <div class="recomendations">
-          <h4>Recomendations</h4>
-          <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <span>Provided by EMMA</span>
+            <legend>Recomendations</legend>
+            <div class="panel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <span>Provided by EMMA</span>
         </div>
 
         <div class="search">
-          <fieldset>
-            <legend>Search</legend>
-            <label>By</label>
-            <select>
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-              <option value="option4">Option 4</option>
-            </select>
-            <input type="text" name="filter">
-          </fieldset>
+            <fieldset>
+                <legend>Search</legend>
+                <label>By</label>
+                <select id="search">
+                </select>
+                <input type="text" name="filter">
+            </fieldset>
         </div>
       </div>
 
