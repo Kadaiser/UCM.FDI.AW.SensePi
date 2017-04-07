@@ -191,6 +191,7 @@ function myHover(element)
     }
 }
 
+
 function myLeave()
 {
     var canvas = byId('myCanvas');
@@ -215,4 +216,13 @@ function mySpanHide()
   var div = document.getElementById("Span");
   div.style.visibility = 'collapse';
   div.style.opacity = "0";
+}
+
+function myHoverImg(element){
+  element.src= "./images/icons/xOn.png";
+}
+
+function myLeaveImg(element){
+  element.src= "./images/icons/xOff.png";
+
 }

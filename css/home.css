@@ -23,6 +23,23 @@ canvas{
   padding: 10px;
 }
 
+.span img{
+  position: absolute;
+  left: 95%;
+  height: 25px;
+  width: 25px;
+  padding:2px 5px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.span img.XOn:hover{
+  opacity: 0;
+}
+
+
 .fog{
   visibility: collapse;
   position: absolute;
@@ -33,32 +50,7 @@ canvas{
   background: #000000;
   overflow: visible;
 }
-.span button{
-  background: #d98f34;
-  background-image: -webkit-linear-gradient(top, #d98f34, #d98f34);
-  background-image: -moz-linear-gradient(top, #d98f34, #d98f34);
-  background-image: -ms-linear-gradient(top, #d98f34, #d98f34);
-  background-image: -o-linear-gradient(top, #d98f34, #d98f34);
-  background-image: linear-gradient(to bottom, #d98f34, #d98f34);
-  -webkit-border-radius: 9;
-  -moz-border-radius: 9;
-  border-radius: 9px;
-  text-shadow: 1px 2px 3px #666666;
-  color: #000000;
-  font-size: 15px;
-  padding: 4px 12px 4px 12px;
-  text-decoration: none;
-}
 
-.spam button:hover {
-  background: #f5c387;
-  background-image: -webkit-linear-gradient(top, #f5c387, #f5c387);
-  background-image: -moz-linear-gradient(top, #f5c387, #f5c387);
-  background-image: -ms-linear-gradient(top, #f5c387, #f5c387);
-  background-image: -o-linear-gradient(top, #f5c387, #f5c387);
-  background-image: linear-gradient(to bottom, #f5c387, #f5c387);
-  text-decoration: none;
-}
 
 #PBMap{
   text-align: center;

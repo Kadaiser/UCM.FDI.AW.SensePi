@@ -17,7 +17,7 @@
     <canvas id='myCanvas'></canvas>
 
     <!-- FOG SPAN-->
-    <div class="fog" id="Fog">
+    <div class="fog" id="Fog" onclick='mySpanHide();'>
     </div>
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
@@ -63,10 +63,11 @@
       <div id="content">
 
         <div class="span" id="Span">
+          <img class="XOff" src="./images/icons/xOff.png">
+          <img class="XOn" src="./images/icons/xOn.png" alt="Close" onclick='mySpanHide();'>
           <h1>CAFETERIA</h1>
           <p>Noise:           40dB</p>
           <div id="chart_div"></div>
-          <button type="button" name="button" onclick="mySpanHide()">Return</button>
         </div>
 
         <img src="./planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
