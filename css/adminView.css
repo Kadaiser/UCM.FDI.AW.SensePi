@@ -7,13 +7,17 @@ fieldset{
 	width: 20%;
 	order: 1;
 }*/
+#peticion{	
+	min-width: 20%;
+	order: 1;
+}
 
 #getInfo{
 	padding-left: 1%;
 	margin-left: 2%;
 	border: 2px solid #FFFFFF;
 	order: 2;
-	width: 20%;
+	min-width: 20%;
 }
 
 #search{
@@ -23,14 +27,14 @@ fieldset{
 
 #nameRegister{
 	text-align: right;
-	width: 18%;
+	min-width: 18%;
 	order: 1;
 }
 
 #getRegister{
 	border-right: 2px solid #FFFFFF;
 	padding-left: 2%;
-	width: 20%;
+	min-width: 20%;
 	order: 2;
 }
 
@@ -45,12 +49,13 @@ fieldset{
 #processRegister{
 	padding: 2%;
 	order: 1;
-	width: 20%;
+	min-width: 20%;
 }
 
 #registerOk{
 	padding-top: 2%;
 	order: 2;
+	min-width: 20%;
 	
 }
 
@@ -63,14 +68,14 @@ fieldset{
 
 #nameRemove{
 	text-align: right;
-	width: 18%;
+	min-width: 18%;
 	order: 1;
 }
 
 #getRemove{ 
 	border-right: 2px solid #FFFFFF;
 	padding-left: 2%;
-	width: 20%;
+	min-width: 20%;
 	order: 2;
 }
 
@@ -85,12 +90,13 @@ fieldset{
 #processRemove{
 	padding: 2%;
 	order: 1;
-	width: 20%;
+	min-width: 20%;
 }
 
 #removeOk{
 	padding-top: 2%;
 	order: 2;
+	min-width: 20%;
 }
 
 #remove{
@@ -124,4 +130,7 @@ fieldset{
 }
 
 .t4{
+}
+.myStyle{
+	width: 80%;
 }
