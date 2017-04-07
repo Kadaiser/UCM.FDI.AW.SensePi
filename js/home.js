@@ -249,4 +249,10 @@ function switchFloorState(chosenFloor) {
     element.style.transition = "opacity 0.4s ease-out";
     element.style.opacity = "0";
   }
+  if(this.showFloor[chosenFloor]==true){
+    element.style.zIndex="1";
+  }else{
+    element.style.zIndex="-1";
+
+  }
 }
