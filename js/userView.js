@@ -1,4 +1,4 @@
-var dataFromDB = [
+﻿var dataFromDB = [
 [1, 'Biblioteca P1', 20, 35, 17, new Date('2017-03-09 17:52')],
 [2, 'Cafeteria', 23, 34, 28, new Date('2017-03-08 13:33')],
 [3, 'Aula', 22, 33, 49, new Date('2017-03-10 09:55')]
@@ -129,3 +129,6 @@ function fillSelect(){
         select.add(option);
     });
 }
+
+
+/* INSIDE METHODS*/
