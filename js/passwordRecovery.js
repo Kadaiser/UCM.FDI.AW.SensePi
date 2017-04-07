@@ -5,174 +5,34 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(){
-  document.getElementById("nickLabel").innerHTML=NickText;
   document.getElementById("emailLabel").innerHTML=EmailText;
-  document.getElementById("passwordLabel").innerHTML=PasswordText;
-  document.getElementById("confirmPasswordLabel").innerHTML=ConfirmPasswordText;
-  document.getElementById("passwordRecover").innerHTML=passwordRecover;
   document.getElementById("mainButton").innerHTML=logInButtonText;
-  document.getElementById("alternativeButton").innerHTML=SignUpButtonText;
-  document.getElementById("accountMessage").innerHTML=noAccountMessage;
-
-  var tryNumber = 0;
-  var loginMatch = false;
-  var loginDisabled = false;
+  this.recoverDisabled = false;
   var isInputLocked = false;
-  var isSignUpForm = false;
-
-  var userNickname = "";
-  var userPhone = "";
   var userEmail = "";
-  var userPassword = "";
-  var userConfirmPassword = "";
-  //TODO: User and password must be requested to user DB.
-  var dbUser = "tontomoco";
-  var dbPassword = "penegrande";
-  //TODO: Phone number and email are not required ftm.
 }
-
 
 /*DIRECT METHODS*/
 
-function mainButtonClick() {
-  if(isSignUpForm){
-    this.userSignUp();
-  }else{
-    this.userLogin();
-  }
+function userRecoverEmail() {
+  this.inputLock();
+  this.checkCredentials();
 }
-
-function switchForms() {
-  this.isSignUpForm = !this.isSignUpForm;
-  document.getElementById("userNickname").focus();
-  document.getElementById("userPassword").value="";
-  document.getElementById("userConfirmPassword").value="";
-  if(isSignUpForm){
-    document.getElementById("confirmPasswordDiv").style.display="block";
-    document.getElementById("userNickname").value="";
-    document.getElementById("userEmail").value="";
-    document.getElementById("nickLabel").innerHTML=NewNickText;
-    document.getElementById("emailLabel").innerHTML=NewEmailText;
-    document.getElementById("passwordLabel").innerHTML=NewPasswordText;
-    document.getElementById("mainButton").innerHTML=SignUpButtonText;
-    document.getElementById("accountMessage").innerHTML=yesAccountMessage;
-    document.getElementById("alternativeButton").innerHTML=logInNowButtonText;
-  }else{
-    document.getElementById("confirmPasswordDiv").style.display="none";
-    document.getElementById("nickLabel").innerHTML=NickText;
-    document.getElementById("emailLabel").innerHTML=EmailText;
-    document.getElementById("passwordLabel").innerHTML=PasswordText;
-    document.getElementById("mainButton").innerHTML=logInButtonText;
-    document.getElementById("accountMessage").innerHTML=noAccountMessage;
-    document.getElementById("alternativeButton").innerHTML=SignUpNowButtonText;
-  }
-}
-
 
 /* INSIDE METHODS*/
 
-function userLogin() {
-  this.inputLock();
-  this.checkCredentials();
-  if(!this.loginDisabled) this.inputUnlock();
-}
-
-function userSignUp() {
-  this.inputLock();
-  this.checkFieldData();
-  this.inputUnlock();
-}
-
 function checkCredentials() {
-  var identifiedAccount = false;
-  if(!this.loginDisabled){
-    /*DB QUERY WITH USER*/
-    if(/*USER SUCCESSFUL QUERY*/true){
-      //REGISTER USER PARAMETERS, ONLY CHECK PASSWORD
-      identifiedAccount = true;
-    }else{
+  if(!this.recoverDisabled){
     /*DB QUERY WITH EMAIL*/
-      if(/*EMAIL SUCCESSFUL QUERY*/true){
-      //REGISTER USER PARAMETERS, ONLY CHECK PASSWORD
-      identifiedAccount = true;
-      }
+    if(/*EMAIL SUCCESSFUL QUERY*/true){
+      //SEND RECOVER@MAIL TO GIVEN EMAIL
     }
-    if(identifiedAccount && this.userPassword == this.dbPassword){
-      this.loginMatch = true;
-      document.getElementById("resultMessage").value=loginSuccess;
-    }else{
-      this.loginMatch = false;
-      switch(this.tryNumber){
-        case 0:
-          document.getElementById("resultMessage").value=loginFail1;
-          break;
-        case 1:
-          document.getElementById("resultMessage").value=loginFail2;
-          break;
-        default:
-          this.warningLockForm();
-      }
-      this.tryNumber++;
-    }
-  }else{
-    //Further failed attempts control.
+    document.getElementById("resultMessage").value=sentRecoverMessage;
+    this.recoverDisabled = true;
   }
-}
-
-function checkFieldData() {
-  //Store temp values
-  var newNickname = this.userNickname;
-  var newPasswordInput = this.userPassword;
-  var newConfirmPasswordInput = this.userConfirmPassword;
-  var newEmail = this.userEmail;
-
-  //Check password and confirmation
-  if(newPasswordInput == newConfirmPasswordInput){
-    if(validateEmail(newEmail)){
-      /*DB QUERY FOR USER AND EMAIL*/
-      if(true){
-        /*DB REQUEST FOR REGISTERING USER, EMAIL AND PASSWORD*/
-        document.getElementById("resultMessage").value=signUpSuccess;
-      }else{
-        document.getElementById("resultMessage").value=signUpFail;
-      }
-    }else{
-      document.getElementById("resultMessage").value=signUpWrongEmail;
-    }
-  }else{
-    document.getElementById("resultMessage").value=signUpWrongPassword;
-  }
-}
-
-function validateEmail(emailString){
-  var isEmailValid = false;
-  //Check the email: SHOULD ONLY DO IT THROUGH PHP?
-  if(true){
-    isEmailValid = true;
-  }
-  return isEmailValid;
+  document.getElementById("resultMessage").value=alreadySentRecoverMessage;
 }
 
 function inputLock() {
-  var fields = document.getElementsByClassName("field");
-  fields = [].slice.call(fields);
-  fields.forEach(function(field) {
-    field.disabled=true;
-  }, this);
-}
-
-function inputUnlock() {
-  var fields = document.getElementsByClassName("field");
-  fields = [].slice.call(fields);
-  fields.forEach(function(field) {
-    field.disabled=false;
-  }, this);
-}
-
-function warningLockForm(){
-  this.inputLock();
-  this.loginDisabled = true;
-    document.getElementById("warningMessage").style.display="block";
-    document.getElementById("warningMessage").innerHTML=warningMessageText;
-  document.getElementById("resultMessage").value=loginFail3;
+  document.getElementById("userRecoverEmail").disabled=true;
 }
