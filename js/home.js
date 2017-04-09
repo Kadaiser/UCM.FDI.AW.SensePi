@@ -57,6 +57,23 @@ function init(/*param1,param2*/){
 
 /*DIRECT METHODS*/
 
+
+
+var mapView = true;
+
+function switchBetweenView(){
+  if(mapView){
+    switchToGalleryView();
+  }
+  else {
+    switchToMapView();
+  }
+  mapView = !mapView;
+}
+
+/* INSIDE METHODS*/
+
+
 function switchToMapView() {
   document.getElementById("PBMap").style.display = "block";
   document.getElementById("PB").style.display = "block";
@@ -68,8 +85,6 @@ function switchToGalleryView() {
   document.getElementById("PBMap").style.display = "none";
   document.getElementById("PB").style.display = "none";
 }
-
-/* INSIDE METHODS*/
 
 var dataFromDB = [
     [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'],
@@ -256,13 +271,4 @@ function switchFloorState(chosenFloor) {
     element.style.zIndex="-1";
 
   }
-}
-
-function myHoverImg(element){
-  element.src= "./images/icons/xOn.png";
-}
-
-function myLeaveImg(element){
-  element.src= "./images/icons/xOff.png";
-
 }

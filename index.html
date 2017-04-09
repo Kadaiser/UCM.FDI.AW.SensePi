@@ -62,14 +62,18 @@
       <!-- CONTENT CLASS -->
       <div id="content">
 
-        <div id="viewSelector">
-          <button id="mapViewButton" onclick="switchToMapView()">Map view</button>
-          <button id="galleryViewButton" onclick="switchToGalleryView()">Gallery view</button>
+        <div class="viewSelector">
+         <label>Map</label>
+          <label class="switch">
+            <input type="checkbox" onclick="switchBetweenView()">
+            <div class="slider round"></div>
+          </label>
+          <label>Gallery</label>
         </div>
 
         <div class="span" id="Span">
-          <img class="XOff" src="./images/icons/xOff.png">
-          <img class="XOn" src="./images/icons/xOn.png" alt="Close" onclick='mySpanHide();'>
+          <img class="XOn" src="./images/icons/xOn.png">
+          <img class="XOff" src="./images/icons/xOff.png" alt="Close" onclick='mySpanHide();'>
           <h1>CAFETERIA</h1>
           <p>Noise:           40dB</p>
           <div id="chart_div"></div>
