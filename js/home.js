@@ -75,15 +75,13 @@ function switchBetweenView(){
 
 
 function switchToMapView() {
-  document.getElementById("PBMap").style.display = "block";
-  document.getElementById("PB").style.display = "block";
+  document.getElementById("mapContainer").style.display = "block";
   document.getElementById("galleryBlock").style.display = "none";
 }
 
 function switchToGalleryView() {
   document.getElementById("galleryBlock").style.display = "block";
-  document.getElementById("PBMap").style.display = "none";
-  document.getElementById("PB").style.display = "none";
+  document.getElementById("mapContainer").style.display = "none";
 }
 
 var dataFromDB = [
@@ -214,7 +212,6 @@ function myHover(element)
     var hoveredElement = element;
     var coordStr = element.getAttribute('coords');
     var areaType = element.getAttribute('shape');
-
     switch (areaType)
     {
         case 'polygon':
@@ -226,7 +223,6 @@ function myHover(element)
             drawRect(coordStr);
     }
 }
-
 
 function myLeave()
 {
