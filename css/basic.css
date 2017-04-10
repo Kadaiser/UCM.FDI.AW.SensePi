@@ -13,6 +13,7 @@ h1{
 }
 
 #wrapper{
+min-width: 800px;
 min-height:100%;
 position:relative;
 }
@@ -21,9 +22,10 @@ position:relative;
 	position: fixed;
 	left: 0;
 	height: 100%;
-	width: 12%;
+	width: 10%;
 	background: #1f1f1f;
 	color: #cc6600;
+	min-width: 150px;
 	padding-top: 60px;	/* Height of the header*/
 	padding-bottom:30px; /* Height of the header*/
 	z-index: 1;
@@ -33,7 +35,7 @@ position:relative;
 	position: fixed;
 	right: 0;
 	height: 100%;
-	width: 12%;
+	width: 10%;
 	background: #1f1f1f;
 	color: #cc6600;
 	padding-top: 60px;	/* Height of the header*/
@@ -57,7 +59,7 @@ position:relative;
 #header{
 	position: fixed;
 	width: 100%;
-	min-width: 400px;
+	min-width: 500px;
 	top: 0;
 	height: 60px;
 	background: #0d0d0d;

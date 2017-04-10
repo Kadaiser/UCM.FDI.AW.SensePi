@@ -9,6 +9,7 @@ canvas{
 
 .viewSelector{
   position: relative;
+  margin-bottom: 5%;
 }
 
 .viewSelector label{
@@ -77,10 +78,10 @@ input:checked + .slider:before {
   opacity: 0;
   position: absolute;
   z-index: 3;
-  width: 740px;
-  height: 390px;
+  width: 840px;
+  height: 490px;
   left: 20%;
-  top: 15%;
+  top: 25%;
   background: #1b1b1b;
   border: 12px double #cc6600;
   border-radius: 10px;
