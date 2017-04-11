@@ -1,6 +1,6 @@
 window.onload = function() {
   this.init(/*param1,param2*/);
-  imageCanvasBorderArea();
+  imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
 };
 
 /*ON DOCUMENT LOAD*/

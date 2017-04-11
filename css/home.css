@@ -83,7 +83,7 @@ input:checked + .slider:before {
   left: 20%;
   top: 25%;
   background: #1b1b1b;
-  border: 12px double #cc6600;
+  border: 20px double #cc6600;
   border-radius: 10px;
   text-align: left;
   padding: 10px;
