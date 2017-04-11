@@ -1,3 +1,7 @@
+window.onresize = function(){
+  imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
+}
+
 window.onload = function() {
   this.init(/*param1,param2*/);
   imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
