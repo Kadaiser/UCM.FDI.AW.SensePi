@@ -1,16 +1,6 @@
-.hgroup { 
-	text-align:center;
-	margin-top: 4em;
-}
-
-.info { 
-	text-align:center;
-	margin-top: 1em;
-}
-
 form {
 	width: 380px;
-	margin: 4em auto;
+	margin: 25px auto;
 	padding: 3em 2em 2em 2em;
 	background: #454545;
 	border: 2px solid #bfbfbf;
@@ -18,8 +8,8 @@ form {
 	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
-.group { 
-	position: relative; 
+.group {
+	position: relative;
 	margin-bottom: 40px;
 	text-align: center;
 }
@@ -43,7 +33,7 @@ input:focus { outline: none; }
 /* Label */
 
 label {
-	color: #bfbfbf; 
+	color: #bfbfbf;
 	font-size: 18px;
 	font-weight: normal;
 	position: absolute;
@@ -81,17 +71,17 @@ input:focus ~ label, input:valid ~ label, input:disabled ~ label {
 	position: relative;
 	display: block;
   margin: 0;
-	width: 100%;
+	width: 103%;
 }
 
 .bar:before, .bar:after {
 	content: '';
-	height: 2px; 
+	height: 2px;
 	width: 0;
-	bottom: 1px; 
+	bottom: 1px;
 	position: absolute;
-	background: #ff953b; 
-	transition: all 0.2s ease;
+	background: #cc6600;
+	transition: all 0.3s ease;
 }
 
 .bar:before { left: 50%; }
@@ -108,9 +98,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 .highlight {
 	position: absolute;
-	height: 60%; 
-	width: 100px; 
-	top: 25%; 
+	height: 60%;
+	width: 100px;
+	top: 25%;
 	left: 0;
 	pointer-events: none;
 	opacity: 0.5;
