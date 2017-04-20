@@ -5,8 +5,8 @@
     <title id="webTitle">User view</title>
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
-    <link rel="stylesheet" type="text/css" href="../css/userview.css"/>
-    <script type="text/javascript" src="../js/userview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/userView.css"/>
+    <script type="text/javascript" src="../js/userView.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
@@ -16,38 +16,9 @@
     <div id="wrapper">
 
       <!-- HEADER CLASS -->
-      <div id="header">
-
-        <nav class="mainNav">
-          <ul>
-            <li id="navHome">
-              <a href="../index.html"><span>HOME</span></a>
-            </li>
-            <li id="navTeam">
-              <a href="team.html"><span>TEAM</span></a>
-            </li>
-            <li id="navDetails">
-              <a href="project.html"><span>PROJECT</span></a>
-            </li>
-            <li id="navContact">
-              <a href="contact.html"><span>CONTACT</span></a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav class="mainNav rightNav">
-          <ul>
-            <li id="navLogOut">
-              <a href="./login.html"><span>LOGOUT</span></a>
-            </li>
-            <li id="navUser">
-              <!-- PONER FOTITO DE KADAISER -->
-              <a href="#"><span>Kadaiser</span></a>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
+      <?php
+      include '../php/navbar.php';
+       ?>
 
       <!-- SIDEBAR CLASS -->
       <div class="sidebarLeft">
@@ -107,10 +78,9 @@
       </div>
 
       <!-- FOOTER CLASS -->
-      <div id="footer">
-        <a id="footerLink" href="./project.html">SensePi</a>
-        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">- a student's project for the FdI</a>
-      </div>
+      <?php
+        include '../php/footer.php';
+       ?>
 
     <!-- END WRAPPER CLASS -->
     </div>

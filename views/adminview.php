@@ -5,9 +5,9 @@
     <title id="webTitle">Administration</title>
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../css/adminview.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/adminView.css"/>
     <script type="text/javascript" src="../js/basic.js"></script>
-    <script type="text/javascript" src="../js/adminview.js"></script>
+    <script type="text/javascript" src="../js/adminView.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
@@ -16,39 +16,9 @@
   <div id="wrapper">
 
     <!-- HEADER CLASS -->
-      <div id="header">
-
-        <nav class="mainNav">
-          <ul>
-            <li id="navHome">
-              <a href="../index.html"><span>HOME</span></a>
-            </li>
-            <li id="navTeam">
-              <a href="./team.html"><span>TEAM</span></a>
-            </li>
-            <li id="navDetails">
-              <a href="./project.html"><span>PROJECT</span></a>
-            </li>
-            <li id="navContact">
-              <a href="./contact.html"><span>CONTACT</span></a>
-            </li>
-            <li id="navAdmin">
-              <a href="./adminview.html"><span>ADMIN</span></a>
-            </li>
-					</ul>
-        </nav>
-
-        <nav class="mainNav rightNav">
-          <ul>
-            <li id="navLogOut">
-              <a href="./login.html"><span>LOGOUT</span></a>
-            </li>
-						<li id="navUser">
-              <a href="./userview.html"><span>Pepe Admin</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <?php
+    include '../php/navbar.php';
+     ?>
 
         <!-- SIDEBAR CLASS -->
         <div class="sidebarLeft">
@@ -148,6 +118,7 @@
 			</div>
 			<div id="removeOk" style="display: none">
 				<p>The SensePi has been removed</p>
+>>>>>>> feature/adminView
 			</div>
 		</div>
 
@@ -187,10 +158,9 @@
 
 
 			<!-- FOOTER CLASS -->
-			<div id="footer">
-        <a id="footerLink" href="./project.html">SensePi</a>
-				<a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">- a student's project for the FdI</a>
-
+      <?php
+        include '../php/footer.php';
+       ?>
     <!-- END WRAPPER CLASS -->
 
 </div>

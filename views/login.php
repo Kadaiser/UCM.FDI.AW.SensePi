@@ -17,34 +17,9 @@
   	<div id="wrapper">
 
       <!-- HEADER CLASS -->
-      <div id="header">
-
-        <nav class="mainNav">
-          <ul>
-            <li id="navHome">
-              <a href="../index.html"><span>HOME</span></a>
-            </li>
-            <li id="navTeam">
-              <a href="./team.html"><span>TEAM</span></a>
-            </li>
-            <li id="navProject">
-              <a href="./project.html"><span>PROJECT</span></a>
-            </li>
-            <li id="navContact">
-              <a href="./contact.html"><span>CONTACT</span></a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav class="mainNav rightNav">
-          <ul>
-            <li id="navLogIn">
-              <a href="#"><span>LOGIN</span></a>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
+      <?php
+      include '../php/navbar.php';
+       ?>
 
       <!-- SIDEBAR CLASS -->
       <div class="sidebarLeft">
@@ -56,11 +31,19 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-          <form class="loginForm" action="loginProcess.php" method="post">
+          <form>
+            <div class="group">
+              <input type="text"
+                    id="userNickname" class="field"
+                    required autofocus>
+              <span class="highlight"></span><span class="bar"></span>
+              <label id="nickLabel"></label>
+            </div>
+
             <div class="group">
               <input type="text"
                     id="userEmail" class="field"
-                    required autofocus>
+                    required>
               <span class="highlight"></span><span class="bar"></span>
               <label id="emailLabel"></label>
             </div>
@@ -82,11 +65,12 @@
             </div>
 
             <div class="group">
-              <input type="submit"
+              <button type="button"
                       class="button buttonGrey"
+                      onclick="mainButtonClick()"
                       id="mainButton">
                 <span class="ripples ripplesCircle"></span>
-              </input>
+              </button>
 
               <div class="info">
                 <p id="accountMessage"></p>
@@ -105,17 +89,16 @@
             </div>
 
             <div class="group">
-              <p id="warningMessage"><a id="passwordRecover" href="./passwordrecovery.html"></a></p>
+              <p id="warningMessage"><a id="passwordRecover" href="./passwordRecovery.html"></a></p>
             </div>
           </form>
 
       </div>
 
       <!-- FOOTER CLASS -->
-      <div id="footer">
-        <a id="footerLink" href="./project.html">SensePi</a>
-        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">- a student's project for the FdI</a>
-      </div>
+      <?php
+        include '../php/footer.php';
+       ?>
 
     <!-- END WRAPPER CLASS -->
     </div>

@@ -1,15 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>PiSense Portal</title>
-    <link rel="icon" type="image/png" href="./images/icons/zero.png"/>
-    <link rel="stylesheet" type="text/css" href="./css/basic.css">
-    <link rel="stylesheet" type="text/css" href="./css/home.css"/>
+    <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
+    <link rel="stylesheet" type="text/css" href="../css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="./js/basic.js"></script>
-    <script type="text/javascript" src="./js/canvas.js"></script>
-    <script type="text/javascript" src="./js/home.js"></script>
+    <script type="text/javascript" src="../js/basic.js"></script>
+    <script type="text/javascript" src="../js/canvas.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
 		<script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
@@ -24,34 +23,9 @@
   	<div id="wrapper">
 
       <!-- HEADER CLASS -->
-      <div id="header">
-
-        <nav class="mainNav">
-          <ul>
-            <li id="navHome">
-              <a href="#"><span>HOME</span></a>
-            </li>
-            <li id="navTeam">
-              <a href="./views/team.html"><span>TEAM</span></a>
-            </li>
-            <li id="navProject">
-              <a href="./views/project.html"><span>PROJECT</span></a>
-            </li>
-            <li id="navContact">
-              <a href="./views/contact.html"><span>CONTACT</span></a>
-            </li>
-          </ul>
-        </nav>
-
-        <nav class="mainNav rightNav">
-          <ul>
-            <li id="navLogIn">
-              <a href="./views/login.html"><span>LOGIN</span></a>
-            </li>
-          </ul>
-        </nav>
-
-      </div>
+      <?php
+      include '../php/navbar.php';
+       ?>
 
       <!-- SIDEBAR CLASS -->
       <div class="sidebarLeft">
@@ -73,21 +47,21 @@
         </div>
 
         <div class="span" id="Span">
-          <img class="staticImg" src="./images/icons/xOff.png">
-          <img class="hoverImg" src="./images/icons/xOn.png" alt="Close" onclick='mySpanHide();'>
+          <img class="staticImg" src="../images/icons/xOff.png">
+          <img class="hoverImg" src="../images/icons/xOn.png" alt="Close" onclick='mySpanHide();'>
           <h1>CAFETERIA</h1>
           <p>Noise:           40dB</p>
           <div id="chart_div"></div>
 
           <div class="favoriteMark">
             <label>Add to favorite </label>
-            <img class="staticImg" src="./images/icons/slimStar.png" alt="Add to favorite">
-            <img class="hoverImg" src="./images/icons/fatStar.png">
+            <img class="staticImg" src="../images/icons/slimStar.png" alt="Add to favorite">
+            <img class="hoverImg" src="../images/icons/fatStar.png">
           </div>
         </div>
 
         <div id="mapContainer">
-          <img src="./images/planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
+          <img src="../images/planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
           <map id="PB" name="PB">
             <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="SalaGrados" alt="Sala de Grados" title="Sala de Grados" shape="rect" coords="10,6,199,264"  target="_self">
             <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="wcBiblioteca" alt="W.C Biblioteca" title="W.C Biblioteca" shape="rect" coords="90,383,125,442"  target="_self">
@@ -108,13 +82,13 @@
           <div class="galleryRow disabled" id="galleryP2">
             <!-- NOT YET ACCESSIBLE -->
             <div class="galleryFloor" onclick="switchFloorState('fp2');">
-              <img src="./images/gallery/p2.png" alt="Planta 2"/>
+              <img src="../images/gallery/p2.png" alt="Planta 2"/>
               <span>Planta 2</span>
             </div>
             <div class="galleryFloorList" id="fp2">
               <ul>
                 <li class="galleryFloorElement">
-                  <img src="./images/gallery/coming-soon.png" alt="Próxima apertura"/>
+                  <img src="../images/gallery/coming-soon.png" alt="Próxima apertura"/>
                   <span>Coming soon</span>
                 </li>
               </ul>
@@ -123,13 +97,13 @@
           <div class="galleryRow disabled" id="galleryP1">
             <!-- NOT YET ACCESSIBLE -->
             <div class="galleryFloor" onclick="switchFloorState('fp1');">
-              <img src="./images/gallery/p1.png" alt="Planta 1"/>
+              <img src="../images/gallery/p1.png" alt="Planta 1"/>
               <span>Planta 1</span>
             </div>
             <div class="galleryFloorList" id="fp1">
               <ul>
                 <li class="galleryFloorElement">
-                  <img src="./images/gallery/coming-soon.png" alt="Próxima apertura"/>
+                  <img src="../images/gallery/coming-soon.png" alt="Próxima apertura"/>
                   <span>Coming soon</span>
                 </li>
               </ul>
@@ -137,57 +111,57 @@
           </div>
           <div class="galleryRow" id="galleryPB">
             <div class="galleryFloor" onclick="switchFloorState('fpb');">
-              <img src="./images/gallery/pb.png" alt="Planta Baja"/>
+              <img src="../images/gallery/pb.png" alt="Planta Baja"/>
               <span>Planta Baja</span>
             </div>
             <div class="galleryFloorList" id="fpb">
               <ul>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/coffee.png" alt="Cafetería"/>
+                  <img src="../images/gallery/coffee.png" alt="Cafetería"/>
                   <span>Cafetería</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/conference.png" alt="Sala de Grados"/>
+                  <img src="../images/gallery/conference.png" alt="Sala de Grados"/>
                   <span>Sala de Grados</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/pasillos.png" alt="Pasillos"/>
+                  <img src="../images/gallery/pasillos.png" alt="Pasillos"/>
                   <span>Pasillos</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/wc.png" alt="W.C Biblioteca"/>
+                  <img src="../images/gallery/wc.png" alt="W.C Biblioteca"/>
                   <span>W.C Biblioteca</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/wc.png" alt="W.C Norte"/>
+                  <img src="../images/gallery/wc.png" alt="W.C Norte"/>
                   <span>W.C Norte</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/wc.png" alt="W.C Sur"/>
+                  <img src="../images/gallery/wc.png" alt="W.C Sur"/>
                   <span>W.C Sur</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/aula.png" alt="Aula 1"/>
+                  <img src="../images/gallery/aula.png" alt="Aula 1"/>
                   <span>Aula 1</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/aula.png" alt="Aula 2"/>
+                  <img src="../images/gallery/aula.png" alt="Aula 2"/>
                   <span>Aula 2</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/aula.png" alt="Aula 3"/>
+                  <img src="../images/gallery/aula.png" alt="Aula 3"/>
                   <span>Aula 3</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/aula.png" alt="Aula 4"/>
+                  <img src="../images/gallery/aula.png" alt="Aula 4"/>
                   <span>Aula 4</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/aula.png" alt="Aula 5"/>
+                  <img src="../images/gallery/aula.png" alt="Aula 5"/>
                   <span>Aula 5</span>
                 </li>
                 <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="./images/gallery/delegacion.png" alt="Delegación"/>
+                  <img src="../images/gallery/delegacion.png" alt="Delegación"/>
                   <span>Delegación</span>
                 </li>
               </ul>
@@ -199,10 +173,9 @@
       </div>
 
       <!-- FOOTER CLASS -->
-      <div id="footer">
-        <a id="footerLink" href="./views/project.html">SensePi</a>
-        <a id="footerSentence" href="https://informatica.ucm.es/" target="_blank">- a student's project for the FdI</a>
-      </div>
+      <?php
+        include '../php/footer.php';
+       ?>
 
     <!-- END WRAPPER CLASS -->
     </div>
