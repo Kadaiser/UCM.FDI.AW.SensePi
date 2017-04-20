@@ -5,9 +5,9 @@
     <title id="webTitle">Administration</title>
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css" />
-    <link rel="stylesheet" type="text/css" href="../css/adminView.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/adminview.css"/>
     <script type="text/javascript" src="../js/basic.js"></script>
-    <script type="text/javascript" src="../js/adminView.js"></script>
+    <script type="text/javascript" src="../js/adminview.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
@@ -118,7 +118,6 @@
 			</div>
 			<div id="removeOk" style="display: none">
 				<p>The SensePi has been removed</p>
->>>>>>> feature/adminView
 			</div>
 		</div>
 

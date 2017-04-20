@@ -5,8 +5,8 @@
     <title id="webTitle">User view</title>
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
-    <link rel="stylesheet" type="text/css" href="../css/userView.css"/>
-    <script type="text/javascript" src="../js/userView.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/userview.css"/>
+    <script type="text/javascript" src="../js/userview.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 

@@ -31,19 +31,11 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-          <form>
-            <div class="group">
-              <input type="text"
-                    id="userNickname" class="field"
-                    required autofocus>
-              <span class="highlight"></span><span class="bar"></span>
-              <label id="nickLabel"></label>
-            </div>
-
+          <form class="loginForm" action="loginProcess.php" method="post">
             <div class="group">
               <input type="text"
                     id="userEmail" class="field"
-                    required>
+                    required autofocus>
               <span class="highlight"></span><span class="bar"></span>
               <label id="emailLabel"></label>
             </div>
