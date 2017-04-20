@@ -77,9 +77,9 @@ function userLogin() {
   //this.checkCredentials();
   //if(!this.loginDisabled) this.inputUnlock();
   if(document.getElementById("userNickname").value=="admin"){
-    window.location.href="./adminView.html";
+    window.location.href="./adminview.html";
   }else{
-    window.location.href="./userView.html";
+    window.location.href="./userview.html";
   }
 }
 

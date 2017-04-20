@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/basic.css"/>
     <link rel="stylesheet" type="text/css" href="../css/login.css"/>
     <script type="text/javascript" src="../js/basic.js"></script>
-    <script type="text/javascript" src="../js/passwordRecovery.js"></script>
+    <script type="text/javascript" src="../js/passwordrecovery.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
