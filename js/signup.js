@@ -33,7 +33,7 @@ function init(){
 /*DIRECT METHODS*/
 
 function switchForms() {
-    window.location.href="./signup.html";
+    window.location.href="./login.html";
 }
 
 
