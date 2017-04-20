@@ -5,7 +5,6 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(){
-  document.getElementById("nickLabel").innerHTML=NickText;
   document.getElementById("emailLabel").innerHTML=EmailText;
   document.getElementById("passwordLabel").innerHTML=PasswordText;
   document.getElementById("confirmPasswordLabel").innerHTML=ConfirmPasswordText;
@@ -20,7 +19,6 @@ function init(){
   this.isInputLocked = false;
   this.isSignUpForm = false;
 
-  this.userNickname = "";
   this.userPhone = "";
   this.userEmail = "";
   this.userPassword = "";
@@ -44,14 +42,12 @@ function mainButtonClick() {
 
 function switchForms() {
   this.isSignUpForm = !this.isSignUpForm;
-  document.getElementById("userNickname").focus();
+  document.getElementById("userEmail").focus();
   document.getElementById("userPassword").value="";
   document.getElementById("userConfirmPassword").value="";
   if(isSignUpForm){
     document.getElementById("confirmPasswordDiv").style.display="block";
-    document.getElementById("userNickname").value="";
     document.getElementById("userEmail").value="";
-    document.getElementById("nickLabel").innerHTML=NewNickText;
     document.getElementById("emailLabel").innerHTML=NewEmailText;
     document.getElementById("passwordLabel").innerHTML=NewPasswordText;
     document.getElementById("mainButton").innerHTML=SignUpButtonText;
@@ -59,7 +55,6 @@ function switchForms() {
     document.getElementById("alternativeButton").innerHTML=logInNowButtonText;
   }else{
     document.getElementById("confirmPasswordDiv").style.display="none";
-    document.getElementById("nickLabel").innerHTML=NickText;
     document.getElementById("emailLabel").innerHTML=EmailText;
     document.getElementById("passwordLabel").innerHTML=PasswordText;
     document.getElementById("mainButton").innerHTML=logInButtonText;
@@ -76,7 +71,7 @@ function userLogin() {
   //TODO: Don't check credentials for this sprint ("only" views html & css)
   //this.checkCredentials();
   //if(!this.loginDisabled) this.inputUnlock();
-  if(document.getElementById("userNickname").value=="admin"){
+  if(document.getElementById("userEmail").value=="admin"){
     window.location.href="./adminview.html";
   }else{
     window.location.href="./userview.html";
@@ -128,7 +123,6 @@ function checkCredentials() {
 
 function checkFieldData() {
   //Store temp values
-  var newNickname = this.userNickname;
   var newPasswordInput = this.userPassword;
   var newConfirmPasswordInput = this.userConfirmPassword;
   var newEmail = this.userEmail;
