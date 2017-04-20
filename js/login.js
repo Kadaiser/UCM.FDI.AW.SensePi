@@ -7,7 +7,6 @@ window.onload = function() {
 function init(){
   document.getElementById("emailLabel").innerHTML=EmailText;
   document.getElementById("passwordLabel").innerHTML=PasswordText;
-  document.getElementById("confirmPasswordLabel").innerHTML=ConfirmPasswordText;
   document.getElementById("passwordRecover").innerHTML=passwordRecover;
   document.getElementById("mainButton").innerHTML=logInButtonText;
   document.getElementById("alternativeButton").innerHTML=SignUpButtonText;
@@ -22,7 +21,6 @@ function init(){
   this.userPhone = "";
   this.userEmail = "";
   this.userPassword = "";
-  this.userConfirmPassword = "";
   //TODO: User and password must be requested to user DB.
   this.dbUser = "prueba1";
   this.dbPassword = "prueba1pw";
@@ -97,7 +95,6 @@ function checkCredentials() {
 function checkFieldData() {
   //Store temp values
   var newPasswordInput = this.userPassword;
-  var newConfirmPasswordInput = this.userConfirmPassword;
   var newEmail = this.userEmail;
 
   //Check password and confirmation

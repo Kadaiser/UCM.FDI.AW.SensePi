@@ -31,7 +31,8 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-          <form class="loginForm" action="loginProcess.php" method="post">
+          <form class="loginForm" action="../php/signUpProcess.php" method="post">
+        <fieldset>
             <div class="group">
               <input type="text"
                     id="userEmail" class="field"
@@ -62,6 +63,7 @@
                       id="mainButton">
                 <span class="ripples ripplesCircle"></span>
               </input>
+        </fieldset>
 
               <div class="info">
                 <p id="accountMessage"></p>

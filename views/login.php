@@ -31,10 +31,11 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-          <form class="loginForm" action="loginProcess.php" method="post">
+          <form class="loginForm" action="../php/loginProcess.php" method="post">
+        <fieldset>
             <div class="group">
               <input type="text"
-                    id="userEmail" class="field"
+                    name="userEmail" id="userEmail" class="field"
                     required autofocus>
               <span class="highlight"></span><span class="bar"></span>
               <label id="emailLabel"></label>
@@ -42,27 +43,19 @@
 
             <div class="group">
               <input type="password"
-                    id="userPassword" class="field"
+                    name="userPassword" id="userPassword" class="field"
                     required>
               <span class="highlight"></span><span class="bar"></span>
               <label id="passwordLabel"></label>
             </div>
 
-            <div id="confirmPasswordDiv" class="group" style="display: none">
-              <input type="password"
-                    id="userConfirmPassword" class="field"
-                    required>
-              <span class="highlight"></span><span class="bar"></span>
-              <label id="confirmPasswordLabel"></label>
-            </div>
-
             <div class="group">
-              <button type="button"
+              <input type="submit"
                       class="button buttonGrey"
-                      onclick="mainButtonClick()"
                       id="mainButton">
                 <span class="ripples ripplesCircle"></span>
-              </button>
+              </input>
+        </fieldset>
 
               <div class="info">
                 <p id="accountMessage"></p>
