@@ -33,7 +33,7 @@ function init(){
 /*DIRECT METHODS*/
 
 function switchForms() {
-    window.location.href="./login.html";
+    window.location.href="./login.php";
 }
 
 
@@ -45,9 +45,9 @@ function userLogin() {
   //this.checkCredentials();
   //if(!this.loginDisabled) this.inputUnlock();
   if(document.getElementById("userEmail").value=="admin"){
-    window.location.href="./adminview.html";
+    window.location.href="./adminview.php";
   }else{
-    window.location.href="./userview.html";
+    window.location.href="./userview.php";
   }
 }
 
