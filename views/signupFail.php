@@ -66,7 +66,8 @@
           </div>
 
           <div class="group">
-            <p id="resultMessage"></p>
+            <p>This email is not available.</p>
+            <p>Try again.</p>
           </div>
 
           <div class="group">

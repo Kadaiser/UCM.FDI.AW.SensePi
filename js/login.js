@@ -5,12 +5,6 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(){
-  document.getElementById("emailLabel").innerHTML=EmailText;
-  document.getElementById("passwordLabel").innerHTML=PasswordText;
-  document.getElementById("passwordRecover").innerHTML=passwordRecover;
-  document.getElementById("mainButton").innerHTML=logInButtonText;
-  document.getElementById("alternativeButton").innerHTML=SignUpButtonText;
-  document.getElementById("accountMessage").innerHTML=noAccountMessage;
 
   this.tryNumber = 0;
   this.loginMatch = false;

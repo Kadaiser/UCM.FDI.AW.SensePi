@@ -31,52 +31,54 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-          <form class="loginForm" action="../php/loginProcess.php" method="post">
-        <fieldset>
-            <div class="group">
-              <input type="text"
-                    name="userEmail" id="userEmail" class="field"
-                    required autofocus>
-              <span class="highlight"></span><span class="bar"></span>
-              <label id="emailLabel"></label>
-            </div>
+        <form class="loginForm" action="../php/loginProcess.php" method="post">
+          <div class="group">
+            <input type="text"
+                  name="userEmail" id="userEmail" class="field"
+                  required autofocus>
+            <span class="highlight"></span><span class="bar"></span>
+            <label id="emailLabel">Email</label>
+          </div>
 
-            <div class="group">
-              <input type="password"
-                    name="userPassword" id="userPassword" class="field"
-                    required>
-              <span class="highlight"></span><span class="bar"></span>
-              <label id="passwordLabel"></label>
-            </div>
+          <div class="group">
+            <input type="password"
+                  name="userPassword" id="userPassword" class="field"
+                  required>
+            <span class="highlight"></span><span class="bar"></span>
+            <label id="passwordLabel">Password</label>
+          </div>
 
-            <div class="group">
-              <input type="submit"
-                      class="button buttonGrey"
-                      id="mainButton">
-                <span class="ripples ripplesCircle"></span>
-              </input>
-        </fieldset>
+          <div class="group">
+            <input type="submit"
+                    class="button buttonGrey"
+                    id="mainButton"
+                    value="Log in">
+              <span class="ripples ripplesCircle"></span>
+            </input>
+          </div>
 
-              <div class="info">
-                <p id="accountMessage"></p>
-              </div>
+          <div class="group">
+            <p id="resultMessage"></p>
+          </div>
 
-              <button type="button"
-                      class="button backgroundButton buttonOrange "
-                      onclick="switchForms()"
-                      id="alternativeButton">
-                <span class="ripples ripplesCircle"></span>
-              </button>
-            </div>
+          <div class="group">
+            <p id="accountMessage">No account yet?</p>
+          </div>
 
-            <div class="group">
-              <p id="resultMessage"></p>
-            </div>
+          <div class="group">
+            <button type="button"
+                    class="button backgroundButton buttonOrange "
+                    onclick="switchForms()"
+                    id="alternativeButton">
+                    Sign up
+              <span class="ripples ripplesCircle"></span>
+            </button>
+          </div>
 
-            <div class="group">
-              <p id="warningMessage"><a id="passwordRecover" href="./passwordRecovery.html"></a></p>
-            </div>
-          </form>
+          <div class="group">
+            <p id="warningMessage"><a id="passwordRecover" href="./passwordRecovery.html">Recover your password here.</a></p>
+          </div>
+        </form>
 
       </div>
 

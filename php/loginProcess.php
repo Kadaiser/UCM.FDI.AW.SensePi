@@ -2,6 +2,18 @@
   session_start();
   $nicks = array();
 
+  $userEmail=htmlspecialchars(trim(strip_tags($_POST['userEmail'])));
+  $userPassword=htmlspecialchars(trim(strip_tags($_POST['userPassword'])));
+
+
+  if(filter_var($userEmail, FILTER_VALIDATE_EMAIL) !== false){
+
+  }else{
+
+  }
+
+
+
   //apertura de conexión con BD
   $DBconnection = mysqli_connect('127.0.0.1','root','','pruebaaw');
   //string de request
@@ -30,7 +42,7 @@
 
       header("Location: ../views/userview.php");
   }else{
-      echo "<p> tempnick </p> ";
+      header("Location: ../views/loginFail.php");
   }
 
 

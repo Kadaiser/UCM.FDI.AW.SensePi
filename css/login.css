@@ -21,7 +21,7 @@ input {
 	display: block;
 	background: #1f1f1f;
 	color: #cc7700;
-	width: 100%;
+	width: 95%;
 	border: none;
 	border-radius: 2px;
 	border-bottom: 1px solid #777;
@@ -71,7 +71,7 @@ input:focus ~ label, input:valid ~ label, input:disabled ~ label {
 	position: relative;
 	display: block;
   margin: 0;
-	width: 103%;
+	width: 99%;
 }
 
 .bar:before, .bar:after {
@@ -129,7 +129,7 @@ input:focus ~ .highlight {
   display: inline-block;
   padding: 12px 24px;
   margin: 0 0 1em 0;
-  width: 100%;
+  width: 80%;
   vertical-align: middle;
   color: #333;
   font-size: 18px;
