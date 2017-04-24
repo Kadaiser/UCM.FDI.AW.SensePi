@@ -1,4 +1,4 @@
-form {
+form, .loginForm {
 	width: 380px;
 	margin: 25px auto;
 	padding: 3em 2em 2em 2em;
