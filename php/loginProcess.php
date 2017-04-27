@@ -15,10 +15,10 @@
 
 
   //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','root','','pruebaaw');
+  $DBconnection = mysqli_connect('127.0.0.1','roo','pruebaaw','pruebaaw');
   //string de request
   $sqlString = "
-                SELECT nick
+                SELECT nick, admin
                 FROM usuarios
                 WHERE email='".$_POST['userEmail']."'
                 AND password='".$_POST['userPassword']."'
@@ -35,7 +35,7 @@
   if(mysqli_num_rows($query)!=0){
     $user=mysqli_fetch_object($query);
       $_SESSION['login']=true;
-      $_SESSION['isAdmin']=false;
+      $_SESSION['isAdmin']=$user->admin;
       $_SESSION['nick']=$user->nick;
       $_SESSION['userEmail']=$_POST['userEmail'];
       $_SESSION['userAvatar']=1;

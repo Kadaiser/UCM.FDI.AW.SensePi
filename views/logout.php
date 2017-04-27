@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php 
+	session_start(); 
+
+	unset($_SESSION);
+
+	session_destroy(); 
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">

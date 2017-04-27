@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <div id="header">
   <nav class="mainNav">
     <ul>
@@ -18,9 +19,38 @@
 
   <nav class="mainNav rightNav">
     <ul>
-      <li id="navLogIn">
-        <a href="../views/login.php"><span>LOGIN</span></a>
-      </li>
+	<?php
+		if (isset($_SESSION["login"])) {  //Usuario
+			?>
+			<li id="navLogout">
+				<a href="../views/logout.php"><span>LOGOUT</span></a>
+			</li>
+	<?php
+		
+			if ($_SESSION['isAdmin']==1) { //Usuario administrador
+	?>
+				<li id="navAdmin">
+					<a href="../views/adminview.php"><span><?php echo "".$_SESSION['nick'];?></span></a>
+				</li>
+	<?php
+			}
+			else {  //Usuario
+	?>
+				<li id="navUser">
+					<a href="../views/userView.php"><span><?php echo "".$_SESSION['nick'];?></span></a>
+				</li>
+	<?php
+			}
+
+		}
+		else{
+	?>
+			<li id="navLogIn">
+				<a href="../views/login.php"><span>LOGIN</span></a>
+			</li>
+	<?php
+		}
+	?>
     </ul>
   </nav>
 </div>
