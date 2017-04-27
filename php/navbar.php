@@ -30,14 +30,14 @@
 			if ($_SESSION['isAdmin']==1) { //Usuario administrador
 	?>
 				<li id="navAdmin">
-					<a href="../views/adminview.php"><span><?php echo "".$_SESSION['nick'];?></span></a>
+					<a href="../views/adminview.php"><span><?php echo $_SESSION['nick'];?></span></a>
 				</li>
 	<?php
 			}
 			else {  //Usuario
 	?>
 				<li id="navUser">
-					<a href="../views/userView.php"><span><?php echo "".$_SESSION['nick'];?></span></a>
+					<a href="../views/userView.php"><span><?php echo $_SESSION['nick'];?></span></a>
 				</li>
 	<?php
 			}
