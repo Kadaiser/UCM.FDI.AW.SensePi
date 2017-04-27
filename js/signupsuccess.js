@@ -11,7 +11,7 @@ function init(){
 /*DIRECT METHODS*/
 
 function redirectToHome() {
-    window.location.href="./index.php";
+    window.location.href="./login.php";
 }
 
 /* INSIDE METHODS*/

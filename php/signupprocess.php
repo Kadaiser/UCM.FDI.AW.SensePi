@@ -2,6 +2,7 @@
   $nicks = array();
 
   $userEmail=htmlspecialchars(trim(strip_tags($_POST['userEmail'])));
+  $userPassword = htmlspecialchars(trim(strip_tags($_POST['userPassword'])));
 
   if(filter_var($userEmail, FILTER_VALIDATE_EMAIL) !== false){
 
@@ -12,30 +13,28 @@
   //apertura de conexión con BD
   $DBconnection = mysqli_connect('127.0.0.1','root','','pruebaaw');
   //string de request
-  $sqlString = "
+  $sqlSelect = "
                 SELECT EXISTS
                 FROM usuarios
                 WHERE email='".$userEmail."'
                 ";
 
   //lanzar request a la BD
-  $query = mysqli_query($DBconnection,$sqlString);
+  $query = mysqli_query($DBconnection,$sqlSelect);
 
   //cierre de conexión con BD
   mysqli_close($DBconnection);
 
   //tratamiento de la query recibida
-  //$result = mysqli_fetch_array($query);
   if(mysqli_num_rows($query)!=0){
-    $user=mysqli_fetch_object($query);
-      $_SESSION['login']=true;
-      $_SESSION['isAdmin']=false;
-      $_SESSION['userEmail']=$_POST['userEmail'];
-      $_SESSION['userAvatar']=1;
-
-      header("Location: ../views/signupsuccess.php");
+    header("Location: ../views/signupfail.php");
   }else{
-      header("Location: ../views/signupfail.php");
+    //registro del usuario
+    $sqlInsert = "
+                  INSERT INTO usuarios (email, password)
+                  VALUES ($userEmail, $userPassword);
+                 ";
+    header("Location: ../views/signupsuccess.php");
   }
 
 
