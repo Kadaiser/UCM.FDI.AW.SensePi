@@ -44,6 +44,53 @@
 	            		  	</span> -->
             			</div>
 					</li>
+
+					<li>
+						<div class="cara" onclick="loadText('Diego')">
+							<div class="im" >
+								<img class="serius" src="../images/dSerius.jpg">
+	              		 		<img class="happy" src="../images/dHappy.jpg" >	
+	            		  	</div>
+	            		  	<!-- <span>
+	            		  		Azahara
+	            		  	</span> -->
+            			</div>
+					</li>
+
+					<li>
+						<div class="cara" onclick="loadText('Javier')">
+							<div class="im" >
+								<img class="serius" src="../images/vSerius.jpg">
+	              		 		<img class="happy" src="../images/vHappy.jpg" >	
+	            		  	</div>
+	            		  	<!-- <span>
+	            		  		Azahara
+	            		  	</span> -->
+            			</div>
+					</li>
+
+					<li>
+						<div class="cara" onclick="loadText('Julio')">
+							<div class="im" >
+								<img class="serius" src="../images/jSerius.jpg">
+	              		 		<img class="happy" src="../images/jHappy.jpg" >	
+	            		  	</div>
+	            		  	<!-- <span>
+	            		  		Azahara
+	            		  	</span> -->
+            			</div>
+					</li>
+					<li>
+						<div class="cara" onclick="loadText('Sergi0')">
+							<div class="im" >
+								<img class="serius" src="../images/sSerius.jpg">
+	              		 		<img class="happy" src="../images/sHappy.jpg" >	
+	            		  	</div>
+	            		  	<!-- <span>
+	            		  		Azahara
+	            		  	</span> -->
+            			</div>
+					</li>
 				</ul>
 			</div>
 
