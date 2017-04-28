@@ -34,58 +34,21 @@
 			<div id="barraImagenes">
 				<ul>
 					<li>
-						<button onclick="switchMemberClick('Azahara')">
-							<div class="im">
-                <img src="../images/azahara.png" alt="Azahara">
-              </div>
-              <span>
-                Azahara
-              </span>
-            </button>
-					</li>
-
-					<li>
-						<button onclick="switchMemberClick('Diego')">
-							<div class="im">
-			    			<img src="../images/diego.png" alt="Diego">
-			    		</div>
-							<span>
-								Diego
-							</span>
-			    		</button>
-					</li>
-
-					<li>
-						<button onclick="switchMemberClick('Javier')">
-							<div class="im">
-								<img src="../images/javier.png" alt="Javier">
-							</div>
-							<span>Javier</span>
-			    	</button>
-					</li>
-
-					<li>
-						<button onclick="switchMemberClick('Julio')">
+						<div class="cara" onclick="loadText('Azahara')">
 							<div class="im" >
-								<img src="../images/julio.png" alt="Julio">
-							</div>
-							<span>Julio</span>
-			   		</button>
-					</li>
-
-					<li>
-						<button onclick="switchMemberClick('Sergio')">
-							<div class="im" >
-								<img src="../images/sergio.png" alt="Sergio">
-							</div>
-							<span>Sergio</span>
-			    	</button>
+								<img class="serius" src="../images/aSerius.jpg">
+	              		 		<img class="happy" src="../images/aHappy.jpg" >	
+	            		  	</div>
+	            		  	<!-- <span>
+	            		  		Azahara
+	            		  	</span> -->
+            			</div>
 					</li>
 				</ul>
 			</div>
 
-			<div id="Azahara" class="descripcionPersonal" style="display: none">
-				<h1>Azahara Fernández Notario</h1>
+			<div id="desc" class="descripcionPersonal" style="display: none">
+				<!-- <h1>Azahara Fernández Notario</h1>
 				<p>
 					Soy Azahara una estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Talavera de la Reina (Toledo) un 21 de Julio de 1995.
 				</p>
@@ -95,7 +58,7 @@
 				<p>
 					Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
 				</p>
-
+-->
 				<ul class="contactIcons">
 					<li>
 						<a href="https://github.com/azaferna" target="_blank">
