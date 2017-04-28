@@ -15,13 +15,13 @@
 
 
   //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','roo','pruebaaw','pruebaaw');
+  $DBconnection = mysqli_connect('127.0.0.1','root','','sensepi');
   //string de request
   $sqlString = "
-                SELECT nick, admin
-                FROM usuarios
+                SELECT nick, isadmin, avatar
+                FROM users
                 WHERE email='".$_POST['userEmail']."'
-                AND password='".$_POST['userPassword']."'
+                AND pw='".$_POST['userPassword']."'
                 ";
 
   //lanzar request a la BD
@@ -35,10 +35,10 @@
   if(mysqli_num_rows($query)!=0){
     $user=mysqli_fetch_object($query);
       $_SESSION['login']=true;
-      $_SESSION['isAdmin']=$user->admin;
+      $_SESSION['isAdmin']=$user->isadmin;
       $_SESSION['nick']=$user->nick;
       $_SESSION['userEmail']=$_POST['userEmail'];
-      $_SESSION['userAvatar']=1;
+      $_SESSION['userAvatar']=$user->avatar;
 
       if($_SESSION['isAdmin']==1)
 		header("Location: ../views/adminView.php");
