@@ -1,26 +1,15 @@
 <team> 
-   <person> 
-       <name>Azahara Fernández Notario</name> 
-       <author>Giada De Laurentiis</author> 
-       <year>2005</year> 
-       <price>30.00</price> </person> 
-   <person> 
-       <name>Diego Valbuena Pineda</name> 
-       <author>J K. Rowling</author> 
-       <year>2005</year> 
-       <price>29.99</price> </person> 
-   <person> 
+  	<person> 
        <name>Segio Calero Robles</name> 
-       <author>James McGovern</author> 
-       <author>Per Bothner</author> 
-       <author>Kurt Cagle</author> 
-       <author>James Linn</author> 
-       <author>Vaidyanathan Nagarajan</author> 
-       <year>2003</year> 
-       <price>49.99</price> </person> 
-   <person> 
-       <name>Julio De La Cruz Valderrama</name> 
-       <author>Erik T. Ray</author> 
-       <year>2003</year> 
-       <price>39.95</price> </person> 
+	</person> 
+
+  	<person> 
+       <name>Diego Valbuena Pineda</name>
+	</person> 
+  	<person> 
+       <name>Azahara Fernández Notario</name>
+	</person> 
+ 	<person> 
+       <name>Julio De La Cruz Valderrama</name>
+	</person> 
 </team>

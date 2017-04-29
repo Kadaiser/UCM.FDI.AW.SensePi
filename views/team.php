@@ -27,7 +27,7 @@
 			<div id="barraImagenes">
 				<ul>
           <li>
-            <div class="photo" onclick="loadText('2')">
+            <div class="photo" onclick="loadText('0')">
 								<img id="sergio">
 	          </div>
 					</li>
@@ -37,7 +37,7 @@
 	          </div>
 					</li>
           <li>
-            <div class="photo" onclick="loadText('0')">
+            <div class="photo" onclick="loadText('2')">
 								<img id="azahara">
 	          </div>
 					</li>
@@ -47,7 +47,7 @@
 	          </div>
 					</li>
           <li>
-            <div class="photo" onclick="loadText('Javier')">
+            <div class="photo" onclick="loadText('4')">
 								<img id="javier">
 	          </div>
 					</li>
