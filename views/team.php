@@ -36,8 +36,8 @@
 					<li>
 						<div class="cara" onclick="loadText('Azahara')">
 							<div class="im" >
-								<img class="serius" src="../images/aSerius.jpg">
-	              		 		<img class="happy" src="../images/aHappy.jpg" >	
+								<img class="serius" src="../images/as1045x1045.jpg">
+	              		 		<img class="happy" src="../images/ah1045x1045.jpg" >
 	            		  	</div>
 	            		  	<!-- <span>
 	            		  		Azahara
@@ -48,8 +48,8 @@
 					<li>
 						<div class="cara" onclick="loadText('Diego')">
 							<div class="im" >
-								<img class="serius" src="../images/dSerius.jpg">
-	              		 		<img class="happy" src="../images/dHappy.jpg" >	
+								<img class="serius" src="../images/ds10333x1033.jpg">
+	              		 		<img class="happy" src="../images/dh10333x1033.jpg" >
 	            		  	</div>
 	            		  	<!-- <span>
 	            		  		Azahara
@@ -61,7 +61,7 @@
 						<div class="cara" onclick="loadText('Javier')">
 							<div class="im" >
 								<img class="serius" src="../images/vSerius.jpg">
-	              		 		<img class="happy" src="../images/vHappy.jpg" >	
+	              		 		<img class="happy" src="../images/vHappy.jpg" >
 	            		  	</div>
 	            		  	<!-- <span>
 	            		  		Azahara
@@ -72,8 +72,8 @@
 					<li>
 						<div class="cara" onclick="loadText('Julio')">
 							<div class="im" >
-								<img class="serius" src="../images/jSerius.jpg">
-	              		 		<img class="happy" src="../images/jHappy.jpg" >	
+								<img class="serius" src="../images/js1235x1235.jpg">
+	              		 		<img class="happy" src="../images/jh1235x1235.jpg" >
 	            		  	</div>
 	            		  	<!-- <span>
 	            		  		Azahara
@@ -83,8 +83,8 @@
 					<li>
 						<div class="cara" onclick="loadText('Sergi0')">
 							<div class="im" >
-								<img class="serius" src="../images/sSerius.jpg">
-	              		 		<img class="happy" src="../images/sHappy.jpg" >	
+								<img class="serius" src="../images/ss1133x1133.jpg">
+	              		 		<img class="happy" src="../images/sh1133x1133.jpg" >
 	            		  	</div>
 	            		  	<!-- <span>
 	            		  		Azahara
