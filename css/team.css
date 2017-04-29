@@ -12,6 +12,11 @@
 	position: relative;
 }
 
+#barraImagenes img{
+	width: 125px;
+	height: 125px;
+}
+
 .photo{
 	position: relative;
 }
@@ -82,10 +87,6 @@
 	background-repeat: no-repeat;
 }
 
-img{
-	width: 125px;
-	height: 125px;
-}
 .descripcionPersonal {
 	border:solid #cc6600 5px ;
 	border-color: rgb(204, 102, 0);
