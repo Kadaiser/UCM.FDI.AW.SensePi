@@ -21,81 +21,61 @@
       include '../php/navbar.php';
        ?>
 
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarLeft">
-      </div>
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarRight">
-      </div>
-
 
 		<!-- CONTENT CLASS -->
 		<div id="content">
+
 			<div id="barraImagenes">
 				<ul>
-					<li>
-						<div class="cara" onclick="loadText('Azahara')">
-							<div class="im" >
-								<img class="serius" src="../images/as1045x1045.jpg">
-	              		 		<img class="happy" src="../images/ah1045x1045.jpg" >
-	            		  	</div>
+          <li>
+            <div class="photo" onclick="loadText('Sergio')">
+								<img id="sergio">
+	          </div>
 	            		  	<!-- <span>
 	            		  		Azahara
 	            		  	</span> -->
-            			</div>
 					</li>
 
 					<li>
-						<div class="cara" onclick="loadText('Diego')">
-							<div class="im" >
-								<img class="serius" src="../images/ds10333x1033.jpg">
-	              		 		<img class="happy" src="../images/dh10333x1033.jpg" >
-	            		  	</div>
+            <div class="photo" onclick="loadText('Diego')">
+								<img id="diego">
+	          </div>
 	            		  	<!-- <span>
 	            		  		Azahara
 	            		  	</span> -->
-            			</div>
 					</li>
 
-					<li>
-						<div class="cara" onclick="loadText('Javier')">
-							<div class="im" >
-								<img class="serius" src="../images/vSerius.jpg">
-	              		 		<img class="happy" src="../images/vHappy.jpg" >
-	            		  	</div>
+          <li>
+            <div class="photo" onclick="loadText('Azahara')">
+								<img id="azahara">
+	          </div>
 	            		  	<!-- <span>
 	            		  		Azahara
 	            		  	</span> -->
-            			</div>
 					</li>
 
-					<li>
-						<div class="cara" onclick="loadText('Julio')">
-							<div class="im" >
-								<img class="serius" src="../images/js1235x1235.jpg">
-	              		 		<img class="happy" src="../images/jh1235x1235.jpg" >
-	            		  	</div>
+          <li>
+            <div class="photo" onclick="loadText('Julio')">
+								<img id="julio">
+	          </div>
 	            		  	<!-- <span>
 	            		  		Azahara
 	            		  	</span> -->
-            			</div>
 					</li>
-					<li>
-						<div class="cara" onclick="loadText('Sergi0')">
-							<div class="im" >
-								<img class="serius" src="../images/ss1133x1133.jpg">
-	              		 		<img class="happy" src="../images/sh1133x1133.jpg" >
-	            		  	</div>
+          <li>
+            <div class="photo" onclick="loadText('Javier')">
+								<img id="javier">
+	          </div>
 	            		  	<!-- <span>
 	            		  		Azahara
 	            		  	</span> -->
-            			</div>
 					</li>
 				</ul>
 			</div>
 
+<!--
 			<div id="desc" class="descripcionPersonal" style="display: none">
-				<!-- <h1>Azahara Fernández Notario</h1>
+				<h1>Azahara Fernández Notario</h1>
 				<p>
 					Soy Azahara una estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Talavera de la Reina (Toledo) un 21 de Julio de 1995.
 				</p>
@@ -105,7 +85,7 @@
 				<p>
 					Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
 				</p>
--->
+
 				<ul class="contactIcons">
 					<li>
 						<a href="https://github.com/azaferna" target="_blank">
@@ -121,24 +101,6 @@
 			</div>
 
 			<div id="Diego" class="descripcionPersonal" style="display: none">
-				<h1>Diego Valbuena Pineda</h1>
-				<p>
-					Estudiante de Ingeniería informática. Comprometido con el desarrollo y la innovación, siempre a la búsqueda de nuevos retos y la adquisición de conocimientos en todas las vertientes posibles.
-					Habiendo desarrollado los inicios de su experiencia profesional en el campo de la informática en empresas como Iberia o Telefónica, y añadiendo la experiencia obtenida de la formación superior, ha conseguido encontrar un equilibrio pragmático de los conocimientos adquiridos.
-				</p>
-        <p>
-					Se nutre de múltiples tecnologías y la adecuada perspectiva otorgada por grandes docentes para desarrollar nuevas competencias continuamente:
-					<ul>
-						<li>Microinformática.</li>
-						<li>Servicios en la nube e infraestructura.</li>
-						<li>Programación orientada a objetos.</li>
-						<li>Estructuras de datos y algoritmos eficientes.</li>
-						<li>Ciberseguridad.</li>
-						<li>Procesos de Análisis de Riesgo.</li>
-						<li>Bases de datos relacionales o deductivas.</li>
-						<li>Programación Web.</li>
-					</ul>
-				</p>
 
 				<ul class="contactIcons">
 					<li>
@@ -239,6 +201,7 @@
 					</li>
 				</ul>
 			</div>
+      -->
 
 		</div>
 

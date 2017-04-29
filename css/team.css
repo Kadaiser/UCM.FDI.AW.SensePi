@@ -1,60 +1,98 @@
-
 #barraImagenes{
-	margin: 10%;
+	margin: 5%;
+	min-width: 850px;
 }
 
 #barraImagenes li{
-	letter-spacing: none;
-	padding: 1%;
-	bottom: 100px;
+	margin: 25px;
 	display : inline-block;
-	font-family: verdana;
-	font-size: 15px;
-	letter-spacing: none;
 	list-style-type: none;
-	margin-left: 20px;
-	text-align: center;
 	width: 100px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	position: relative;
 }
-.im{
+
+.photo{
 	position: relative;
 }
-.im img{
-	position: absolute;
-	border-radius: 100px;
-	border: solid transparent 5px;
 
-}
-.happy{
-	opacity: 0;
-}
-.happy:hover{
-	opacity: 1;
-	border: solid rgb(204, 102, 0) 5px;
+.photo img{
 	border-radius: 100px;
-
-	transform : scale(1.1);
-	-moz-transform : scale(1.1); /* Firefox */
-	-webkit-transform : scale(1.1); /* Chrome - Safari */
-	-o-transform : scale(1.1); /* Opera */
-	-ms-transform : scale(1.1); /* IE9 */
-	-webkit-transition: 0.8s ease-out;
-	transition: 0.8s ease-out;
-	transition: opacity 0.8s ease-in-out;
+	border: solid #bfbfbf 7px;
 }
+
+.photo img:hover{
+	border: solid #cc6600 7px;
+}
+
+.photo img, .photo img:hover{
+	transition: all .4s ease;
+}
+
+#azahara{
+	background: url("../images/as1045x1045.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#azahara:hover{
+	background: url("../images/ah1045x1045.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#diego{
+	background: url("../images/ds10333x1033.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#diego:hover{
+	background: url("../images/dh10333x1033.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#sergio{
+	background: url("../images/ss1133x1133.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#sergio:hover{
+	background: url("../images/sh1133x1133.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#julio{
+	background: url("../images/js1235x1235.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#julio:hover{
+	background: url("../images/jh1235x1235.jpg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#javier{
+	background: url();
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#javier:hover{
+	background: url();
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 img{
 	width: 125px;
 	height: 125px;
 }
 .descripcionPersonal {
-	border: 5px solid;
+	border:solid #cc6600 5px ;
 	border-color: rgb(204, 102, 0);
     border-radius: 25px;
 	margin: 70px;
 	padding: 10px;
-	
+
 }
 
 .descripcionPersonal li{
@@ -67,7 +105,7 @@ img{
 
 }
 .descripcionPersonal img{
-	margin-right: 25px; 
+	margin-right: 25px;
 	height: 60px;
 	width: 60px;
 
