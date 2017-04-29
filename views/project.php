@@ -30,7 +30,7 @@
 
       <!-- CONTENT CLASS -->
       <div id="content">
-  		  <div id="About" class="projectElem">
+  		  <div id="info" class="projectElem">
 
           <div id="Image">
           <img src="../images/icons/PiSense.png" alt="PiSense Technologies">
@@ -75,61 +75,6 @@
                de manera cómoda y eficaz [Aplicaciones Web].</p>
           </div>
         </div>
-
-          <div id="Hardware" class="projectElem" style="display: none">
-            <h1>Hardware</h1>
-           <p>
-              arduino, sensores, raspberry, fotos...
-
-              Utilizaremos un modulo Arduino que consiste en una placa de circuito impreso con un microcontrolador, puertos digitales y analógicos de entrada/salida a los cuales coneectaremos un kit de sensores, desde los que tomaremos distintas medidas ambienteales. Aunque disponemos de una amplia lista sensores,  el proyecto se centra principalmente en los de temperatura y humedad, pero esperamos que esto sea segun los gustos de los usuarios.
-              <img src="../images/sensores.jpg" id="sensores" alt="Imagen">
-            </p>
-              <img src="../images/sensorTH.jpg " id="sensorTH" alt="Imagen">
-            <p>
-              Los sensores de temperatura y humedad que usamos tienen un rango de medicion de 20%-90% de HR para la humedad y temperatura de 0-50℃ y una precision de 2℃ y 5%HR. De los datos recogidos y almacenados en la base de datos, generaremos gráficas y recomendaciones "inteligentes" segun el usuario.
-            </p>
-
-          </div>
-
-          <div id="Servicios" class="projectElem" style="display: none">
-            <h1>Services</h1>
-             <p>
-
-              Utilizaremos una LAMP para montar nuestro propio servidor donde alojaremos la pagina web y la base de datos.
-              Una LAMP es el acrónimo usado para describir un sistema de infraestructura de internet que usa las siguientes herramientas:
-
-              <ul>
-                <li>Linux, el sistema operativo; En algunos casos también se refiere a LDAP.</li>
-                <li>Apache, el servidor web;</li>
-                <li>MySQL/MariaDB, el gestor de bases de datos;</li>
-                <li>Perl, PHP, o Python, los lenguajes de programación.</li>
-              </ul>
-
-              Que genarará nuestro servidor web.
-
-
-            <img src="../images/LAMP.png" id="LAMPIM" alt="Imagen">
-
-
-          </div>
-
-          <div id="Configuraciones" class="projectElem" style="display: none">
-            <h1>Settings</h1>
-            <p>
-              Se rellenará en la proxima entrega.
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-            </p>
-          </div>
-
-          <div id="Tecnologias" class="projectElem" style="display: none">
-            <h1>Technologies</h1>
-            <p>
-              Como tecnologías actuales queremos implementar un servicio REST para que los usuarios puedan añadir sus propios sensores y sean adaptables a cualquier tipo de entrada indistintamente de la forma en la que se introduzcan los datos.
-              Para mas información sobre REST y los servicios Web pinche <a href="http://users.dsic.upv.es/~rnavarro/NewWeb/docs/RestVsWebServices.pdf" target="_blank">aquí.</a>
-
-            </p>
-          </div>
-
       </div>
 
       <!-- FOOTER CLASS -->
