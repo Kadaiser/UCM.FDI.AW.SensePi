@@ -28,8 +28,16 @@ function loadText(a){
 function showInfo(xml,a){
   var info = "";
   var xmlDoc = xml.responseXML;
-  var x = xmlDoc.getElementsByTagName("name");
-  info += "<h1>" + x[a].childNodes[0].nodeValue + "</h1>";
-  info += "<p>" + x[a].childNodes[0].nodeValue + "</p>";
+
+  var name = xmlDoc.getElementsByTagName("name");
+  info += "<h1>" + name[a].childNodes[0].nodeValue + "</h1>";
+  var about = xmlDoc.getElementsByTagName("about");
+  info += "<p>" + about[a].childNodes[0].nodeValue + "</p>";
+
+  /*
+  var x = xmlDoc.getElementsByTagName("person");
+  var name = x[a].childNodes[0];
+  info += "<h1>" + name.nodeValue + "</h1>";
+  */
   document.getElementById("info").innerHTML = info;
 }

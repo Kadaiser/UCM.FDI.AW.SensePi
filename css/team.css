@@ -26,11 +26,11 @@
 	border: solid #bfbfbf 7px;
 }
 
-.photo img:hover{
+.photo img:hover, img:focus{
 	border: solid #cc6600 7px;
 }
 
-.photo img, .photo img:hover{
+.photo img{
 	transition: all .4s ease;
 }
 
@@ -88,9 +88,8 @@
 }
 
 .descripcionPersonal {
-	border:solid #cc6600 5px ;
-	border-color: rgb(204, 102, 0);
-    border-radius: 25px;
+	border:double #cc6600 9px ;
+  border-radius: 20px;
 	margin: 70px;
 	padding: 10px;
 
@@ -103,12 +102,5 @@
 	margin-top: 100px;
 	list-style-type: none;
 	text-align: center;
-
-}
-.descripcionPersonal img{
-	margin-right: 25px;
-	height: 60px;
-	width: 60px;
-
 
 }

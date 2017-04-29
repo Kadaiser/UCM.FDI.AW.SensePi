@@ -56,6 +56,12 @@
 
 
       <div id="info" class="descripcionPersonal">
+        <h1>Nuestro equipo humano de desarrollo en PiSense</h1>
+        <p>Gente innovadora y con recursos. Miden las cosas en 'C0' [Coolitos], y para
+          esta página esperan alcanzar los 14 C0/vista. Para ello han investigado
+          tecnologías y técnicas mas allá de la docencia de la facultad, consiguiendo
+          este Site con una combinación nueva e interesante, todo a mano y con mucho
+          mimo, como no podía ser menos!!</p>
       </div>
 
 		</div>
