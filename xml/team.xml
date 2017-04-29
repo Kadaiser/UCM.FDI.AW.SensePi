@@ -10,6 +10,15 @@
 			Aun así, siempre queda tiempo libre para dedicarlo a disfrutar de mi novia, mi familia, mi gata y salir con los amigos.
 	        Me gustan los juegos de ordenador, programar, el desarrollo de videojuegos, jugar al baloncesto, viajar, los idiomas, pintar miniaturas...
 			</about>
+
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				https://github.com/RedParabola
+			</facebook>
+			<github image= "../images/icons/git_icon.png" alt="GitHub">
+				https://www.facebook.com/search/str/Sergio-Calero-Robles
+			</github>
+		
+
 	</person> 
 
   	<person> 
@@ -27,6 +36,12 @@
 			Bases de datos relacionales o deductivas.
 			Programación Web.
 		</about>
+		<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+			https://www.facebook.com/diego.valbuena.988
+		</facebook>
+		<github image = "../images/icons/git_icon.png" alt="GitHub">
+			https://github.com/Kadaiser
+		</github>
 	</person> 
 	
   	<person> 
@@ -35,6 +50,13 @@
 			Hija de Nuria y Josué, tengo tres hermanos pequeños, Yaiza, Josué y Alfredo. Me gustan el futbol, el airsoft, el rugby y los deportes en general. Además de practicar estos deportes en mi tiempo libre también me gusta leer, escuchar música o ver series.
 			Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
 		</about>
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				 https://www.facebook.com/nuria.notario.3 
+			</facebook>
+			<github image = "../images/icons/git_icon.png" alt="GitHub">
+				https://github.com/azaferna
+			</github>
+
 	</person>
 	
  	<person> 
@@ -43,7 +65,13 @@
 			Me encuentro cursando la carrera anteriormente mencionada, con el objetivo de complementar ciertos aspectos de mi entorno profesional.
 			Actualmente me dedico a la consultoría de sistemas informáticos en un ámbito público.
 		</about>
-		</person> 
+		<facebook>
+			https://www.facebook.com/
+		</facebook>
+		<github image = "../images/icons/git_icon.png" alt="GitHub">
+			https://github.com/endela01
+		</github>
+	</person> 
 	
 	<person> 
 		<name>Javier</name>
@@ -51,5 +79,12 @@
 			Me gusta la música, aparte de escucharla también soy componente de varios grupos musicales. El deporte me gusta más verlo que practicarlo, entre ellos están el futbol, el tenis, y el mundo del motor en general.
 			Poseo el título de administración de sistemas informáticos en red (ASIR), y actualmente solo me dedico a estudiar el grado de ingeniería informática.
 		</about>
-		</person> 
+	
+		<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+			https://www.facebook.com/javi.esky
+		</facebook>
+		<github image= "../images/icons/git_icon.png" alt="GitHub">
+			https://github.com/javiesky
+		</github>
+	</person>
 </team>
