@@ -33,6 +33,11 @@ function showInfo(xml,a){
   info += "<h1>" + name[a].childNodes[0].nodeValue + "</h1>";
   var about = xmlDoc.getElementsByTagName("about");
   info += "<p>" + about[a].childNodes[0].nodeValue + "</p>";
+  var face = xmlDoc.getElementsByTagName("facebook");
+  var gh = xmlDoc.getElementsByTagName("github");
+  
+  document.getElementById("facebook").href = face[a].childNodes[0].nodeValue;
+  document.getElementById("github").href = gh[a].childNodes[0].nodeValue;
 
   /*
   var x = xmlDoc.getElementsByTagName("person");
