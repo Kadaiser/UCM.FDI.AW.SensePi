@@ -11,12 +11,12 @@
 	        Me gustan los juegos de ordenador, programar, el desarrollo de videojuegos, jugar al baloncesto, viajar, los idiomas, pintar miniaturas...
 			</about>
 
-			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
-				https://github.com/RedParabola
-			</facebook>
-			<github image= "../images/icons/git_icon.png" alt="GitHub">
+			<facebook>
 				https://www.facebook.com/search/str/Sergio-Calero-Robles
-			</github>
+			</facebook>
+			<github>
+				https://github.com/RedParabola
+				</github>
 		
 
 	</person> 
@@ -36,10 +36,10 @@
 			Bases de datos relacionales o deductivas.
 			Programación Web.
 		</about>
-		<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+		<facebook>
 			https://www.facebook.com/diego.valbuena.988
 		</facebook>
-		<github image = "../images/icons/git_icon.png" alt="GitHub">
+		<github>
 			https://github.com/Kadaiser
 		</github>
 	</person> 
@@ -50,10 +50,10 @@
 			Hija de Nuria y Josué, tengo tres hermanos pequeños, Yaiza, Josué y Alfredo. Me gustan el futbol, el airsoft, el rugby y los deportes en general. Además de practicar estos deportes en mi tiempo libre también me gusta leer, escuchar música o ver series.
 			Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
 		</about>
-			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+			<facebook>
 				 https://www.facebook.com/nuria.notario.3 
 			</facebook>
-			<github image = "../images/icons/git_icon.png" alt="GitHub">
+			<github>
 				https://github.com/azaferna
 			</github>
 
@@ -68,7 +68,7 @@
 		<facebook>
 			https://www.facebook.com/
 		</facebook>
-		<github image = "../images/icons/git_icon.png" alt="GitHub">
+		<github>
 			https://github.com/endela01
 		</github>
 	</person> 
@@ -80,10 +80,10 @@
 			Poseo el título de administración de sistemas informáticos en red (ASIR), y actualmente solo me dedico a estudiar el grado de ingeniería informática.
 		</about>
 	
-		<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+		<facebook>
 			https://www.facebook.com/javi.esky
 		</facebook>
-		<github image= "../images/icons/git_icon.png" alt="GitHub">
+		<github>
 			https://github.com/javiesky
 		</github>
 	</person>
