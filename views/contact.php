@@ -15,24 +15,24 @@
 
       <?php
       $nameErr = $emailErr = $conformErr = "";
-      $name = $email = $radio = $conform = $comment = "";
+      $name = $email = $conform = "";
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-        if (empty($_POST['nick'])) {
+        if (empty($_POST['name'])) {
           $nameErr="Nombre requerido";
         } else {
-          $name = test_input($_POST["nick"]);
+          $name = test_input($_POST["name"]);
           if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
             $nameErr = "Solo se permiten letras y espacios";
           }
         }
 
-        if (empty($_POST['mail'])) {
+        if (empty($_POST['email'])) {
           $emailErr = "Email requerido";
         } else {
-          $email = test_input($_POST["mail"]);
+          $email = test_input($_POST["email"]);
           if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Formato de Email erroneo";
           }
@@ -71,7 +71,7 @@
           <label class="error"><?php echo $nameErr;?></label>
            <div class="group">
              <input type="text"
-                   name="nick" id="nameContac" class="field" autofocus>
+                   name="name" id="nameContac" class="field" autofocus>
              <span class="highlight"></span><span class="bar"></span>
              <label id="nicknameLabel">Nickname</label>
 
@@ -80,7 +80,7 @@
           <label class="error"><?php echo $emailErr;?></label>
            <div class="group">
              <input type="text"
-                   name="mail" id="emailLabel" class="field" autofocus>
+                   name="email" id="emailLabel" class="field" autofocus>
              <span class="highlight"></span><span class="bar"></span>
              <label id="emailLabel">Email</label>
 
