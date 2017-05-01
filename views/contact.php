@@ -14,50 +14,34 @@
   <body>
 
       <?php
-      $nameErr = $emailErr = $radioErr = $conformErr = $commentErr = "";
+      $nameErr = $emailErr = $conformErr = "";
       $name = $email = $radio = $conform = $comment = "";
 
       if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
-        if (empty($_POST['textNameContact'])) {
+        if (empty($_POST['nick'])) {
           $nameErr="Nombre requerido";
         } else {
-          $name = test_input($_POST["textNameContact"]);
+          $name = test_input($_POST["nick"]);
           if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
             $nameErr = "Solo se permiten letras y espacios";
           }
         }
 
-
-        if (empty($_POST['textEmailContact'])) {
+        if (empty($_POST['mail'])) {
           $emailErr = "Email requerido";
         } else {
-          $email = test_input($_POST["textEmailContact"]);
+          $email = test_input($_POST["mail"]);
           if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "formato de Email erroneo";
+            $emailErr = "Formato de Email erroneo";
           }
         }
-
-
-        if (empty($_POST['radioClass'])) {
-          $radioErr = "Selecciona un tipo";
-        } else {
-          $radio = test_input($_POST['radioClass']);
-        }
-
-
-        if (empty($_POST['textEmailText'])) {
-          $commentErr = "";
-        } else {
-          $comment = test_input($_POST['textEmailText']);
-        }
-
 
         if (empty($_POST['conform'])) {
           $conformErr = "Acepta nuestras condiciones";
         } else {
-          $conform = test_input($_POST['conform']);
+          $conform = test_input($_POST["conform"]);
         }
       }
       function test_input($data) {
@@ -78,41 +62,48 @@
 
       <!-- CONTENT CLASS -->
       <div id="content">
-        <p><span class="error">* We're missing some datas!!</span></p>
-        <form class="contactForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-          <div class="group">
-            <fieldset>
-             <legend>Personal information:</legend>
-              <label id="nickLabel"></label>
-              <input type="text" name="textNameContact" id="nameContac" class="field" autofocus>
-              <span class="highlight"></span><span class="bar"></span>
-              <span class="error">* <?php echo $nameErr;?></span>
+        <form class="contactForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-              <label id="emailLabel"></label>
-              <input type="text" name="textEmailContact" id="emailContact" class="field">
-              <span class="highlight"></span><span class="bar"></span>
-              <span class="error">* <?php echo $emailErr;?></span>
-            </fieldset>
-          </div>
+          <fieldset>
+            <legend>Personal information:</legend>
+
+          <label class="error"><?php echo $nameErr;?></label>
+           <div class="group">
+             <input type="text"
+                   name="nick" id="nameContac" class="field" autofocus>
+             <span class="highlight"></span><span class="bar"></span>
+             <label id="nicknameLabel">Nickname</label>
+
+           </div>
+
+          <label class="error"><?php echo $emailErr;?></label>
+           <div class="group">
+             <input type="text"
+                   name="mail" id="emailLabel" class="field" autofocus>
+             <span class="highlight"></span><span class="bar"></span>
+             <label id="emailLabel">Email</label>
+
+           </div>
+          </fieldset>
 
           <div class="groupType">
             <fieldset>
               <legend>Type of contact:</legend>
-              <input type="radio" name="radioClass" class="field" value="male" checked><span id="evaluation"></span>
-              <input type="radio" name="radioClass" class="field" value="male"><span id="suggest"></span>
-              <input type="radio" name="radioClass" class="field" value="male"><span id="review"></span>
-              <span class="error"><?php echo $radioErr;?></span>
+              <input type="radio" name="classMail" class="field" value="male" checked><label id="evaluation"></label>
+              <input type="radio" name="classMail" class="field" value="male"><label id="suggest"></label>
+              <input type="radio" name="classMail" class="field" value="male"><label id="review"></label>
             </fieldset>
           </div>
 
           <div class="groupText">
-            <textarea id="emailText" name="textEmailText" maxlength="300" rows="10" cols="30" placeholder="We want to read your opinion!"></textarea>
+            <textarea id="emailText" name="text" maxlength="300" rows="10" cols="60" placeholder="We want to read your opinion!"></textarea>
           </div>
 
           <div class="groupConform">
-            <input type="checkbox" name="conform" value="conformity"/><span id="accordance" ></span>
-            <span class="error">* <?php echo $conformErr;?></span><br>
+            <span class="error"><?php echo $conformErr;?></span><br>
+            <input type="checkbox" name="conform" value="conformity"/><label id="accordance" ></label>
+
           </div>
 
           <div class="group">

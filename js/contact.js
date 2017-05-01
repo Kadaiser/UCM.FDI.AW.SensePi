@@ -4,7 +4,7 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
-  document.getElementById("nickLabel").innerHTML=NickText;
+  document.getElementById("nicknameLabel").innerHTML=NickText;
   document.getElementById("emailLabel").innerHTML=EmailText;
   document.getElementById("evaluation").innerHTML=evaluation;
   document.getElementById("suggest").innerHTML=suggest;
