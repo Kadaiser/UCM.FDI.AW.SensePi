@@ -12,10 +12,6 @@ function init(/*param1,param2*/){
   document.getElementById("accordance").innerHTML=accordance;
   document.getElementById("emailText").innerHTML=texAreaContact;
 }
-
-var isAccordance = false;
-
-
 /*DIRECT METHODS*/
 
 

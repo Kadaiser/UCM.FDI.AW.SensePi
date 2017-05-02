@@ -1,5 +1,7 @@
 <?php
 
+    $temp = $hum = $noise = 0;
+
     class Measure{
       function Measure(){
         $this->Date = null;
@@ -10,6 +12,21 @@
     }
 
     $Info = new Measure();
+
+    //apertura de conexión con BD
+    $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
+    //string de request
+    $sqlString = "
+                  SELECT temperature , humidity , noise
+                  FROM measures
+                  WHERE track='".$_POST['track']."'
+                  ";
+
+    //lanzar request a la BD
+    $query = mysqli_query($DBconnection,$sqlString);
+
+    //cierre de conexión con BD
+    mysqli_close($DBconnection);
 ?>
 
 
