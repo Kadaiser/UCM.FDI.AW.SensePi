@@ -26,7 +26,6 @@
       <?php
       include '../php/navbar.php';
       include '../php/sideBarButtonFloor.php';
-      include '../php/sideBarRight.php';
        ?>
 
       <!-- CONTENT CLASS -->
