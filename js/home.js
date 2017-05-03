@@ -133,7 +133,7 @@ function drawChart() {
 
 
 
-function mySpanAppear()
+function mySpanAppear(str)
 {
   var fog = document.getElementById('Fog');
   fog.style.visibility = "visible";
@@ -142,6 +142,24 @@ function mySpanAppear()
   div.style.visibility = "visible";
   div.style.transition = "opacity 0.7s ease-out";
   div.style.opacity = "1";
+
+    if (str == "") {
+        document.getElementById("Area").innerHTML = "";
+        return;
+    } else {
+        document.getElementById("Area").innerHTML = str;
+        /*
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("Measure").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getmeasure.php?q="+str,true);
+        xmlhttp.send();
+        */
+    }
+
 }
 
 function mySpanHide()
