@@ -129,6 +129,10 @@ input:checked + .slider:before {
   text-align: center;
   display: block;
 }
+#mapContainer img{
+  width: 100%
+  object-fit: contain;
+}
 
 #galleryBlock{
   display: none;
