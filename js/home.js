@@ -135,6 +135,7 @@ function drawChart() {
 
 function mySpanAppear(str)
 {
+  //VISUAL EFFECT
   var fog = document.getElementById('Fog');
   fog.style.visibility = "visible";
   fog.style.transition = "opacity 0.4s ease-out";
@@ -143,12 +144,31 @@ function mySpanAppear(str)
   div.style.transition = "opacity 0.7s ease-out";
   div.style.opacity = "1";
 
+  //FUNCIONAL EFFECT
+  var text, parser, xmlDoc;
+  text = "<measure><track>" +
+  "<temp>25 C</temp>" +
+  "<hum>28%</hum>" +
+  "<noise>25 dB</noise>" +
+  "</track></measure>";
+
+  parser = new DOMParser();
+  xmlDoc = parser.parseFromString(text,"text/xml");
+
     if (str == "") {
         document.getElementById("Area").innerHTML = "";
         return;
     } else {
         document.getElementById("Area").innerHTML = str;
-        /*
+        document.getElementById("Temp").innerHTML=
+        xmlDoc.getElementsByTagName("temp")[0].childNodes[0].nodeValue;
+        document.getElementById("Hum").innerHTML=
+        xmlDoc.getElementsByTagName("hum")[0].childNodes[0].nodeValue;
+        document.getElementById("Noise").innerHTML=
+        xmlDoc.getElementsByTagName("noise")[0].childNodes[0].nodeValue;
+
+
+        /* No valido, redireccionaria los datos
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -170,6 +190,12 @@ function mySpanHide()
   div.style.opacity = "0";
   div.style.visibility = "hidden";
 }
+
+
+function AddToFavorite(){
+
+}
+
 
 function switchFloorState(chosenFloor) {
   var element = document.getElementById(chosenFloor);
