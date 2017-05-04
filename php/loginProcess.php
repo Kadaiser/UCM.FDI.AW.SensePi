@@ -15,13 +15,13 @@
 
 
   //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','root','','pruebaaw');
+  $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
   //string de request
   $sqlString = "
-                SELECT nick
-                FROM usuarios
+                SELECT nick, isadmin, avatar
+                FROM users
                 WHERE email='".$_POST['userEmail']."'
-                AND password='".$_POST['userPassword']."'
+                AND pw='".$_POST['userPassword']."'
                 ";
 
   //lanzar request a la BD
@@ -32,17 +32,20 @@
 
   //tratamiento de la query recibida
   //$result = mysqli_fetch_array($query);
-  if(mysqli_num_rows($query)!=0){
+  if(mysqli_num_rows($query)!==0){
     $user=mysqli_fetch_object($query);
       $_SESSION['login']=true;
-      $_SESSION['isAdmin']=false;
+      $_SESSION['isAdmin']=$user->isadmin;
       $_SESSION['nick']=$user->nick;
       $_SESSION['userEmail']=$_POST['userEmail'];
-      $_SESSION['userAvatar']=1;
+      $_SESSION['userAvatar']=$user->avatar;
 
-      header("Location: ../views/userview.php");
+      if($_SESSION['isAdmin']==1)
+		header("Location: ../views/adminView.php");
+	  else
+		header("Location: ../views/userview.php");
   }else{
-      header("Location: ../views/loginFail.php");
+    header("Location: ../views/loginFail.php");
   }
 
 
