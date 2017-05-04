@@ -40,7 +40,7 @@
       $_SESSION['userEmail']=$_POST['userEmail'];
       $_SESSION['userAvatar']=$user->avatar;
 
-      if($_SESSION['isAdmin']===1)
+      if($_SESSION['isAdmin']==1)
 		header("Location: ../views/adminView.php");
 	  else
 		header("Location: ../views/userview.php");
