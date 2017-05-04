@@ -24,7 +24,7 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-        <form class="loginForm" action="../php/signUpProcess.php" method="post">
+        <form class="loginForm" action="../php/signupprocess.php" method="post">
           <div class="group">
             <input type="text"
                   name="userEmail" id="userEmail" class="field"
