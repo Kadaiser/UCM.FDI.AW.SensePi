@@ -24,10 +24,10 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-        <form class="loginForm" action="../php/signUpprocess.php" method="post">
+        <form class="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <div class="group">
             <input type="text"
-                  id="userEmail" name="userEmail" class="field"
+                  name="userEmail" id="userEmail" class="field"
                   required autofocus>
             <span class="highlight"></span><span class="bar"></span>
             <label id="emailLabel">Enter your email:</label>
@@ -35,13 +35,13 @@
 
           <div class="group">
             <input type="password"
-                  id="userPassword" name="userPassword" class="field"
+                  name="userPassword" id="userPassword" class="field"
                   required>
             <span class="highlight"></span><span class="bar"></span>
             <label id="passwordLabel">Enter a new password:</label>
           </div>
 
-          <div id="confirmPasswordDiv" class="group" style="display: none">
+          <div id="confirmPasswordDiv" class="group">
             <input type="password"
                   name="userConfirmPassword" id="userConfirmPassword" class="field"
                   required>
