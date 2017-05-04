@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <div id="header">
   <nav class="mainNav">
     <ul>
@@ -23,11 +22,11 @@
 		if (isset($_SESSION["login"])) {  //Usuario
 			?>
 			<li id="navLogout">
-				<a href="../views/logout.php"><span>LOGOUT</span></a>
+				<a href="../php/logout.php"><span>LOGOUT</span></a>
 			</li>
 	<?php
 		
-			if ($_SESSION['isAdmin']==1) { //Usuario administrador
+			if ($_SESSION['isAdmin']===1) { //Usuario administrador
 	?>
 				<li id="navAdmin">
 					<a href="../views/adminview.php"><span><?php echo $_SESSION['nick'];?></span></a>

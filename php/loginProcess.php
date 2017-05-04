@@ -15,7 +15,7 @@
 
 
   //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','root','','sensepi');
+  $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
   //string de request
   $sqlString = "
                 SELECT nick, isadmin, avatar
@@ -32,7 +32,7 @@
 
   //tratamiento de la query recibida
   //$result = mysqli_fetch_array($query);
-  if(mysqli_num_rows($query)!=0){
+  if(mysqli_num_rows($query)!==0){
     $user=mysqli_fetch_object($query);
       $_SESSION['login']=true;
       $_SESSION['isAdmin']=$user->isadmin;
@@ -40,12 +40,12 @@
       $_SESSION['userEmail']=$_POST['userEmail'];
       $_SESSION['userAvatar']=$user->avatar;
 
-      if($_SESSION['isAdmin']==1)
+      if($_SESSION['isAdmin']===1)
 		header("Location: ../views/adminView.php");
 	  else
 		header("Location: ../views/userview.php");
   }else{
-      header("Location: ../views/loginFail.php");
+    header("Location: ../views/loginFail.php");
   }
 
 
