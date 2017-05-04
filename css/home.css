@@ -81,7 +81,7 @@ input:checked + .slider:before {
   width: 840px;
   height: 490px;
   left: 20%;
-  top: 25%;
+  top: 20%;
   background: #1b1b1b;
   border: 20px double #cc6600;
   border-radius: 10px;
@@ -114,10 +114,9 @@ input:checked + .slider:before {
   padding: 15px;
 }
 
-
 .fog{
   visibility: collapse;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   opacity: 0.7;
   width: 100%;
@@ -130,12 +129,18 @@ input:checked + .slider:before {
   text-align: center;
   display: block;
 }
-
+#mapContainer img{
+  width: 100%
+  object-fit: contain;
+}
 
 #galleryBlock{
   display: none;
   text-align: center;
-  margin-top: 15px;
+}
+#FloorButtons{
+  text-align: center;
+  margin-top: 75%;
 }
 
 .galleryRow{
@@ -157,6 +162,7 @@ input:checked + .slider:before {
 }
 
 .galleryFloorList{
+  margin-top: 20px;
   display: inline-block;
   position: relative;
   opacity: 0;
@@ -164,6 +170,9 @@ input:checked + .slider:before {
   text-align: left;
   border:3px solid #bfbfbf;
   border-radius: 10px;
+  padding: 10px 0 10px 0;
+  top:0;
+  left:0;
 }
 
 .galleryFloorOverPanel{
@@ -175,11 +184,6 @@ input:checked + .slider:before {
   border: 1px solid blue;
   text-align: left;
   z-index: 1;
-}
-
-.galleryFloorList ul{
-  margin: 0;
-  padding: 0;
 }
 
 .galleryFloorElement{

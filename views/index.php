@@ -1,3 +1,6 @@
+<?php session_start(); ?>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -17,22 +20,16 @@
     <canvas id='canvasBorderArea'></canvas>
 
     <!-- FOG SPAN-->
-    <div class="fog" id="Fog" onclick='mySpanHide();'>
+    <div class="fog" id="Fog" onclick='mySpanHide()'>
     </div>
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
 
-      <!-- HEADER CLASS -->
+      <!-- HEADER CLASS & SIDEBAR CLASS -->
       <?php
       include '../php/navbar.php';
+      include '../php/sideBarButtonFloor.php';
        ?>
-
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarLeft">
-      </div>
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarRight">
-      </div>
 
       <!-- CONTENT CLASS -->
       <div id="content">
@@ -46,129 +43,11 @@
           <label>Gallery</label>
         </div>
 
-        <div class="span" id="Span">
-          <img class="staticImg" src="../images/icons/xOff.png">
-          <img class="hoverImg" src="../images/icons/xOn.png" alt="Close" onclick='mySpanHide();'>
-          <h1>CAFETERIA</h1>
-          <p>Noise:           40dB</p>
-          <div id="chart_div"></div>
-
-          <div class="favoriteMark">
-            <label>Add to favorite </label>
-            <img class="staticImg" src="../images/icons/slimStar.png" alt="Add to favorite">
-            <img class="hoverImg" src="../images/icons/fatStar.png">
-          </div>
-        </div>
-
-        <div id="mapContainer">
-          <img src="../images/planos/transparentMap.png" alt="Planta baja" usemap="#PB" id="PBMap">
-          <map id="PB" name="PB">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="SalaGrados" alt="Sala de Grados" title="Sala de Grados" shape="rect" coords="10,6,199,264"  target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="wcBiblioteca" alt="W.C Biblioteca" title="W.C Biblioteca" shape="rect" coords="90,383,125,442"  target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="Cafeta" alt="Cafetería" title="Cafetería" shape="rect" coords="561,30,909,171" >
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="A1" alt="Aula1" title="Aula1" shape="rect" coords="307,310,429,461" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="A2" alt="Aula2" title="Aula2" shape="rect" coords="430,310,554,461" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="A3" alt="Aula3" title="Aula3" shape="rect" coords="553,310,675,461" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="A4" alt="Aula4" title="Aula4" shape="rect" coords="676,310,800,460" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="A5" alt="Aula5" title="Aula5" shape="rect" coords="801,310,918,459" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="wcS" alt="W.C Sur" title="W.C Sur" shape="rect" coords="945,310,993,416" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="wcN" alt="W.C Norte" title="W.C Norte" shape="rect" coords="945,30,994,136" target="_self">
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="delegacionA" alt="Delegación de Alumnos" title="Delegación de Alumnos" shape="rect" coords="944,166,992,273" target="_self"/>
-            <area onmouseover='myHover(this);' onmouseout='myLeave(this,canvasBorderArea);' onclick='mySpanAppear();' id="pasillosPB" alt="Pasillos Planta Baja" title="Pasillos Planta Baja" shape="poly" coords="10,328,10,266,198,267,199,28,223,28,224,46,285,47,285,28,305,29,304,132,560,133,560,172,465,172,465,268,913,268,913,115,943,115,943.25,138,960,138,960,163,942,163,942,275,961,274,962,307,944,307,944,330,921,331,920,307,275,307,275,353,244,353,243,328,90,329,88,463,46,463,58,327"  target="_self">
-          </map>
-        </div>
-
-        <div id="galleryBlock">
-          <div class="galleryRow disabled" id="galleryP2">
-            <!-- NOT YET ACCESSIBLE -->
-            <div class="galleryFloor" onclick="switchFloorState('fp2');">
-              <img src="../images/gallery/p2.png" alt="Planta 2"/>
-              <span>Planta 2</span>
-            </div>
-            <div class="galleryFloorList" id="fp2">
-              <ul>
-                <li class="galleryFloorElement">
-                  <img src="../images/gallery/coming-soon.png" alt="Próxima apertura"/>
-                  <span>Coming soon</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="galleryRow disabled" id="galleryP1">
-            <!-- NOT YET ACCESSIBLE -->
-            <div class="galleryFloor" onclick="switchFloorState('fp1');">
-              <img src="../images/gallery/p1.png" alt="Planta 1"/>
-              <span>Planta 1</span>
-            </div>
-            <div class="galleryFloorList" id="fp1">
-              <ul>
-                <li class="galleryFloorElement">
-                  <img src="../images/gallery/coming-soon.png" alt="Próxima apertura"/>
-                  <span>Coming soon</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="galleryRow" id="galleryPB">
-            <div class="galleryFloor" onclick="switchFloorState('fpb');">
-              <img src="../images/gallery/pb.png" alt="Planta Baja"/>
-              <span>Planta Baja</span>
-            </div>
-            <div class="galleryFloorList" id="fpb">
-              <ul>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/coffee.png" alt="Cafetería"/>
-                  <span>Cafetería</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/conference.png" alt="Sala de Grados"/>
-                  <span>Sala de Grados</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/pasillos.png" alt="Pasillos"/>
-                  <span>Pasillos</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/wc.png" alt="W.C Biblioteca"/>
-                  <span>W.C Biblioteca</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/wc.png" alt="W.C Norte"/>
-                  <span>W.C Norte</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/wc.png" alt="W.C Sur"/>
-                  <span>W.C Sur</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/aula.png" alt="Aula 1"/>
-                  <span>Aula 1</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/aula.png" alt="Aula 2"/>
-                  <span>Aula 2</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/aula.png" alt="Aula 3"/>
-                  <span>Aula 3</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/aula.png" alt="Aula 4"/>
-                  <span>Aula 4</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/aula.png" alt="Aula 5"/>
-                  <span>Aula 5</span>
-                </li>
-                <li class="galleryFloorElement" onclick="mySpanAppear();">
-                  <img src="../images/gallery/delegacion.png" alt="Delegación"/>
-                  <span>Delegación</span>
-                </li>
-              </ul>
-            </div>
-            <!-- <div class="galleryFloorOverPanel"><p>Click here to show all available rooms in this floor</p></div> -->
-          </div>
-        </div>
+        <?php
+          include '../php/span.php';
+          include '../php/mapContainer.php';
+          include '../php/galleryBlock.php';
+         ?>
 
       </div>
 

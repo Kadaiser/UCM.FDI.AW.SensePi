@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<?php
+
+$config['mysql_host'] = "localhost";
+$config['mysql_user'] = "root";
+$config['mysql_pass'] = "";
+$config['db_name']    = "pisense";
+$config['table_name'] = "measures";
+
+
+mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
+
+@mysql_select_db($config['db_name']) or die( "Unable to select database");
+
+//building the actual XML by creating the XML header and the necessary root element
+
+$xml          = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+$root_element = $config['table_name'];
+$xml          = "<All"."$root_element>";
+
+
+//select all items in table
+$sql = "SELECT * FROM ".$config['table_name'];
+
+$result = mysql_query($sql);
+if (!$result) {
+    die('Invalid query: ' . mysql_error());
+}
+
+if(mysql_num_rows($result)>0)
+  {
+    while($result_array = mysql_fetch_assoc($result))
+    {
+      $xml .= "<".$config['table_name'].">";
+      //loop through each key,value pair in row
+      foreach($result_array as $key => $value)
+      {
+      //$key holds the table column name
+      $xml .= "<$key>";
+      //embed the SQL data in a CDATA element to avoid XML entity issues
+      $xml .= "<![CDATA[$value]]>";
+      //and close the element
+      $xml .= "</$key>";
+      }
+      $xml.="</".$config['table_name'].">";
+    }
+  }
+//created a list of XML elements representing the MySQL data
+
+//close the root element
+$xml = "</All"."$root_element>";
+
+//send the xml header to the browser
+header ("Content-Type:text/xml");
+
+//output the XML data
+echo $xml;
+?>

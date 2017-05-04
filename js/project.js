@@ -8,75 +8,32 @@ function init(/*param1,param2*/){
 
 }
 
-/*DIRECT METHODS*/
-function switchProjectClick(selectedProject) {
-  nombre=selectedProject;
-      num=0;
-      document.getElementById('About').style.opacity=0;
-	  document.getElementById('Hardware').style.opacity=0;
-      document.getElementById('Servicios').style.opacity=0;
-      document.getElementById('Configuraciones').style.opacity=0;
-      document.getElementById('Tecnologias').style.opacity=0;
-	  
-      
+function loadText(a){
 
-  switch(selectedProject){
-	case 'About':
-	  document.getElementById("About").style.display="block";
-      document.getElementById("Hardware").style.display="none";     
-      document.getElementById("Servicios").style.display="none";
-      document.getElementById("Configuraciones").style.display="none";
-      document.getElementById("Tecnologias").style.display="none";
-      a=setInterval(open,30);
-      break;
-    case 'Hardware':
-	  document.getElementById("About").style.display="none";
-      document.getElementById("Hardware").style.display="block";     
-      document.getElementById("Servicios").style.display="none";
-      document.getElementById("Configuraciones").style.display="none";
-      document.getElementById("Tecnologias").style.display="none";
-      a=setInterval(open,30);
-      break;
-    case 'Servicios':
-	  document.getElementById("About").style.display="none";
-	  document.getElementById("Hardware").style.display="none";     
-      document.getElementById("Servicios").style.display="block";
-      document.getElementById("Configuraciones").style.display="none";
-      document.getElementById("Tecnologias").style.display="none";
-      a=setInterval(open,30);
-      break;
-    case 'Configuraciones':
-	  document.getElementById("About").style.display="none";
-      document.getElementById("Hardware").style.display="none";     
-      document.getElementById("Servicios").style.display="none";
-      document.getElementById("Configuraciones").style.display="block";
-      document.getElementById("Tecnologias").style.display="none";
-      a=setInterval(open,30);
-      break;
-    case 'Tecnologias':
-	  document.getElementById("About").style.display="none";
-      document.getElementById("Hardware").style.display="none";     
-      document.getElementById("Servicios").style.display="none";
-      document.getElementById("Configuraciones").style.display="none";
-      document.getElementById("Tecnologias").style.display="block";
-      a=setInterval(open,30);
-      break;
-  
-    default:
-	  document.getElementById("About").style.display="none";
-      document.getElementById("Hardware").style.display="none";     
-      document.getElementById("Servicios").style.display="none";
-      document.getElementById("Configuraciones").style.display="none";
-      document.getElementById("Tecnologias").style.display="none";
-  }
+  var xhttp =new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      showInfo(this,a);
+    }
+  };
+  //requerir como metodo asincrono a la carga de la pagina (true)
+  xhttp.open("GET","../xml/project.xml",true);
+  xhttp.send();
 }
-function open(a){
-    document.getElementById(nombre).style.opacity=num;
-    num=num+0.03;
-    if(num>=1)
-        clear();
-    
-}
-function clear(){
-    clearInterval(a);
+
+function showInfo(xml,a){
+  var info = "";
+  var xmlDoc = xml.responseXML;
+
+  var name = xmlDoc.getElementsByTagName("about");
+  info += "<h1>" + name[a].childNodes[0].nodeValue + "</h1>";
+  var about = xmlDoc.getElementsByTagName("information");
+  info += "<p>" + about[a].childNodes[0].nodeValue + "</p>";
+
+  /*
+  var x = xmlDoc.getElementsByTagName("person");
+  var name = x[a].childNodes[0];
+  info += "<h1>" + name.nodeValue + "</h1>";
+  */
+  document.getElementById("info").innerHTML = info;
 }

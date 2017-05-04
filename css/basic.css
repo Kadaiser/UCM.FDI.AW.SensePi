@@ -99,6 +99,8 @@ position:relative;
 .mainNav ul li a:hover{
 	text-decoration: none;
 	text-shadow: #cc7700 1px 1px 0;
+	-webkit-transition: 0.25s ease-out;
+	transition: 0.25s ease-out;
 }
 
 /*FOOTER CONTENT*/
