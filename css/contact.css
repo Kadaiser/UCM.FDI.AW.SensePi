@@ -1,23 +1,130 @@
-.group{
-  margin-top: 25px;
-  min-width: 200px;
-  width: 200px;
+form {
+  margin: auto;
+	width: 600px;
+	padding: 3%;
+	background: #454545;
+	border: 2px solid #bfbfbf;
+  border-radius: 4px;
+	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
 .groupType{
-  margin-top: 25px;
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
   min-width: 400px;
   width: 400px;
 }
 
 .groupConform{
-  margin-top: 25px;
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
   min-width: 500px;
 }
 
 .groupText{
-  margin-top: 25px;
+  position: relative;
+  text-align: center;
+  margin: auto;
   min-width: 260px;
-  width: 260px;
+  width: 500px;
   border: 10px ridge  grey;
+}
+
+.group {
+	position: relative;
+	margin: 30px 30px auto;
+	text-align: center;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+.group input {
+	padding: 10px 10px 10px 10px;
+	-webkit-appearance: none;
+	display: block;
+	background: #1f1f1f;
+	color: #cc7700;
+	width: 95%;
+	border: none;
+	border-radius: 2px;
+	border-bottom: 1px solid #777;
+}
+
+.group input:focus { outline: none; }
+
+
+/* Label */
+
+.group label {
+	color: #bfbfbf;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+
+/* active */
+
+input:focus ~ label, input:valid ~ label, input:disabled ~ label {
+	animation:mymove 0.2s;
+	animation-fill-mode: forwards;
+    -webkit-animation: mymove 0.2s; /*Safari and Chrome*/
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {top: 0px; left: 0px; transform: scale(1);	color: #bfbfbf;}
+    to {top: -20px; left: -2px; transform: scale(.75); color: #bfbfbf;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/ {
+    from {top: 0px; left: 0px; transform: scale(1); color: #bfbfbf;}
+    to {top: -20px; left: -2px; transform: scale(.75); color: #bfbfbf;}
+}
+
+
+
+/* Underline */
+
+.bar {
+	position: relative;
+	display: block;
+  margin: 0;
+	width: 98%;
+}
+
+.bar:before, .bar:after {
+	content: '';
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #cc6600;
+	transition: all 0.3s ease;
+}
+
+.bar:before { left: 50%; }
+
+.bar:after { right: 50%; }
+
+
+/* active */
+
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
+
+/* Animations */
+
+@keyframes inputHighlighter {
+	from { width: 30%; background: #ff953b; }
+	to 	{ width: 0; background: transparent; }
 }

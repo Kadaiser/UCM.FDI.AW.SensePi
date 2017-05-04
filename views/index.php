@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,7 +20,7 @@
     <canvas id='canvasBorderArea'></canvas>
 
     <!-- FOG SPAN-->
-    <div class="fog" id="Fog" onclick='mySpanHide();'>
+    <div class="fog" id="Fog" onclick='mySpanHide()'>
     </div>
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
@@ -27,7 +29,6 @@
       <?php
       include '../php/navbar.php';
       include '../php/sideBarButtonFloor.php';
-      include '../php/sideBarRight.php';
        ?>
 
       <!-- CONTENT CLASS -->

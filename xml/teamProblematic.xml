@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<equipo>
+	<person>
+		<nameComplete>
+			<name>Azahara</name>
+			<surname>Fernández Notario</surname>
+		</nameComplete>
+
+		<description>
+			Soy Azahara una estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Talavera de la Reina (Toledo) un 21 de Julio de 1995.
+			Hija de Nuria y Josué, tengo tres hermanos pequeños, Yaiza, Josué y Alfredo. Me gustan el futbol, el airsoft, el rugby y los deportes en general. Además de practicar estos deportes en mi tiempo libre también me gusta leer, escuchar música o ver series.
+			Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
+		</description>
+		
+		<socialLinks>
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				 https://www.facebook.com/nuria.notario.3 
+			</facebook>
+			<github image = "../images/icons/git_icon.png" alt="GitHub">
+				https://github.com/azaferna
+			</github>
+		</socialLinks>
+
+	</person>
+
+	<person>
+		<nameComplete>
+			<name>Diego</name>
+			<surname>Valbuena Pineda</surname>
+		</nameComplete>
+
+		<description>
+			Estudiante de Ingeniería informática. Comprometido con el desarrollo y la innovación, siempre a la búsqueda de nuevos retos y la adquisición de conocimientos en todas las vertientes posibles.
+			Habiendo desarrollado los inicios de su experiencia profesional en el campo de la informática en empresas como Iberia o Telefónica, y añadiendo la experiencia obtenida de la formación superior, ha conseguido encontrar un equilibrio pragmático de los conocimientos adquiridos.
+			Se nutre de múltiples tecnologías y la adecuada perspectiva otorgada por grandes docentes para desarrollar nuevas competencias continuamente:
+			<ul>
+				<li>Microinformática.</li>
+				<li>Servicios en la nube e infraestructura.</li>
+				<li>Programación orientada a objetos.</li>
+				<li>Estructuras de datos y algoritmos eficientes.</li>
+				<li>Ciberseguridad.</li>
+				<li>Procesos de Análisis de Riesgo.</li>
+				<li>Bases de datos relacionales o deductivas.</li>
+				<li>Programación Web.</li>
+			</ul>
+		</description>
+		<socialLinks>
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				https://www.facebook.com/diego.valbuena.988
+			</facebook>
+			<github image = "../images/icons/git_icon.png" alt="GitHub">
+				https://github.com/Kadaiser
+			</github>
+		</socialLinks>
+
+	</person>
+
+	<person>
+		<nameComplete>
+			<name>Julio</name>
+			<surname>De La Cruz Valderrama</surname>
+		</nameComplete>
+
+		<description>
+			Soy Julio, un estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Lima.
+			Me encuentro cursando la carrera anteriormente mencionada, con el objetivo de complementar ciertos aspectos de mi entorno profesional.
+			Actualmente me dedico a la consultoría de sistemas informáticos en un ámbito público.
+		</description>
+		<socialLinks>
+			<github image = "../images/icons/git_icon.png" alt="GitHub">
+				https://github.com/endela01
+			</github>
+		</socialLinks>
+
+
+	</person>
+
+	<person>
+		<nameComplete>
+			<name>Javier</name>
+			<surname>De La Oliva Sanchez-Valladares</surname>
+		</nameComplete>
+
+		<description>
+			Soy Javier, un estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Toledo en 1991.
+			Me gusta la música, aparte de escucharla también soy componente de varios grupos musicales. El deporte me gusta más verlo que practicarlo, entre ellos están el futbol, el tenis, y el mundo del motor en general.
+			Poseo el título de administración de sistemas informáticos en red (ASIR), y actualmente solo me dedico a estudiar el grado de ingeniería informática.
+		</description>
+		<socialLinks>
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				https://www.facebook.com/javi.esky
+			</facebook>
+			<github image= "../images/icons/git_icon.png" alt="GitHub">
+				https://github.com/javiesky
+			</github>
+		</socialLinks>
+
+
+	</person>
+
+	<person>
+		<nameComplete>
+			<name>Segio</name>
+			<surname>Calero Robles</surname>
+		</nameComplete>
+
+		<description>
+			Soy Sergio, estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información.
+	        Nací en Madrid en 1990, y aunque he vivido la mayor parte de mi vida en Alicante, he vuelto a esta ciudad para formarme y trabajar, pero me gustaría vivir en el extranjero para descubrir nuevas culturas.
+			Actualmente trabajo en consultoría para una multinacional, participando en varios proyectos de desarrollo de aplicaciones web a jornada casi completa.
+	        La labor principal es desarrollo tanto de front-end como de back-end de aplicaciones basadas en Ionic, Node.js y AngularJS, que integran servicios REST y comunicación con dispositivos reales.
+	        A la vez, dedico el resto de mi jornada laboral a mi formación académica, así como a aprender los lenguajes del mañana, como Angular 2 para poder combinar todo el conocimiento adquirido en herramientas de futuro.
+			Aun así, siempre queda tiempo libre para dedicarlo a disfrutar de mi novia, mi familia, mi gata y salir con los amigos.
+	        Me gustan los juegos de ordenador, programar, el desarrollo de videojuegos, jugar al baloncesto, viajar, los idiomas, pintar miniaturas...
+			Necesito más tiempo. :)
+		</description>
+		<socialLinks>
+			<facebook image="../images/icons/fb_icon.png" alt="Facebook">
+				https://github.com/RedParabola
+			</facebook>
+			<github image= "../images/icons/git_icon.png" alt="GitHub">
+				https://www.facebook.com/search/str/Sergio-Calero-Robles
+			</github>
+		</socialLinks>
+	</person>
+</equipo>
