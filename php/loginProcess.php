@@ -12,38 +12,44 @@
   }
 
   //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
-  //string de request
-  $sqlString = "
-                SELECT nick, isadmin, avatar
-                FROM users
-                WHERE email='".$userEmail."'
-                AND pw='".$userPassword."'
-                ";
+  $DBconnection = mysqli_connect('127.0.0.1','ro8ot','','pisense');
 
-  //lanzar request a la BD
-  $query = mysqli_query($DBconnection,$sqlString);
+  if($DBconnection) {
+    //string de request
+    $sqlString = "
+                  SELECT nick, isadmin, avatar
+                  FROM users
+                  WHERE email='".$userEmail."'
+                  AND pw='".$userPassword."'
+                  ";
 
-  //cierre de conexión con BD
-  mysqli_close($DBconnection);
+    //lanzar request a la BD
+    $query = mysqli_query($DBconnection,$sqlString);
 
-  //tratamiento de la query recibida
-  //$result = mysqli_fetch_array($query);
-  if(mysqli_num_rows($query)!==0){
-    $user=mysqli_fetch_object($query);
-      $_SESSION['login']=true;
-      $_SESSION['isAdmin']=$user->isadmin;
-      $_SESSION['nick']=$user->nick;
-      $_SESSION['userEmail']=$userEmail;
-      $_SESSION['userAvatar']=$user->avatar;
+    //cierre de conexión con BD
+    mysqli_close($DBconnection);
 
-      if($_SESSION['isAdmin']==1) {
-		    header("Location: ../views/adminView.php");
+    //tratamiento de la query recibida
+    //$result = mysqli_fetch_array($query);
+    if(mysqli_num_rows($query)!==0){
+      $user=mysqli_fetch_object($query);
+        $_SESSION['login']=true;
+        $_SESSION['isAdmin']=$user->isadmin;
+        $_SESSION['nick']=$user->nick;
+        $_SESSION['userEmail']=$userEmail;
+        $_SESSION['userAvatar']=$user->avatar;
+
+        if($_SESSION['isAdmin']==1) {
+          header("Location: ../views/adminView.php");
+        }else{
+          header("Location: ../views/userview.php");
+        }
       }else{
-		    header("Location: ../views/userview.php");
-      }
-    }else{
-      header("Location: ../views/loginFail.php");
+        header("Location: ../views/loginFail.php");
+    }
+  }else{
+    mysqli_close($DBconnection);
+    header("Location: ../views/error.php");
   }
 
 ?>
