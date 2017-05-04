@@ -21,13 +21,6 @@
       include '../php/navbar.php';
        ?>
 
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarLeft">
-      </div>
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarRight">
-      </div>
-
   		<!-- CONTENT CLASS -->
   		<div id="content">
 

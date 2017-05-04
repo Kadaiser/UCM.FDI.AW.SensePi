@@ -25,11 +25,6 @@
       include '../php/sideBarButtonProject.php';
        ?>
 
-
-      <!-- SIDEBAR CLASS -->
-      <div class="sidebarRight">
-      </div>
-
       <!-- CONTENT CLASS -->
       <div id="content">
   		  <div id="info" class="projectElem">

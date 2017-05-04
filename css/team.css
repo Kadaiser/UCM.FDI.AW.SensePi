@@ -1,6 +1,8 @@
 #barraImagenes{
 	margin: 5%;
+  margin-left: 0;
 	min-width: 850px;
+
 }
 
 #barraImagenes li{
@@ -17,74 +19,59 @@
 	height: 125px;
 }
 
+#barraImagenes ul li .photo img{
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: all .4s ease;
+}
+
 .photo{
 	position: relative;
 }
 
 .photo img{
+	border: solid #bfbfbf 8px;
 	border-radius: 100px;
-	border: solid #bfbfbf 7px;
+  -webkit-border-radius: 10 0px;
 }
 
 .photo img:hover, img:focus{
-	border: solid #cc6600 7px;
-}
-
-.photo img{
-	transition: all .4s ease;
+	border: solid #cc6600 8px;
 }
 
 #azahara{
 	background: url("../images/as1045x1045.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #azahara:hover{
 	background: url("../images/ah1045x1045.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 
 #diego{
 	background: url("../images/ds10333x1033.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #diego:hover{
 	background: url("../images/dh10333x1033.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 
 #sergio{
 	background: url("../images/ss1133x1133.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #sergio:hover{
 	background: url("../images/sh1133x1133.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
+
 #julio{
 	background: url("../images/js1235x1235.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #julio:hover{
 	background: url("../images/jh1235x1235.jpg");
-	background-size: contain;
-	background-repeat: no-repeat;
 }
+
 #javier{
 	background: url();
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 #javier:hover{
 	background: url();
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 
 .descripcionPersonal {
