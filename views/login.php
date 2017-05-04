@@ -50,7 +50,7 @@
 
           <div class="group">
             <input type="submit"
-                    class="button buttonGrey"
+                    class="button buttonGrey field"
                     id="mainButton"
                     value="Log in">
               <span class="ripples ripplesCircle"></span>
@@ -67,7 +67,7 @@
 
           <div class="group">
             <button type="button"
-                    class="button backgroundButton buttonOrange "
+                    class="button backgroundButton buttonOrange field"
                     onclick="switchForms()"
                     id="alternativeButton">
                     Sign up
@@ -75,8 +75,8 @@
             </button>
           </div>
 
-          <div class="group">
-            <p id="warningMessage"><a id="passwordRecover" href="./passwordRecovery.html">Recover your password here.</a></p>
+          <div class="group field">
+            <p id="warningMessage"><a id="passwordRecover" href="./passwordRecovery.php" target="_blank">Recover your password here.</a></p>
           </div>
         </form>
 

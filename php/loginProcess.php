@@ -2,9 +2,8 @@
   session_start();
   $nicks = array();
 
-  $userEmail=htmlspecialchars(trim(strip_tags($_POST['userEmail'])));
-  $userPassword=htmlspecialchars(trim(strip_tags($_POST['userPassword'])));
-
+  $userEmail = htmlspecialchars(trim(strip_tags($_POST['userEmail'])));
+  $userPassword = htmlspecialchars(trim(strip_tags($_POST['userPassword'])));
 
   if(filter_var($userEmail, FILTER_VALIDATE_EMAIL) !== false){
 
@@ -12,16 +11,14 @@
 
   }
 
-
-
   //apertura de conexión con BD
   $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
   //string de request
   $sqlString = "
                 SELECT nick, isadmin, avatar
                 FROM users
-                WHERE email='".$_POST['userEmail']."'
-                AND pw='".$_POST['userPassword']."'
+                WHERE email='".$userEmail."'
+                AND pw='".$userPassword."'
                 ";
 
   //lanzar request a la BD
@@ -37,16 +34,16 @@
       $_SESSION['login']=true;
       $_SESSION['isAdmin']=$user->isadmin;
       $_SESSION['nick']=$user->nick;
-      $_SESSION['userEmail']=$_POST['userEmail'];
+      $_SESSION['userEmail']=$userEmail;
       $_SESSION['userAvatar']=$user->avatar;
 
-      if($_SESSION['isAdmin']==1)
-		header("Location: ../views/adminView.php");
-	  else
-		header("Location: ../views/userview.php");
-  }else{
-    header("Location: ../views/loginFail.php");
+      if($_SESSION['isAdmin']==1) {
+		    header("Location: ../views/adminView.php");
+      }else{
+		    header("Location: ../views/userview.php");
+      }
+    }else{
+      header("Location: ../views/loginFail.php");
   }
-
 
 ?>
