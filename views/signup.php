@@ -13,6 +13,62 @@
 
   <body>
 
+    <?php
+
+      include '../php/signupprocess.php';
+
+      $tempEmailErr = $tempPWErr = $tempPWConfirmErr = "";
+      $tempEmail = $tempPW = $tempPWConfirm = "";
+      $formReady = TRUE;
+
+      if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $tempEmail = test_input($_POST['userEmail']);
+        $tempPW = test_input($_POST['userPassword']);
+        $tempPWConfirm = test_input($_POST['userConfirmPassword']);
+
+        if (!preg_match("/
+        ^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$
+        /",$tempEmail)) {
+          $tempEmailErr = "Introduce tu cuenta institucional";
+          $formReady = FALSE;
+        }else{
+          $tempEmailErr = "";
+        }
+
+        if (!preg_match("/
+        [a-zA-Z ]*$
+        /",$tempPW)) {
+          $tempPWErr = "Tu contraseña debe cumplir los siguientes requisitos:</br>
+          Entre x y z carácteres</br>
+          De los cuáles al menos dos números</br>
+          Y al menos un símbolo de entre los siguientes: []
+          Sin ninguno de los siguientes: []</br></br>";
+          $formReady = FALSE;
+        }else{
+          $tempPWErr = "";
+        }
+
+        if ($tempPW != $tempPWConfirm) {
+          $tempPWConfirmErr = "Confirma correctamente tu password";
+          $formReady = FALSE;
+        }else{
+          $tempPWConfirmErr = "";
+        }
+
+        $userEmail = $tempEmail;
+        $userPassword = $tempPW;
+
+        signUpProcess();
+      }
+
+      function test_input($input) {
+        $data=htmlspecialchars(stripslashes(trim(strip_tags($input))));
+        return $data;
+      }
+    ?>
+
+
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
 
@@ -24,13 +80,14 @@
   		<!-- CONTENT CLASS -->
   		<div id="content">
 
-        <form class="loginForm" action="../php/signupprocess.php" method="post">
+        <form class="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
           <div class="group">
             <input type="text"
                   name="userEmail" id="userEmail" class="field"
                   required autofocus>
             <span class="highlight"></span><span class="bar"></span>
             <label id="emailLabel">Enter your email:</label>
+            <span class="error"><?php echo $tempEmailErr;?></span>
           </div>
 
           <div class="group">
@@ -39,14 +96,16 @@
                   required>
             <span class="highlight"></span><span class="bar"></span>
             <label id="passwordLabel">Enter a new password:</label>
+            <span class="error"><?php echo $tempPWErr;?></span>
           </div>
 
-          <div id="confirmPasswordDiv" class="group" style="display: none">
+          <div id="confirmPasswordDiv" class="group">
             <input type="password"
                   name="userConfirmPassword" id="userConfirmPassword" class="field"
                   required>
             <span class="highlight"></span><span class="bar"></span>
             <label id="confirmPasswordLabel">Confirm password:</label>
+            <span class="error"><?php echo $tempPWConfirmErr;?></span>
           </div>
 
           <div class="group">
