@@ -17,7 +17,7 @@
     </div>
 
     <div class="galleryFloorList" id="fpb">
-        <div class="galleryFloorElement" onclick="mySpanAppear('cafetería');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('cafeteria');">
           <img src="../images/gallery/coffee.png" alt="Cafetería"/>
           <span>Cafetería</span>
         </div>
@@ -61,7 +61,7 @@
           <img src="../images/gallery/aula.png" alt="Aula 5"/>
           <span>Aula 5</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('delegación de alumnos');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('delegacion de alumnos');">
           <img src="../images/gallery/delegacion.png" alt="Delegación"/>
           <span>Delegación</span>
         </div>

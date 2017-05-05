@@ -11,7 +11,6 @@ window.onload = function() {
 function init(/*param1,param2*/){
   //Chart initialization
   google.charts.load('current', {'packages':['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
 
   //Gallery view floor state
   this.showFloor = {
@@ -50,6 +49,8 @@ function switchToGalleryView() {
 
 var dataFromDB = [
     [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'],
+];
+/*
     [new Date('2017-03-08'),          16,         0.18],
     [new Date('2017-03-09'),          16,         0.29],
     [new Date('2017-03-10'),          16,         0.30],
@@ -80,10 +81,24 @@ var dataFromDB = [
     [new Date('2017-04-05'),          22,         0.10],
     [new Date('2017-04-06'),          21,         0.15],
     [new Date('2017-04-07'),          22,         0.18],
-  ];
+*/
 
 function measuresFormatting(rawMeasures){
-  document.getElementById("Temp").innerText=rawMeasures;
+  var obj = JSON.parse(rawMeasures);
+  var measureList = obj[1];
+  measureList.forEach(function(measure) {
+    var tempArray=[];
+
+    var date_test = new Date("2011-07-14 11:23:00".replace(/-/g,"/"));
+    splittedDate = measure.Date.split(" ");
+    splittedDate = splittedDate[0].replace(/"/,"'");
+    tempArray[0]=new Date(splittedDate);
+    tempArray[1]=parseFloat(measure.temperature);
+    tempArray[2]=parseFloat(measure.humidity)/100;
+    dataFromDB.push(tempArray);
+  }, this);
+
+  google.charts.setOnLoadCallback(drawChart);
 }
 
 function drawChart() {
@@ -153,6 +168,7 @@ function mySpanAppear(str)
   //TODO: Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
   //2017-05-01 19:10:58
   ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+
 
   //FUNCIONAL EFFECT
   /* No valido, redireccionaria los datos

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 
   //apertura de conexión con BD
@@ -16,10 +15,11 @@
                      ";
 
     $queryForRoomSlots = mysqli_query($DBconnection,$sqlroomslotid);
+ 
     $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
-
-    for ($x = 0; $x < sizeof($slotsArray); $x++) {
-      $tempSlotId = $slotsArray[$x]->id;
+      
+    for ($x = 0; $x < 1/*sizeof($slotsArray)*/; $x++) {
+      $tempSlotId = $slotsArray[$x]["id"];
 
       $sqlmeasures = "SELECT Date, temperature, humidity, noise
                       FROM measures
@@ -42,9 +42,11 @@
       mysqli_close($DBconnection);
 
       $measuresArray[$tempSlotId] = $queryForMeasures->fetch_all(MYSQLI_ASSOC);
-
-      echo $measuresArray;
     }
+
+    echo json_encode($measuresArray);
+    header("Content-type: application/json");
+    exit();    
 
   }else{
     mysqli_close($DBconnection);
