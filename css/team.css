@@ -68,10 +68,10 @@
 }
 
 #javier{
-	background: url();
+	background: url("../images/jas744x744.jpg");
 }
 #javier:hover{
-	background: url();
+	background: url("../images/jah744x744.jpg");
 }
 
 .descripcionPersonal {
