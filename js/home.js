@@ -82,6 +82,10 @@ var dataFromDB = [
     [new Date('2017-04-07'),          22,         0.18],
   ];
 
+function measuresFormatting(rawMeasures){
+  document.getElementById("Temp").innerText=rawMeasures;
+}
+
 function drawChart() {
 
   var data = google.visualization.arrayToDataTable(dataFromDB);
@@ -144,7 +148,14 @@ function mySpanAppear(str)
   div.style.transition = "opacity 0.7s ease-out";
   div.style.opacity = "1";
 
+  document.getElementById("Area").innerHTML = str;
+
+  //TODO: Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
+  //2017-05-01 19:10:58
+  ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+
   //FUNCIONAL EFFECT
+  /* No valido, redireccionaria los datos
   var text, parser, xmlDoc;
   text = "<measure><track>" +
   "<temp>25 C</temp>" +
@@ -168,7 +179,7 @@ function mySpanAppear(str)
         xmlDoc.getElementsByTagName("noise")[0].childNodes[0].nodeValue;
 
 
-        /* No valido, redireccionaria los datos
+        
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -177,9 +188,9 @@ function mySpanAppear(str)
         };
         xmlhttp.open("GET","getmeasure.php?q="+str,true);
         xmlhttp.send();
-        */
-    }
 
+    }
+    */
 }
 
 function mySpanHide()

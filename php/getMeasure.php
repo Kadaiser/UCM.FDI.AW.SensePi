@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <?php
 
-$config['mysql_host'] = "localhost";
-$config['mysql_user'] = "root";
-$config['mysql_pass'] = "";
-$config['db_name']    = "pisense";
-$config['table_name'] = "measures";
+  //apertura de conexión con BD
+  $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
 
+  $roomName = $_POST['roomName'];
+  $sinceDate = $_POST['sinceDate'];
 
-mysql_connect($config['mysql_host'],$config['mysql_user'],$config['mysql_pass']);
+  if($DBconnection) {
 
-@mysql_select_db($config['db_name']) or die( "Unable to select database");
+    $sqlroomslotid = "SELECT roomslots.id
+                      FROM rooms JOIN roomslots
+                      ON rooms.id = roomslots.roomId
+                      WHERE rooms.name = '".$roomName."'
+                     ";
 
-//building the actual XML by creating the XML header and the necessary root element
+    $queryForRoomSlots = mysqli_query($DBconnection,$sqlroomslotid);
+    $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
 
-$xml          = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-$root_element = $config['table_name'];
-$xml          = "<All"."$root_element>";
+    for ($x = 0; $x < sizeof($slotsArray); $x++) {
+      $tempSlotId = $slotsArray[$x]->id;
 
+      $sqlmeasures = "SELECT Date, temperature, humidity, noise
+                      FROM measures
+                      WHERE Date > '".$sinceDate."' AND track IN (
+                            SELECT measureTrack
+                            FROM measureLogs
+                            WHERE roomslotid = ".$tempSlotId." AND date >= (
+                                  SELECT date
+                                  FROM measureLogs
+                                  WHERE roomslotid = ".$tempSlotId." AND date < '".$sinceDate."'
+                                  ORDER BY date DESC
+                                  LIMIT 1 
+                                  )
+                            )
+                      ";
+      
+//2017-04-27 19:10:58
 
-//select all items in table
-$sql = "SELECT * FROM ".$config['table_name'];
+      $queryForMeasures = mysqli_query($DBconnection,$sqlmeasures);
+      mysqli_close($DBconnection);
 
-$result = mysql_query($sql);
-if (!$result) {
-    die('Invalid query: ' . mysql_error());
-}
+      $measuresArray[$tempSlotId] = $queryForMeasures->fetch_all(MYSQLI_ASSOC);
 
-if(mysql_num_rows($result)>0)
-  {
-    while($result_array = mysql_fetch_assoc($result))
-    {
-      $xml .= "<".$config['table_name'].">";
-      //loop through each key,value pair in row
-      foreach($result_array as $key => $value)
-      {
-      //$key holds the table column name
-      $xml .= "<$key>";
-      //embed the SQL data in a CDATA element to avoid XML entity issues
-      $xml .= "<![CDATA[$value]]>";
-      //and close the element
-      $xml .= "</$key>";
-      }
-      $xml.="</".$config['table_name'].">";
+      echo $measuresArray;
     }
+
+  }else{
+    mysqli_close($DBconnection);
+    echo 'GRAN CAGADA '.mysqli_error();
   }
-//created a list of XML elements representing the MySQL data
 
-//close the root element
-$xml = "</All"."$root_element>";
-
-//send the xml header to the browser
-header ("Content-Type:text/xml");
-
-//output the XML data
-echo $xml;
 ?>
