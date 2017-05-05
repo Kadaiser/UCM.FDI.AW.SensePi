@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/canvas.js"></script>
     <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="../js/ajaxbasic.js"></script>
 		<script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
