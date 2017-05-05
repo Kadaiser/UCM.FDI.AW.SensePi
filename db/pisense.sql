@@ -36,7 +36,6 @@ CREATE TABLE `measurelogs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `measurelogs` (`roomslotid`, `measuretrack`, `date`) VALUES
-(1, '1234567890abcde2', '2017-04-27 19:12:44'),
 (1, '1234567890abcdef', '2017-04-27 19:10:58'),
 (2, 'abcdef1234567890', '2017-04-27 19:23:16');
 
@@ -55,7 +54,15 @@ INSERT INTO `measures` (`id`, `track`, `Date`, `stationname`, `temperature`, `hu
 (2, '1234567890abcdef', '2017-04-27 19:21:49', 'testacion1', '22.0', '38.0', 12),
 (3, 'abcdef1234567890', '2017-04-27 18:24:40', 'testacion2', '18.0', '45.0', NULL),
 (4, 'abcdef1234567890', '2017-04-27 19:24:40', 'testacion2', '17.0', '48.0', NULL),
-(5, 'abcdef1234567890', '2017-04-27 18:25:39', 'testacion2', '20.0', '43.0', NULL);
+(5, 'abcdef1234567890', '2017-04-27 18:25:39', 'testacion2', '20.0', '43.0', NULL),
+(6, '1234567890abcdef', '2017-04-28 08:00:00', 'testacion1', '21.0', '35.0', 7),
+(7, '1234567890abcdef', '2017-04-29 08:00:00', 'testacion1', '20.5', '32.0', 6),
+(8, '1234567890abcdef', '2017-04-30 08:00:00', 'testacion1', '19.0', '30.0', 7),
+(9, '1234567890abcdef', '2017-05-01 08:00:00', 'testacion1', '18.0', '29.0', 8),
+(10, '1234567890abcdef', '2017-05-02 08:00:00', 'testacion1', '19.5', '31.0', 7),
+(11, '1234567890abcdef', '2017-05-03 08:00:00', 'testacion1', '20.5', '27.0', 6),
+(12, '1234567890abcdef', '2017-05-04 08:00:00', 'testacion1', '19.0', '29.0', 7),
+(13, '1234567890abcdef', '2017-05-05 08:00:00', 'testacion1', '17.0', '42.5', 6);
 
 CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
@@ -196,7 +203,7 @@ ALTER TABLE `users`
 
 
 ALTER TABLE `measures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 ALTER TABLE `rooms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 ALTER TABLE `roomslots`
