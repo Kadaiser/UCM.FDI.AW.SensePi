@@ -1,3 +1,4 @@
+
 html, body{
 	cursor: default;
 	margin:0;
@@ -17,6 +18,7 @@ min-width: 800px;
 min-height:100%;
 position:relative;
 }
+
 
 .sidebarLeft{
 	position: fixed;
