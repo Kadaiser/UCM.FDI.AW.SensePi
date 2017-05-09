@@ -14,7 +14,7 @@ function init(){
 /*DIRECT METHODS*/
 
 function switchForms() {
-    window.location.href="./signup.php";
+    window.location.href="./login.php";
 }
 
 /* INSIDE METHODS*/

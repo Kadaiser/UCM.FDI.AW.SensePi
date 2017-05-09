@@ -1,0 +1,59 @@
+#content .sort{
+    float: right;
+    padding: 25px;
+}
+
+#content .datatable{
+    margin: 50px;
+}
+
+.datatable table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.datatable > table > thead > tr > th,
+.datatable > table > tbody > tr > th,
+.datatable > table > tfoot > tr > th,
+.datatable > table > thead > tr > td,
+.datatable > table > tbody > tr > td,
+.datatable > table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px white solid;
+}
+
+.datatable > table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+td, th {
+    text-align: left;
+}
+
+.recomendations{
+    margin: 50px;
+}
+
+.recomendations .panel{
+    padding: 5px 15px;
+    border: 3px white solid;
+    border-radius: 25px;
+}
+
+.recomendations span{
+    float: right;
+}
+
+.search{
+    float: left;
+    width: 25%;
+    margin: 50px;
+}
+
+.search fieldset{
+    padding: 20px;
+}

@@ -1,24 +1,15 @@
-.hgroup { 
-	text-align:center;
-	margin-top: 4em;
-}
-
-.info { 
-	text-align:center;
-	margin-top: 1em;
-}
-
-form {
+form, .loginForm {
 	width: 380px;
-	margin: 4em auto;
+	margin: 25px auto;
 	padding: 3em 2em 2em 2em;
-	background: #fafafa;
-	border: 1px solid #ebebeb;
+	background: #454545;
+	border: 2px solid #bfbfbf;
+  border-radius: 4px;
 	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
-.group { 
-	position: relative; 
+.group {
+	position: relative;
 	margin-bottom: 40px;
 	text-align: center;
 }
@@ -28,12 +19,12 @@ input {
 	padding: 10px 10px 10px 5px;
 	-webkit-appearance: none;
 	display: block;
-	background: #fafafa;
-	color: #636363;
-	width: 100%;
+	background: #1f1f1f;
+	color: #cc7700;
+	width: 95%;
 	border: none;
-	border-radius: 0;
-	border-bottom: 1px solid #757575;
+	border-radius: 2px;
+	border-bottom: 1px solid #777;
 }
 
 input:focus { outline: none; }
@@ -42,7 +33,7 @@ input:focus { outline: none; }
 /* Label */
 
 label {
-	color: #999; 
+	color: #bfbfbf;
 	font-size: 18px;
 	font-weight: normal;
 	position: absolute;
@@ -63,13 +54,13 @@ input:focus ~ label, input:valid ~ label, input:disabled ~ label {
 }
 
 @keyframes mymove {
-    from {top: 0px; left: 0px; transform: scale(1);	color: #999;}
-    to {top: -20px; left: -2px; transform: scale(.75); color: #4a89dc;}
+    from {top: 0px; left: 0px; transform: scale(1);	color: #bfbfbf;}
+    to {top: -20px; left: -2px; transform: scale(.75); color: #bfbfbf;}
 }
 
 @-webkit-keyframes mymove /*Safari and Chrome*/ {
-    from {top: 0px; left: 0px; transform: scale(1); color: #999;}
-    to {top: -20px; left: -2px; transform: scale(.75); color: #4a89dc;}
+    from {top: 0px; left: 0px; transform: scale(1); color: #bfbfbf;}
+    to {top: -20px; left: -2px; transform: scale(.75); color: #bfbfbf;}
 }
 
 
@@ -79,17 +70,18 @@ input:focus ~ label, input:valid ~ label, input:disabled ~ label {
 .bar {
 	position: relative;
 	display: block;
-	width: 100%;
+  margin: 0;
+	width: 99%;
 }
 
 .bar:before, .bar:after {
 	content: '';
-	height: 2px; 
+	height: 2px;
 	width: 0;
-	bottom: 1px; 
+	bottom: 1px;
 	position: absolute;
-	background: #4a89dc; 
-	transition: all 0.2s ease;
+	background: #cc6600;
+	transition: all 0.3s ease;
 }
 
 .bar:before { left: 50%; }
@@ -106,9 +98,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 .highlight {
 	position: absolute;
-	height: 60%; 
-	width: 100px; 
-	top: 25%; 
+	height: 60%;
+	width: 100px;
+	top: 25%;
 	left: 0;
 	pointer-events: none;
 	opacity: 0.5;
@@ -125,7 +117,7 @@ input:focus ~ .highlight {
 /* Animations */
 
 @keyframes inputHighlighter {
-	from { background: #4a89dc; }
+	from { width: 30%; background: #ff953b; }
 	to 	{ width: 0; background: transparent; }
 }
 
@@ -137,9 +129,9 @@ input:focus ~ .highlight {
   display: inline-block;
   padding: 12px 24px;
   margin: 0 0 1em 0;
-  width: 100%;
+  width: 80%;
   vertical-align: middle;
-  color: #fff;
+  color: #333;
   font-size: 18px;
   line-height: 20px;
   -webkit-font-smoothing: antialiased;
@@ -147,47 +139,38 @@ input:focus ~ .highlight {
   letter-spacing: 1px;
   background: transparent;
   border: 0;
-  border-bottom: 2px solid #A6A6A6;
+  border-bottom: 2px solid #999;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 .button:focus { outline: 0; }
 
 .backgroundButton  {
-  position: relative;
-  display: inline-block;
   padding: 8px 12px;
   margin: .3em 0 1em 0;
   width: 50%;
-  vertical-align: middle;
   color: #fff;
   font-size: 14px;
   line-height: 19px;
-  -webkit-font-smoothing: antialiased;
-  text-align: center;
-  letter-spacing: 1px;
-  background: transparent;
-  border: 0;
-  border-bottom: 2px solid #A6A6A6;
-  cursor: pointer;
-  transition: all 0.15s ease;
+  border-bottom: 2px solid #ff953b;
 }
 
 /* Button modifiers */
 
-.buttonBlue {
-  background: #4a89dc;
-  text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+.buttonGrey {
+  background: #888;
+  text-shadow: 1px 1px 0 rgba(153, 153, 153, 0.8);
 }
 
-.buttonBlue:hover { background: #357bd8; }
-
-.buttonGreen {
-  background: #4adc89;
-  text-shadow: 1px 1px 0 rgba(39, 204, 110, .5);
+.buttonGrey:hover { background: #686868;   color: #222;   text-shadow: 1px 1px 0 rgba(120, 120, 120, 0.8);
 }
 
-.buttonGreen:hover { background: #35d87b; }
+.buttonOrange {
+  background: #cc6600;
+  text-shadow: 1px 1px 0 rgba(149, 57, 0, 0.8);
+}
+
+.buttonOrange:hover { background: #953900; }
 
 /* Ripples container */
 
@@ -233,4 +216,9 @@ input:focus ~ .highlight {
     padding-bottom: 200%;
     opacity: 0;
   }
+}
+
+#warningMessage a {
+  	text-decoration: none;
+    color: #ff953b;
 }

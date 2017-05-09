@@ -1,0 +1,98 @@
+#barraImagenes{
+	margin: 5%;
+  margin-left: 0;
+	min-width: 850px;
+
+}
+
+#barraImagenes li{
+	margin: 25px;
+	display : inline-block;
+	list-style-type: none;
+	width: 100px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+#barraImagenes img{
+	width: 125px;
+	height: 125px;
+}
+
+#barraImagenes ul li .photo img{
+	background-size: contain;
+	background-repeat: no-repeat;
+	transition: all .4s ease;
+}
+
+.photo{
+	position: relative;
+}
+
+.photo img{
+	border: solid #bfbfbf 8px;
+	border-radius: 100px;
+  -webkit-border-radius: 10 0px;
+}
+
+.photo img:hover, img:focus{
+	border: solid #cc6600 8px;
+}
+
+#azahara{
+	background: url("../images/as1045x1045.jpg");
+}
+#azahara:hover{
+	background: url("../images/ah1045x1045.jpg");
+}
+
+#diego{
+	background: url("../images/ds10333x1033.jpg");
+}
+#diego:hover{
+	background: url("../images/dh10333x1033.jpg");
+}
+
+#sergio{
+	background: url("../images/ss1133x1133.jpg");
+}
+#sergio:hover{
+	background: url("../images/sh1133x1133.jpg");
+}
+
+#julio{
+	background: url("../images/js1235x1235.jpg");
+}
+#julio:hover{
+	background: url("../images/jh1235x1235.jpg");
+}
+
+#javier{
+	background: url("../images/jas744x744.jpg");
+}
+#javier:hover{
+	background: url("../images/jah744x744.jpg");
+}
+
+.descripcionPersonal {
+	border:double #cc6600 9px ;
+  border-radius: 20px;
+	margin: 70px;
+	padding: 10px;
+
+}
+
+.descripcionPersonal li{
+	display : inline-block;
+	font-family: verdana;
+	font-size: 15px;
+	margin-top: 100px;
+	list-style-type: none;
+	text-align: center;
+
+}
+.contactIcons img{
+	height: 75px;
+	width: 75px;
+
+}

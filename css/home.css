@@ -1,0 +1,200 @@
+canvas{
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    position: absolute;
+}
+
+#content{
+  text-align: center;
+}
+
+.viewSelector{
+  position: relative;
+  margin-bottom: 5%;
+}
+
+.viewSelector label{
+  font-size: 25px;
+}
+
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input{ display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0d0d0d;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #cc6600;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #0d0d0d;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0d0d0d;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(56px);
+  -ms-transform: translateX(56px);
+  transform: translateX(56px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.span{
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  width: 840px;
+  height: 490px;
+  left: 20%;
+  top: 20%;
+  background: #1b1b1b;
+  border: 20px double #cc6600;
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px;
+}
+
+.span img{
+  position: absolute;
+  left: 95%;
+  height: 25px;
+  width: 25px;
+  padding:2px 2px 2px 2px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+}
+
+.span img.hoverImg:hover{
+  opacity: 0;
+}
+
+.span .favoriteMark{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.span .favoriteMark label{
+  padding: 15px;
+}
+
+.fog{
+  visibility: collapse;
+  position: fixed;
+  z-index: 2;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  overflow: visible;
+}
+
+#mapContainer{
+  text-align: center;
+  display: block;
+}
+#mapContainer img{
+  width: 100%
+  object-fit: contain;
+}
+
+#galleryBlock{
+  display: none;
+  text-align: center;
+}
+#FloorButtons{
+  text-align: center;
+  margin-top: 75%;
+}
+
+.galleryRow{
+  width: 99%;
+  display: block;
+  padding: 10px 0 10px 0;
+  margin: 0;
+}
+
+.galleryFloor{
+  display: inline-block;
+  width: 90px;
+  left: 0;
+  text-align: center;
+  vertical-align: top;
+  margin: 0 20px 0 0px;
+  border:2px solid #cc6600;
+  border-radius: 8px;
+}
+
+.galleryFloorList{
+  margin-top: 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  width: 80%;
+  text-align: left;
+  border:3px solid #bfbfbf;
+  border-radius: 10px;
+  padding: 10px 0 10px 0;
+  top:0;
+  left:0;
+}
+
+.galleryFloorOverPanel{
+  display: inline-block;
+  position: relative;
+  opacity: 1;
+  width: 80%;
+  height: 100%;
+  border: 1px solid blue;
+  text-align: left;
+  z-index: 1;
+}
+
+.galleryFloorElement{
+  text-align: center;
+  display: inline-block;
+  width: 120px;
+  margin: 5px;
+}
+
+.galleryFloor img, .galleryFloorElement img{
+  width: 90px;
+  height: 90px;
+  border-radius: 3px;
+}
