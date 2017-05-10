@@ -25,7 +25,6 @@ function init(/*param1,param2*/){
 
 /*DIRECT METHODS*/
 
-
 var mapView = true;
 
 function switchBetweenView(){
@@ -34,8 +33,55 @@ function switchBetweenView(){
   mapView = !mapView;
 }
 
-/* INSIDE METHODS*/
+function mySpanAppear(str){
+  //VISUAL EFFECT
+  var fog = document.getElementById('Fog');
+  fog.style.visibility = "visible";
+  fog.style.transition = "opacity 0.4s ease-out";
+  var div = document.getElementById("Span");
+  div.style.visibility = "visible";
+  div.style.transition = "opacity 0.7s ease-out";
+  div.style.opacity = "1";
 
+  document.getElementById("Area").innerHTML = str;
+
+  //TODO: Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
+  //2017-05-01 19:10:58
+  ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+}
+
+function mySpanHide(){
+  var fog = document.getElementById('Fog');
+  fog.style.visibility = "collapse";
+  var div = document.getElementById("Span");
+  div.style.opacity = "0";
+  div.style.visibility = "hidden";
+}
+
+function AddToFavorite(){
+
+}
+
+function switchFloorState(chosenFloor) {
+  var element = document.getElementById(chosenFloor);
+  if(this.showFloor[chosenFloor]==false){
+    this.showFloor[chosenFloor]=true;
+    element.style.transition = "opacity 0.4s ease-out";
+    element.style.opacity = "1";
+  }else{
+    this.showFloor[chosenFloor]=false;
+    element.style.transition = "opacity 0.4s ease-out";
+    element.style.opacity = "0";
+  }
+  if(this.showFloor[chosenFloor]==true){
+    element.style.zIndex="1";
+  }else{
+    element.style.zIndex="-1";
+
+  }
+}
+
+/* INSIDE METHODS*/
 
 function switchToMapView() {
   document.getElementById("mapContainer").style.display = "block";
@@ -63,7 +109,6 @@ function measuresFormatting(rawMeasures){
   var measureList = obj[1];
   measureList.forEach(function(measure) {
     var tempArray=[];
-
     var date_test = new Date("2011-07-14 11:23:00".replace(/-/g,"/"));
     splittedDate = measure.Date.split(" ");
     splittedDate = splittedDate[0].replace(/"/,"'");
@@ -121,99 +166,4 @@ function drawChart() {
 
   var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
   chart.draw(data, options);
-}
-
-/* INSIDE METHODS*/
-
-
-
-function mySpanAppear(str)
-{
-  //VISUAL EFFECT
-  var fog = document.getElementById('Fog');
-  fog.style.visibility = "visible";
-  fog.style.transition = "opacity 0.4s ease-out";
-  var div = document.getElementById("Span");
-  div.style.visibility = "visible";
-  div.style.transition = "opacity 0.7s ease-out";
-  div.style.opacity = "1";
-
-  document.getElementById("Area").innerHTML = str;
-
-  //TODO: Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
-  //2017-05-01 19:10:58
-  ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
-
-
-  //FUNCIONAL EFFECT
-  /* No valido, redireccionaria los datos
-  var text, parser, xmlDoc;
-  text = "<measure><track>" +
-  "<temp>25 C</temp>" +
-  "<hum>28%</hum>" +
-  "<noise>25 dB</noise>" +
-  "</track></measure>";
-
-  parser = new DOMParser();
-  xmlDoc = parser.parseFromString(text,"text/xml");
-
-    if (str == "") {
-        document.getElementById("Area").innerHTML = "";
-        return;
-    } else {
-        document.getElementById("Area").innerHTML = str;
-        document.getElementById("Temp").innerHTML=
-        xmlDoc.getElementsByTagName("temp")[0].childNodes[0].nodeValue;
-        document.getElementById("Hum").innerHTML=
-        xmlDoc.getElementsByTagName("hum")[0].childNodes[0].nodeValue;
-        document.getElementById("Noise").innerHTML=
-        xmlDoc.getElementsByTagName("noise")[0].childNodes[0].nodeValue;
-
-
-        
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("Measure").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET","getmeasure.php?q="+str,true);
-        xmlhttp.send();
-
-    }
-    */
-}
-
-function mySpanHide()
-{
-  var fog = document.getElementById('Fog');
-  fog.style.visibility = "collapse";
-  var div = document.getElementById("Span");
-  div.style.opacity = "0";
-  div.style.visibility = "hidden";
-}
-
-
-function AddToFavorite(){
-
-}
-
-
-function switchFloorState(chosenFloor) {
-  var element = document.getElementById(chosenFloor);
-  if(this.showFloor[chosenFloor]==false){
-    this.showFloor[chosenFloor]=true;
-    element.style.transition = "opacity 0.4s ease-out";
-    element.style.opacity = "1";
-  }else{
-    this.showFloor[chosenFloor]=false;
-    element.style.transition = "opacity 0.4s ease-out";
-    element.style.opacity = "0";
-  }
-  if(this.showFloor[chosenFloor]==true){
-    element.style.zIndex="1";
-  }else{
-    element.style.zIndex="-1";
-
-  }
 }
