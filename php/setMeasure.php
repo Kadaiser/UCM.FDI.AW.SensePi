@@ -14,18 +14,22 @@
             //document.getElementById("test").innerHTML = IdRoom;
 
             ajax.post('../php/getSlotsIdAndTracks.php',{roomId: IdRoom},fullfillOptions,true);
+            //retorna [{"roomslotid":"1","measuretrack":"1234567890abcdef"},{"roomslotid":"2","measuretrack":"abcdef1234567890"}] para idRoom = 1;
           }
-  //
-          function fullfillOptions(rawMeasuresTrack){
-            var obj = JSON.parse(rawMeasuresTrack);
 
-            trackList.each(function(d){
-              trackList('#emptyDropdown').append('<option value="' + d.measuretrack + '">' + d.roomslotid + '</option>');
-              },this);
+          function fullfillOptions(rawMeasuresTrack){
+
+            var dropDown = document.getElementById('trackDropDown');
+
+            var obj = JSON.parse(rawMeasuresTrack);
+            for(var i = 0; i< obj.length; i++){
+              //falta sacar la informacion del objeto y rellenar la creacion del option (text, value)
+              dropDown.options[i]= new Option(obj[i]['roomslotid'],obj[i]['measuretrack']);
+            }
           }
-  //
+
           function showImput(){
-              document.getElementById("measureSetDiv").style.visibility = "visible";
+            /* document.getElementById("measureSetDiv").style.visibility = "visible"; */
           }
         </script>
 
@@ -100,12 +104,11 @@
 
       <div class="group">
         <label>Measure Track</label>
-        <select onchange="showImput()" class="mesureTrackSelect" name="MeasureTrack" id="emptyDropdown">
+        <select onchange="showImput()" class="mesureTrackSelect" name="MeasureTrack" id="trackDropDown">
         </select>
       </div>
       <br>
 
-      <div id="measureSetDiv">
 
         <span class="error"><?php echo $tempErr;?></span>
         <div class="group">
@@ -132,8 +135,6 @@
           <input type="submit" value="Process">
           <span class="error"><?php echo $result;?></span>
         </div>
-
-      </div>
 
     </form>
   </body>
