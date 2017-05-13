@@ -1,19 +1,37 @@
 <?php
-$DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
+$connection = mysqli_connect('127.0.0.1','root','','pisense')
+or die("Error " . mysqli_error($connection));
+
+//debug: $roomId = 1;
 $roomId = $_POST['roomId'];
 
-if($DBconnection) {
+if($connection) {
 
- $sqlMeasureTrack = "SELECT roomslotid, measuretrack
+ $sql = "SELECT roomslotid, measuretrack
                    FROM  roomslots JOIN measurelogs
                    ON roomslots.id = measurelogs.roomslotid
                    WHERE roomslots.roomid = '".$roomId."'
                   ";
 
-  $queryForSlotsTracks = mysqli_query($DBconnection,$sqlMeasureTrack);
+  $result = mysqli_query($connection,$sql) or die("Error in Selecting " . mysqli_error($connection));
 
-  mysqli_close($DBconnection);
-  echo json_encode($queryForSlotsTracks);
+  $array = array();
+
+  while ($row = mysqli_fetch_assoc($result)) {
+    $array[] = $row;
+  }
+
+
+  mysqli_close($connection);
+
+  /*
+    //Alternativa al echo, escribir un Json file
+    $fp = fopen('empdata.json', 'w');
+    fwrite($fp, json_encode($array));
+    fclose($fp);
+  */
+
+  echo json_encode($array);
   header("Content-type: application/json");
   exit();
 
@@ -21,4 +39,5 @@ if($DBconnection) {
   mysqli_close($DBconnection);
   echo 'GRAN CAGADA '.mysqli_error();
 }
+
  ?>

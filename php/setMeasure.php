@@ -19,7 +19,6 @@
           function fullfillOptions(rawMeasuresTrack){
             var obj = JSON.parse(rawMeasuresTrack);
 
-            var trackList = obj[1];
             trackList.each(function(d){
               trackList('#emptyDropdown').append('<option value="' + d.measuretrack + '">' + d.roomslotid + '</option>');
               },this);
