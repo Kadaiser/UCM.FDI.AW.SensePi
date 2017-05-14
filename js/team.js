@@ -35,7 +35,7 @@ function showInfo(xml,a){
   info += "<p>" + about[a].childNodes[0].nodeValue + "</p>";
   var face = xmlDoc.getElementsByTagName("facebook");
   var gh = xmlDoc.getElementsByTagName("github");
-  
+
   document.getElementById("facebook").href = face[a].childNodes[0].nodeValue;
   document.getElementById("github").href = gh[a].childNodes[0].nodeValue;
 

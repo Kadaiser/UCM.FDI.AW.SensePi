@@ -38,21 +38,6 @@
 								<img id="diego">
 	          </div>
 					</li>
-          <li>
-            <div class="photo" onclick="loadText('2')">
-								<img id="azahara">
-	          </div>
-					</li>
-          <li>
-            <div class="photo" onclick="loadText('3')">
-								<img id="julio">
-	          </div>
-					</li>
-          <li>
-            <div class="photo" onclick="loadText('4')">
-								<img id="javier">
-	          </div>
-					</li>
 				</ul>
 			</div>
 
@@ -78,7 +63,7 @@
 					</li>
 				</ul>
 			</div>
-    
+
 
 		</div>
 

@@ -43,48 +43,4 @@
 			https://github.com/Kadaiser
 		</github>
 	</person> 
-	
-  	<person> 
-		<name>Azahara Fernández Notario</name>
-		<about>Soy Azahara una estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Talavera de la Reina (Toledo) un 21 de Julio de 1995.
-			Hija de Nuria y Josué, tengo tres hermanos pequeños, Yaiza, Josué y Alfredo. Me gustan el futbol, el airsoft, el rugby y los deportes en general. Además de practicar estos deportes en mi tiempo libre también me gusta leer, escuchar música o ver series.
-			Actualmente me dedico por completo a estudiar aunque tempranamente me gustaría incorporarme al mundo laboral, en el ámbito de las aplicaciones web o la programación en general.
-		</about>
-			<facebook>
-				 https://www.facebook.com/nuria.notario.3 
-			</facebook>
-			<github>
-				https://github.com/azaferna
-			</github>
-
-	</person>
-	
- 	<person> 
-		<name>Julio De La Cruz Valderrama</name>
-		<about>Soy Julio, un estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Lima.
-			Me encuentro cursando la carrera anteriormente mencionada, con el objetivo de complementar ciertos aspectos de mi entorno profesional.
-			Actualmente me dedico a la consultoría de sistemas informáticos en un ámbito público.
-		</about>
-		<facebook>
-			https://www.facebook.com/
-		</facebook>
-		<github>
-			https://github.com/endela01
-		</github>
-	</person> 
-	
-	<person> 
-		<name>Javier</name>
-		<about>Soy Javier, un estudiante del Grado de Ingenieria Informática de la Universidad Complutense de Madrid en la rama de Tecnologías de la Información. Aunque actualmente resido en dicha ciudad nací en Toledo en 1991.
-			Me gusta la música, aparte de escucharla también soy componente de varios grupos musicales. El deporte me gusta más verlo que practicarlo, entre ellos están el futbol, el tenis, y el mundo del motor en general.
-			Poseo el título de administración de sistemas informáticos en red (ASIR), y actualmente solo me dedico a estudiar el grado de ingeniería informática.
-		</about>
-	
-		<facebook>
-			https://www.facebook.com/javi.esky
-		</facebook>
-		<github>
-			https://github.com/javiesky
-		</github>
-	</person>
 </team>
