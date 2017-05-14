@@ -6,7 +6,7 @@ window.onload = function() {
 function init(/*param1,param2*/){
 
   //Chart initialization
-  google.charts.load('current', {'packages':['corechart','bar']});
+  google.charts.load('current', {'packages':['bar']});
   google.charts.setOnLoadCallback(drawChart);
 
 }
@@ -23,7 +23,7 @@ function init(/*param1,param2*/){
     [3, 12, "Sala de conferencias"],
     [4, 10, "Pasillos"],
     [5, 2, 'WC biblioteca'],
-    [, 1, 'Others']
+    [6, 1, 'Others']
   ];
 
 function drawChart() {
@@ -31,6 +31,12 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable(dataFromDB);
 
   var options = { 
+
+    axes: {
+      x: {
+        0: { side: 'top',} // Top x-axis.
+      }
+    },
 
     //title: 'ALL-TIME TOP 5 queries',
     width: 300,
@@ -40,18 +46,32 @@ function drawChart() {
       position: 'none',
     },
 
+    axisTitlesPosition: 'none',
+
+    backgroundColor: {
+      fill: '#bfbfbf',
+    }, 
+    chartArea: {
+      backgroundColor: '#bfbfbf',
+    },
+
+    hAxis: {
+      viewWindowMode: 'explicit',
+      textPosition: 'none',
+      textStyle:{color: 'red', fontSize: 0},
+    },
+    vAxis: {
+      viewWindowMode: 'explicit',
+      textPosition: 'none',
+      textStyle:{color: 'red', fontSize: 0},
+    },
+
     /*chart: {
       title: 'ALL-TIME TOP 5 queries',
       subtitle: 'popularity by percentage'
     },*/
 
     bars: 'horizontal', // Required for Material Bar Charts.
-
-    axes: {
-      x: {
-        0: { side: 'top'} // Top x-axis.
-      }
-    },
 
     bar: {
       groupWidth: "90%"
@@ -87,5 +107,5 @@ function drawChart() {
   };
 
   var chart = new google.charts.Bar(document.getElementById('top_x_div'));
-  chart.draw(data, options);
+  chart.draw(data, google.charts.Bar.convertOptions(options));
 };
