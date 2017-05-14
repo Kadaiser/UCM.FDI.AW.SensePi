@@ -11,7 +11,6 @@
           function populateMeasure(id){
             var dropDown = document.getElementById("RoomDropdown");
             var IdRoom = dropDown.options[dropDown.selectedIndex].value;
-            //document.getElementById("test").innerHTML = IdRoom;
 
             ajax.post('../php/getSlotsIdAndTracks.php',{roomId: IdRoom},fullfillOptions,true);
             //retorna [{"roomslotid":"1","measuretrack":"1234567890abcdef"},{"roomslotid":"2","measuretrack":"abcdef1234567890"}] para idRoom = 1;
@@ -20,6 +19,9 @@
           function fullfillOptions(rawMeasuresTrack){
 
             var dropDown = document.getElementById('trackDropDown');
+            while (dropDown.options.length > 0) {
+              dropDown.remove(0);
+            }
 
             var obj = JSON.parse(rawMeasuresTrack);
             for(var i = 0; i< obj.length; i++){
@@ -29,7 +31,7 @@
           }
 
           function showImput(){
-            /* document.getElementById("measureSetDiv").style.visibility = "visible"; */
+            //document.getElementById("measureSetDiv").style.visibility = "visible";
           }
         </script>
 
@@ -80,8 +82,8 @@
         //$date = test_input($_POST['datetime']);
 
         /*debug*/
-        $result  = "Se ha procesado el registro con valores Temp:".$temp." Hum:".$hum." Noise:".$noise.
-                    " en la sala:".$_POST['Room']." para el track:".$_POST['MeasureTrack']; //con fecha ".$_POST['datetime'];
+        $result  = "Se ha procesado el registro con valores Temp: ".$temp." Hum: ".$hum." Noise: ".$noise.
+                    " en la sala: ".$_POST['Room']." para el track: ".$_POST['MeasureTrack']; //con fecha ".$_POST['datetime'];
       }
 
       function test_input($data) {
@@ -92,23 +94,27 @@
       }
     ?>
 
-    <form class="injector" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+    <form class="injector" method="post" action="../php/setMeasureOnStation.php">
 
       <div class="group">
         <h1 id="test"></h1>
         <label>Room</label>
         <select onchange="populateMeasure(this.value)" class="mesureTrackSelect" name="Room" id="RoomDropdown">
+          <option disabled selected value>-- select an option --</option>
           <?php echo $optionRoom;?>
         </select>
       </div>
 
       <div class="group">
-        <label>Measure Track</label>
+        <label>Slot ID</label>
         <select onchange="showImput()" class="mesureTrackSelect" name="MeasureTrack" id="trackDropDown">
         </select>
       </div>
       <br>
 
+
+      <div id="measureSetDiv">
 
         <span class="error"><?php echo $tempErr;?></span>
         <div class="group">
@@ -135,6 +141,7 @@
           <input type="submit" value="Process">
           <span class="error"><?php echo $result;?></span>
         </div>
+      </div>
 
     </form>
   </body>
