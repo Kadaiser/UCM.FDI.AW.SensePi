@@ -17,10 +17,9 @@
   if($DBconnection) {
     //string de request
     $sqlString = "
-                  SELECT nick, isadmin, avatar
+                  SELECT nick, isadmin, avatar,pw
                   FROM users
                   WHERE email='".$userEmail."'
-                  AND pw='".$userPassword."'
                   ";
 
     //lanzar request a la BD
@@ -29,24 +28,30 @@
       //cierre de conexión con BD
       mysqli_close($DBconnection);
 
-      //tratamiento de la query recibida
-      //$result = mysqli_fetch_array($query);
-      if(mysqli_num_rows($query)!==0){
-        $user=mysqli_fetch_object($query);
-        $_SESSION['login']=true;
-        $_SESSION['isAdmin']=$user->isadmin;
-        $_SESSION['nick']=$user->nick;
-        $_SESSION['userEmail']=$userEmail;
-        $_SESSION['userAvatar']=$user->avatar;
+      $user=mysqli_fetch_object($query);
 
-        if($_SESSION['isAdmin']==1) {
-          header("Location: ../views/adminView.php");
+      if (password_verify($userPassword,$user->pw)) {
+        if(mysqli_num_rows($query)!==0){
+          $_SESSION['login']=true;
+          $_SESSION['isAdmin']=$user->isadmin;
+          $_SESSION['nick']=$user->nick;
+          $_SESSION['userEmail']=$userEmail;
+          $_SESSION['userAvatar']=$user->avatar;
+          unset($user);
+
+          if($_SESSION['isAdmin']==1) {
+            header("Location: ../views/adminView.php");
+          }else{
+            header("Location: ../views/userview.php");
+          }
         }else{
-          header("Location: ../views/userview.php");
+          header("Location: ../views/loginFail.php");
         }
       }else{
+        unset($user);
         header("Location: ../views/loginFail.php");
       }
+
     }else{
       mysqli_close($DBconnection);
       header("Location: ../views/error.php");

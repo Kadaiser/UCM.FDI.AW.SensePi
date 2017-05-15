@@ -26,7 +26,7 @@
         $tempEmail = test_input($_POST['userEmail']);
         $tempPW = test_input($_POST['userPassword']);
         $tempPWConfirm = test_input($_POST['userConfirmPassword']);
-
+        
         if (!preg_match("/
         ^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$
         /",$tempEmail)) {
@@ -67,7 +67,6 @@
         return $data;
       }
     ?>
-
 
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
