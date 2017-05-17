@@ -14,29 +14,17 @@ if($connection) {
                   ";
 
   $result = mysqli_query($connection,$sql) or die("Error in Selecting " . mysqli_error($connection));
-
   $array = array();
-
   while ($row = mysqli_fetch_assoc($result)) {
     $array[] = $row;
   }
-
-
   mysqli_close($connection);
-
-  /*
-    //Alternativa al echo, escribir un Json file
-    $fp = fopen('empdata.json', 'w');
-    fwrite($fp, json_encode($array));
-    fclose($fp);
-  */
-
   echo json_encode($array);
   header("Content-type: application/json");
   exit();
 
 }else{
-  mysqli_close($DBconnection);
+  mysqli_close($connection);
   echo 'GRAN CAGADA '.mysqli_error();
 }
 
