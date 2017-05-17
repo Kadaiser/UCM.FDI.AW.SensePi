@@ -1,6 +1,7 @@
 <?php
 $connection = mysqli_connect('127.0.0.1','root','','pisense')
 or die("Error " . mysqli_error($connection));
+mysqli_set_charset( $connection, 'utf8');
 
 //debug: $roomId = 1;
 $roomId = $_POST['roomId'];

@@ -32,7 +32,7 @@
             var dropDown = document.getElementById('RoomDropdown');
             var obj = JSON.parse(rawMeasuresTrack);
             for(var i = 0; i< obj.length; i++){
-              dropDown.options[i]= new Option(obj[i]['id'],obj[i]['name']);
+              dropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
             }
           }
 
