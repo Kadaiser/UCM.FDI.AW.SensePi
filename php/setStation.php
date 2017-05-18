@@ -9,14 +9,28 @@
     <link rel="stylesheet" type="text/css" href="../css/contact.css"/>
     <script type="text/javascript" src="../js/ajaxbasic.js"></script>
     <script>
+      var obj;
 
       function populationStationDropdown(rawMeasuresTrack){
         var dropDown = document.getElementById('stationDropdown');
-        var obj = JSON.parse(rawMeasuresTrack);
+        obj = JSON.parse(rawMeasuresTrack);
         for(var i = 0; i< obj.length; i++){
           dropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
         }
       }
+
+      function report(id){
+        var field = document.getElementById('stationInfo');
+        var i = 0;
+        while(id != obj[i]['id']){
+          i++;
+        }
+        var p = document.createElement('h1');
+        var text = document.createTextNode(obj[i]['currentTrack']);
+        p.appendChild(text);
+        field.appendChild(p);
+      }
+
     </script>
   </head>
 
@@ -26,11 +40,14 @@
     <form class="injector" method="post" action="#">
 
       <div class="group">
-        <h1 id="test"></h1>
         <label>Station</label>
-        <select  class="mesureTrackSelect" name="Room" id="stationDropdown">
-          <option disabled selected value>-- select device --</option>
+        <select onchange="report(this.value)"  class="mesureTrackSelect" name="Room" id="stationDropdown">
+          <option disabled selected value>select device</option>
         </select>
+
+          <div class="StationInfo" id="stationInfo">
+
+          </div>
         <input type="submit">
       </div>
 
