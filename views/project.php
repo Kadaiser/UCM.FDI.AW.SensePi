@@ -21,8 +21,8 @@
       <!-- HEADER CLASS -->
       <!-- SIDEBAR CLASS -->
       <?php
-      include '../php/navbar.php';
-      include '../php/sideBarButtonProject.php';
+      include '../views/viewModule/navbar.php';
+      include '../views/viewModule/sideBarButtonProject.php';
        ?>
 
       <!-- CONTENT CLASS -->
@@ -76,7 +76,7 @@
 
       <!-- FOOTER CLASS -->
       <?php
-        include '../php/footer.php';
+        include '../views/viewModule/footer.php';
        ?>
 
     <!-- END WRAPPER CLASS -->

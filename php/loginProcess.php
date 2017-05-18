@@ -5,50 +5,41 @@
 
     include '../php/DBconnection.php';
 
-    if($DBconnection) {
-      //string de request
-      $sqlString = "SELECT nick, isadmin, avatar,pw
-                    FROM users
-                    WHERE email='".$userEmail."'
-                    ";
+    //string de request
+    $sqlString = "SELECT nick, isadmin, avatar,pw
+                  FROM users
+                  WHERE email='".$userEmail."'
+                  ";
 
-      //lanzar request a la BD
-      $query = mysqli_query($DBconnection,$sqlString);
-      if($query){
-        //cierre de conexión con BD
-        mysqli_close($DBconnection);
+    //lanzar request a la BD
+    $query = mysqli_query($connection,$sqlString)
+    or die(header("Location: ../views/error.php"));
 
-        $user=mysqli_fetch_object($query);
+    //cierre de conexión con BD
+    mysqli_close($connection);
 
-        if (password_verify($userPassword,$user->pw)) {
-          if(mysqli_num_rows($query)!==0){
-            $_SESSION['login']=true;
-            $_SESSION['isAdmin']=$user->isadmin;
-            $_SESSION['nick']=$user->nick;
-            $_SESSION['userEmail']=$userEmail;
-            $_SESSION['userAvatar']=$user->avatar;
-            unset($user);
+    $user=mysqli_fetch_object($query);
 
-            if($_SESSION['isAdmin']==1) {
-              header("Location: ../views/adminView.php");
-            }else{
-              header("Location: ../views/userview.php");
-            }
-          }else{
-            header("Location: ../views/login.php?event=fail");
-          }
+    if (password_verify($userPassword,$user->pw)) {
+      if(mysqli_num_rows($query)!==0){
+        $_SESSION['login']=true;
+        $_SESSION['isAdmin']=$user->isadmin;
+        $_SESSION['nick']=$user->nick;
+        $_SESSION['userEmail']=$userEmail;
+        $_SESSION['userAvatar']=$user->avatar;
+        unset($user);
+
+        if($_SESSION['isAdmin']==1) {
+          header("Location: ../views/adminView.php");
         }else{
-          unset($user);
-          header("Location: ../views/login.php?event=fail");
+          header("Location: ../views/userview.php");
         }
-
       }else{
-        mysqli_close($DBconnection);
-        header("Location: ../views/error.php");
+        header("Location: ../views/login.php?event=fail");
       }
     }else{
-      mysqli_close($DBconnection);
-      header("Location: ../views/error.php");
+      unset($user);
+      header("Location: ../views/login.php?event=fail");
     }
 
   }
