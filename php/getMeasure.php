@@ -2,6 +2,7 @@
 
   //apertura de conexión con BD
   $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
+  mysqli_set_charset( $DBconnection, 'utf8');
 
   $roomName = $_POST['roomName'];
   $sinceDate = $_POST['sinceDate'];
@@ -15,9 +16,9 @@
                      ";
 
     $queryForRoomSlots = mysqli_query($DBconnection,$sqlroomslotid);
- 
+
     $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
-      
+
     for ($x = 0; $x < 1/*sizeof($slotsArray)*/; $x++) {
       $tempSlotId = $slotsArray[$x]["id"];
 
@@ -31,11 +32,11 @@
                                   FROM measureLogs
                                   WHERE roomslotid = ".$tempSlotId." AND date < '".$sinceDate."'
                                   ORDER BY date DESC
-                                  LIMIT 1 
+                                  LIMIT 1
                                   )
                             )
                       ";
-      
+
 //2017-04-27 19:10:58
 
       $queryForMeasures = mysqli_query($DBconnection,$sqlmeasures);
@@ -46,7 +47,7 @@
 
     echo json_encode($measuresArray);
     header("Content-type: application/json");
-    exit();    
+    exit();
 
   }else{
     mysqli_close($DBconnection);

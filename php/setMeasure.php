@@ -17,16 +17,22 @@
           }
 
           function fullfillOptions(rawMeasuresTrack){
-
             var dropDown = document.getElementById('trackDropDown');
             while (dropDown.options.length > 0) {
               dropDown.remove(0);
             }
-
             var obj = JSON.parse(rawMeasuresTrack);
             for(var i = 0; i< obj.length; i++){
               //falta sacar la informacion del objeto y rellenar la creacion del option (text, value)
               dropDown.options[i]= new Option(obj[i]['roomslotid'],obj[i]['measuretrack']);
+            }
+          }
+
+          function fullfillOptions2(rawMeasuresTrack){
+            var dropDown = document.getElementById('RoomDropdown');
+            var obj = JSON.parse(rawMeasuresTrack);
+            for(var i = 0; i< obj.length; i++){
+              dropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
             }
           }
 
@@ -38,25 +44,9 @@
 
   </head>
 
-  <body>
+  <body onload="ajax.post('../php/getRooms.php',null,fullfillOptions2,true);">
 
     <?php
-      $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
-
-      if($DBconnection) {
-        $sqlroom = 'SELECT id,name FROM rooms';
-        $queryRoom = mysqli_query($DBconnection,$sqlroom);
-
-        $optionRoom='';
-        while ($row = $queryRoom->fetch_array()) {
-          $optionRoom.='<option value="'.$row['id'].'">'.$row['name'].'</option>';
-        }
-
-        mysqli_close($DBconnection);
-      }else{
-        mysqli_close($DBconnection);
-        echo 'GRAN CAGADA '.mysqli_error();
-      }
 
       $tempErr = $humErr = $noiseErr = $dateError = "";
       $temp = $hum = $noise = $result = $date = "";
@@ -102,7 +92,6 @@
         <label>Room</label>
         <select onchange="populateMeasure(this.value)" class="mesureTrackSelect" name="Room" id="RoomDropdown">
           <option disabled selected value>-- select an option --</option>
-          <?php echo $optionRoom;?>
         </select>
       </div>
 
