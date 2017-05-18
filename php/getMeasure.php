@@ -14,7 +14,6 @@ $sqlroomslotid = "SELECT roomslots.id
 $queryForRoomSlots = mysqli_query($connection,$sqlroomslotid)
 or die(header("Location: ../views/error.php"));
 
-
 $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
 
 for ($x = 0; $x < 1/*count($slotsArray)*/; $x++) {
@@ -45,6 +44,5 @@ for ($x = 0; $x < 1/*count($slotsArray)*/; $x++) {
 
 echo json_encode($measuresArray);
 header("Content-type: application/json");
-exit();
 
 ?>

@@ -15,6 +15,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 mysqli_close($connection);
 echo json_encode($array);
 header("Content-type: application/json");
-exit();
 
 ?>

@@ -19,15 +19,15 @@
 
     <!-- HEADER CLASS -->
     <?php
-    include '../views/viewModule/navbar.php';
-     ?>
+      include '../views/viewModule/navbar.php';
+    ?>
 
-        <!-- SIDEBAR CLASS -->
-        <div class="sidebarLeft">
-        </div>
-        <!-- SIDEBAR CLASS -->
-        <div class="sidebarRight">
-        </div>
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarLeft">
+      </div>
+      <!-- SIDEBAR CLASS -->
+      <div class="sidebarRight">
+      </div>
 
 
 
