@@ -27,23 +27,16 @@
         $tempPW = test_input($_POST['userPassword']);
         $tempPWConfirm = test_input($_POST['userConfirmPassword']);
         
-        if (!preg_match("/
-        ^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$
-        /",$tempEmail)) {
+        if (!preg_match("/^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$/",$tempEmail)) {
           $tempEmailErr = "Introduce tu cuenta institucional";
           $formReady = FALSE;
         }else{
           $tempEmailErr = "";
         }
 
-        if (!preg_match("/
-        [a-zA-Z ]*$
-        /",$tempPW)) {
+        if (!preg_match("/^[a-z0-9]{8,}$/",$tempPW)) {
           $tempPWErr = "Tu contraseña debe cumplir los siguientes requisitos:</br>
-          Entre x y z carácteres</br>
-          De los cuáles al menos dos números</br>
-          Y al menos un símbolo de entre los siguientes: []
-          Sin ninguno de los siguientes: []</br></br>";
+          Al menos 8 carácteres alfanuméricos</br>";
           $formReady = FALSE;
         }else{
           $tempPWErr = "";
@@ -59,7 +52,9 @@
         $userEmail = $tempEmail;
         $userPassword = $tempPW;
 
-        signUpProcess();
+        if($formReady){
+          signUpProcess($userEmail,$userPassword);
+        }
       }
 
       function test_input($input) {
@@ -116,9 +111,18 @@
             </input>
           </div>
 
+          <?php
+            if(isset($_GET['event']) && $_GET['event']=='fail'){
+          ?>
+
           <div class="group">
-            <p id="resultMessage"></p>
+            <p>This email is not available.</p>
+            <p>Try again.</p>
           </div>
+          
+          <?php
+            };
+          ?>
 
           <div class="group">
             <p id="accountMessage">Already have an account?</p>
