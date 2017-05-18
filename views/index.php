@@ -28,8 +28,8 @@
 
       <!-- HEADER CLASS & SIDEBAR CLASS -->
       <?php
-      include '../php/navbar.php';
-      include '../php/sideBarButtonFloor.php';
+      include '../views/viewModule/navbar.php';
+      include '../views/viewModule/sideBarButtonFloor.php';
        ?>
 
       <!-- CONTENT CLASS -->
@@ -45,16 +45,16 @@
         </div>
 
         <?php
-          include '../php/span.php';
-          include '../php/mapContainer.php';
-          include '../php/galleryBlock.php';
+          include '../views/viewModule/span.php';
+          include '../views/viewModule/mapContainer.php';
+          include '../views/viewModule/galleryBlock.php';
          ?>
 
       </div>
 
       <!-- FOOTER CLASS -->
       <?php
-        include '../php/footer.php';
+        include '../views/viewModule/footer.php';
        ?>
 
     <!-- END WRAPPER CLASS -->

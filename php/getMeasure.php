@@ -1,56 +1,50 @@
 <?php
 
-  //apertura de conexión con BD
-  $DBconnection = mysqli_connect('127.0.0.1','root','','pisense');
+include '../php/DBconnection.php';
 
-  $roomName = $_POST['roomName'];
-  $sinceDate = $_POST['sinceDate'];
+$roomName = $_POST['roomName'];
+$sinceDate = $_POST['sinceDate'];
 
-  if($DBconnection) {
+$sqlroomslotid = "SELECT roomslots.id
+                  FROM rooms JOIN roomslots
+                  ON rooms.id = roomslots.roomId
+                  WHERE rooms.name = '".$roomName."'
+                  ";
 
-    $sqlroomslotid = "SELECT roomslots.id
-                      FROM rooms JOIN roomslots
-                      ON rooms.id = roomslots.roomId
-                      WHERE rooms.name = '".$roomName."'
-                     ";
+$queryForRoomSlots = mysqli_query($connection,$sqlroomslotid)
+or die(header("Location: ../views/error.php"));
 
-    $queryForRoomSlots = mysqli_query($DBconnection,$sqlroomslotid);
- 
-    $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
-      
-    for ($x = 0; $x < 1/*sizeof($slotsArray)*/; $x++) {
-      $tempSlotId = $slotsArray[$x]["id"];
 
-      $sqlmeasures = "SELECT Date, temperature, humidity, noise
-                      FROM measures
-                      WHERE Date > '".$sinceDate."' AND track IN (
-                            SELECT measureTrack
-                            FROM measureLogs
-                            WHERE roomslotid = ".$tempSlotId." AND date >= (
-                                  SELECT date
-                                  FROM measureLogs
-                                  WHERE roomslotid = ".$tempSlotId." AND date < '".$sinceDate."'
-                                  ORDER BY date DESC
-                                  LIMIT 1 
-                                  )
-                            )
-                      ";
-      
-//2017-04-27 19:10:58
+$slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
 
-      $queryForMeasures = mysqli_query($DBconnection,$sqlmeasures);
-      mysqli_close($DBconnection);
+for ($x = 0; $x < 1/*count($slotsArray)*/; $x++) {
+  $tempSlotId = $slotsArray[$x]["id"];
 
-      $measuresArray[$tempSlotId] = $queryForMeasures->fetch_all(MYSQLI_ASSOC);
-    }
+  $sqlmeasures = "SELECT Date, temperature, humidity, noise
+                  FROM measures
+                  WHERE Date > '".$sinceDate."' AND track IN (
+                        SELECT measureTrack
+                        FROM measureLogs
+                        WHERE roomslotid = ".$tempSlotId." AND date >= (
+                              SELECT date
+                              FROM measureLogs
+                              WHERE roomslotid = ".$tempSlotId." AND date < '".$sinceDate."'
+                              ORDER BY date DESC
+                              LIMIT 1
+                              )
+                        )
+                  ";
 
-    echo json_encode($measuresArray);
-    header("Content-type: application/json");
-    exit();    
+  $queryForMeasures = mysqli_query($connection,$sqlmeasures)
+  or die(header("Location: ../views/error.php"));
 
-  }else{
-    mysqli_close($DBconnection);
-    echo 'GRAN CAGADA '.mysqli_error();
-  }
+  mysqli_close($connection);
+
+  $measuresArray[$tempSlotId] = $queryForMeasures->fetch_all(MYSQLI_ASSOC);
+}
+
+echo json_encode($measuresArray);
+header("Content-type: application/json");
+exit();
 
 ?>

@@ -19,7 +19,7 @@
 
     <!-- HEADER CLASS -->
     <?php
-    include '../php/navbar.php';
+    include '../views/viewModule/navbar.php';
      ?>
 
         <!-- SIDEBAR CLASS -->
@@ -160,7 +160,7 @@
 
 			<!-- FOOTER CLASS -->
       <?php
-        include '../php/footer.php';
+        include '../views/viewModule/footer.php';
        ?>
     <!-- END WRAPPER CLASS -->
 

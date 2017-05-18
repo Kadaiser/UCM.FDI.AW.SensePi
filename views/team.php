@@ -20,7 +20,7 @@
 
       <!-- HEADER CLASS -->
       <?php
-      include '../php/navbar.php';
+      include '../views/viewModule/navbar.php';
        ?>
 
 		<!-- CONTENT CLASS -->
@@ -36,21 +36,6 @@
 					<li>
             <div class="photo" onclick="loadText('1')">
 								<img id="diego">
-	          </div>
-					</li>
-          <li>
-            <div class="photo" onclick="loadText('2')">
-								<img id="azahara">
-	          </div>
-					</li>
-          <li>
-            <div class="photo" onclick="loadText('3')">
-								<img id="julio">
-	          </div>
-					</li>
-          <li>
-            <div class="photo" onclick="loadText('4')">
-								<img id="javier">
 	          </div>
 					</li>
 				</ul>
@@ -78,14 +63,14 @@
 					</li>
 				</ul>
 			</div>
-    
+
 
 		</div>
 
 
       <!-- FOOTER CLASS -->
       <?php
-        include '../php/footer.php';
+        include '../views/viewModule/footer.php';
        ?>
 
 	<!-- END WRAPPER CLASS -->
