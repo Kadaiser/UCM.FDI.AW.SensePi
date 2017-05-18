@@ -50,37 +50,9 @@ function switchToGalleryView() {
 var dataFromDB = [
     [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'],
 ];
-/*
-    [new Date('2017-03-08'),          16,         0.18],
+/*  [new Date('2017-03-08'),          16,         0.18],
     [new Date('2017-03-09'),          16,         0.29],
     [new Date('2017-03-10'),          16,         0.30],
-    [new Date('2017-03-11'),          15,         0.40],
-    [new Date('2017-03-12'),          16,         0.23],
-    [new Date('2017-03-13'),          15,         0.33],
-    [new Date('2017-03-14'),          16,         0.20],
-    [new Date('2017-03-15'),          17,         0.10],
-    [new Date('2017-03-16'),          18,         0.10],
-    [new Date('2017-03-17'),          18,         0.15],
-    [new Date('2017-03-18'),          18,         0.13],
-    [new Date('2017-03-19'),          18,         0.29],
-    [new Date('2017-03-20'),          17,         0.40],
-    [new Date('2017-03-21'),          18,         0.30],
-    [new Date('2017-03-22'),          19,         0.35],
-    [new Date('2017-03-23'),          19,         0.22],
-    [new Date('2017-03-24'),          20,         0.20],
-    [new Date('2017-03-25'),          23,         0.13],
-    [new Date('2017-03-26'),          20,         0.29],
-    [new Date('2017-03-27'),          20,         0.30],
-    [new Date('2017-03-28'),          19,         0.24],
-    [new Date('2017-03-29'),          20,         0.15],
-    [new Date('2017-03-30'),          21,         0.13],
-    [new Date('2017-04-01'),          23,         0.17],
-    [new Date('2017-04-02'),          24,         0.16],
-    [new Date('2017-04-03'),          25,         0.12],
-    [new Date('2017-04-04'),          22,         0.11],
-    [new Date('2017-04-05'),          22,         0.10],
-    [new Date('2017-04-06'),          21,         0.15],
-    [new Date('2017-04-07'),          22,         0.18],
 */
 
 function measuresFormatting(rawMeasures){
@@ -150,8 +122,6 @@ function drawChart() {
 
 /* INSIDE METHODS*/
 
-
-
 function mySpanAppear(str)
 {
   //VISUAL EFFECT
@@ -169,44 +139,6 @@ function mySpanAppear(str)
   //2017-05-01 19:10:58
   ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
 
-
-  //FUNCIONAL EFFECT
-  /* No valido, redireccionaria los datos
-  var text, parser, xmlDoc;
-  text = "<measure><track>" +
-  "<temp>25 C</temp>" +
-  "<hum>28%</hum>" +
-  "<noise>25 dB</noise>" +
-  "</track></measure>";
-
-  parser = new DOMParser();
-  xmlDoc = parser.parseFromString(text,"text/xml");
-
-    if (str == "") {
-        document.getElementById("Area").innerHTML = "";
-        return;
-    } else {
-        document.getElementById("Area").innerHTML = str;
-        document.getElementById("Temp").innerHTML=
-        xmlDoc.getElementsByTagName("temp")[0].childNodes[0].nodeValue;
-        document.getElementById("Hum").innerHTML=
-        xmlDoc.getElementsByTagName("hum")[0].childNodes[0].nodeValue;
-        document.getElementById("Noise").innerHTML=
-        xmlDoc.getElementsByTagName("noise")[0].childNodes[0].nodeValue;
-
-
-        
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("Measure").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET","getmeasure.php?q="+str,true);
-        xmlhttp.send();
-
-    }
-    */
 }
 
 function mySpanHide()

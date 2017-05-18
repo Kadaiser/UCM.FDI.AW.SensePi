@@ -23,13 +23,14 @@
     <!-- FOG SPAN-->
     <div class="fog" id="Fog" onclick='mySpanHide()'>
     </div>
+    
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
 
       <!-- HEADER CLASS & SIDEBAR CLASS -->
       <?php
-      include '../views/viewModule/navbar.php';
-      include '../views/viewModule/sideBarButtonFloor.php';
+        include '../views/viewModule/navbar.php';
+        include '../views/viewModule/sideBarButtonFloor.php';
        ?>
 
       <!-- CONTENT CLASS -->
@@ -55,7 +56,7 @@
       <!-- FOOTER CLASS -->
       <?php
         include '../views/viewModule/footer.php';
-       ?>
+      ?>
 
     <!-- END WRAPPER CLASS -->
     </div>

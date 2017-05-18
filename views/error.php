@@ -18,8 +18,8 @@
 
       <!-- HEADER CLASS -->
       <?php
-      include '../views/viewModule/navbar.php';
-       ?>
+        include '../views/viewModule/navbar.php';
+      ?>
 
   		<!-- CONTENT CLASS -->
   		<div id="content">
@@ -34,7 +34,7 @@
       <!-- FOOTER CLASS -->
       <?php
         include '../views/viewModule/footer.php';
-       ?>
+      ?>
 
     <!-- END WRAPPER CLASS -->
     </div>
