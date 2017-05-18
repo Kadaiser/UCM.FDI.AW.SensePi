@@ -19,20 +19,32 @@
 
 	    <!-- HEADER CLASS -->
 	    <?php
-	    include '../php/navbar.php';
-	     ?>
+        include '../views/viewModule/navbar.php';
+	    ?>
 
-		<div id="content">
-		</div>
+      <div id="content">
 
+        <div class="grid">
+          <div class="cell" id="11"></div>
+          <div class="cell" id="12"></div>
+          <div class="cell" id="13"></div>
+          <div class="cell" id="21"></div>
+          <div class="cell" id="22"></div>
+          <div class="cell" id="23"></div>
+          <div class="cell" id="31"></div>
+          <div class="cell" id="32"></div>
+          <div class="cell" id="33"></div>
+        </div>
 
+      </div>
 
 			<!-- FOOTER CLASS -->
 	  	<?php
-	    include '../php/footer.php';
+	      include '../php/footer.php';
 	   	?>
-		<!-- END WRAPPER CLASS -->
 
-	</div>
+		<!-- END WRAPPER CLASS -->
+	  </div>
+
   </body>
 </html>

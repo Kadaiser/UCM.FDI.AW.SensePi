@@ -1,0 +1,17 @@
+.grid {
+  display: flex;                       /* establish flex container */
+  flex-wrap: wrap;                     /* enable flex items to wrap */
+  justify-content: space-around;
+  
+}
+.cell {
+  flex: 0 0 31%;                       /* don't grow, don't shrink, width */
+  height: 180px;
+  margin-bottom: 5px;
+  background-color: #999;
+  border: 3px solid #cc6600;
+  border-radius: 5px;
+}
+.cell:nth-child(3n) {
+  
+}
