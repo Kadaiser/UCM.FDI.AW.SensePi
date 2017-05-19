@@ -20,15 +20,37 @@
       }
 
       function report(id){
+        var div, p, label, labelState, i = 0;
         var field = document.getElementById('stationInfo');
-        var i = 0;
+        field.innerHTML = "";
+
         while(id != obj[i]['id']){
           i++;
         }
-        var p = document.createElement('h1');
-        var text = document.createTextNode(obj[i]['currentTrack']);
-        p.appendChild(text);
-        field.appendChild(p);
+
+        label = document.createElement('span');
+        label.appendChild(document.createTextNode("Operative: "));
+        field.appendChild(label);
+
+        labelState = document.createElement('span');
+        if(parseInt(obj[i]['operative'])){
+          labelState.appendChild(document.createTextNode("ENABLED"));
+          labelState.id= "enable";
+          field.appendChild(labelState);
+
+          p = document.createElement('p');
+          p.appendChild(document.createTextNode("Actual track: "));
+          p.appendChild(document.createTextNode(obj[i]['currentTrack']));
+          p.appendChild(document.createElement("br"))
+          p.appendChild(document.createTextNode(" Working since: "));
+          p.appendChild(document.createTextNode(obj[i]['currentTrackSince']));
+          field.appendChild(p);
+        }else{
+          labelState.appendChild(document.createTextNode("DISABLED"));
+          labelState.id= "disable";
+          field.appendChild(labelState);
+        }
+        document.getElementById('stationInfo').appendChild(field);
       }
 
     </script>
@@ -40,15 +62,14 @@
     <form class="injector" method="post" action="#">
 
       <div class="group">
-        <label>Station</label>
+        <Span>Station</Span>
         <select onchange="report(this.value)"  class="mesureTrackSelect" name="Room" id="stationDropdown">
           <option disabled selected value>select device</option>
         </select>
-
-          <div class="StationInfo" id="stationInfo">
-
-          </div>
+        <div class="StationInfo" id="stationInfo"></div>
+<!--
         <input type="submit">
+-->
       </div>
 
 

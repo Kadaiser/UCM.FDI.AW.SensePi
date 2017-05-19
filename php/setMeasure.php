@@ -13,7 +13,6 @@
             var IdRoom = dropDown.options[dropDown.selectedIndex].value;
 
             ajax.post('../php/getSlotsIdAndTracks.php',{roomId: IdRoom},fullfillOptions,true);
-            //retorna [{"roomslotid":"1","measuretrack":"1234567890abcdef"},{"roomslotid":"2","measuretrack":"abcdef1234567890"}] para idRoom = 1;
           }
 
           function fullfillOptions(rawMeasuresTrack){
@@ -28,7 +27,7 @@
             }
           }
 
-          function fullfillOptions2(rawMeasuresTrack){
+          function populateRoomDropdown(rawMeasuresTrack){
             var dropDown = document.getElementById('RoomDropdown');
             var obj = JSON.parse(rawMeasuresTrack);
             for(var i = 0; i< obj.length; i++){
@@ -44,7 +43,7 @@
 
   </head>
 
-  <body onload="ajax.post('../php/getRooms.php',null,fullfillOptions2,true);">
+  <body onload="ajax.post('../php/getRooms.php',null,populateRoomDropdown,true);">
 
     <?php
 
@@ -88,7 +87,6 @@
     <form class="injector" method="post" action="../php/setMeasureOnStation.php">
 
       <div class="group">
-        <h1 id="test"></h1>
         <label>Room</label>
         <select onchange="populateMeasure(this.value)" class="mesureTrackSelect" name="Room" id="RoomDropdown">
           <option disabled selected value>-- select an option --</option>

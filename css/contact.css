@@ -74,6 +74,12 @@ form {
 	transition: all 0.2s ease;
 }
 
+#enable{
+  color:green;
+}
+#disable{
+  color: red;
+}
 
 /* active */
 
