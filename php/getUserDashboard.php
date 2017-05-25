@@ -4,7 +4,7 @@ include '../php/DBconnection.php';
 
 $userEmail = $_POST['email'];
 
-$sqlDashboardGrid = "SELECT cell,cardId
+$sqlDashboardGrid = "SELECT cell,cardIdentity
                      FROM dashboardprofiles
                      WHERE userEmail = '".$userEmail."'
                      ";

@@ -18,8 +18,8 @@ function init(/*param1,param2*/){
   function setUserDashboard(cardsProfile){
     var cellCardList = JSON.parse(cardsProfile);
     cellCardList.forEach(function(cellCard) {
-      addCardJSScript(cellCard.cardId);
-      placeCardToCell(cellCard.cardId,cellCard.cell);
+      addCardJSScript(cellCard.cardIdentity);
+      placeCardToCell(cellCard.cardIdentity,cellCard.cell);
     }, this);
   }
 
@@ -28,7 +28,7 @@ function init(/*param1,param2*/){
     var newScript = document.createElement('script');
     newScript.setAttribute("type","text/javascript");
     newScript.setAttribute("defer","defer");
-    newScript.setAttribute("src","../js/cards/card-".concat(cardId).concat(".js"));
+    newScript.setAttribute("src","../js/cards/".concat(cardId).concat(".js"));
     //get all script elements
     var allScriptsArray = document.getElementsByTagName("script");
     //get last script
@@ -37,11 +37,11 @@ function init(/*param1,param2*/){
     currentLastScript.insertAdjacentElement('afterend',newScript);
   }
 
-  //get respective cell 
+  //get respective cell
   function placeCardToCell(cardId,cell){
     var dashboardCell = document.getElementById(cell);
     dashboardCell.style.backgroundColor = '#999';
-    var cardPHPURL = '../php/cards/card-'.concat(cardId).concat('.php');
+    var cardPHPURL = '../php/cards/'.concat(cardId).concat('.php');
     ajax.post(cardPHPURL,{},appendCard,true);
 
     function appendCard(cardPHP){
