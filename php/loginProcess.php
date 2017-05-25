@@ -29,11 +29,8 @@
         $_SESSION['userAvatar']=$user->avatar;
         unset($user);
 
-        if($_SESSION['isAdmin']==1) {
-          header("Location: ../views/adminView.php");
-        }else{
-          header("Location: ../views/userview.php");
-        }
+        header("Location: ../views/dashboard.php");
+
       }else{
         header("Location: ../views/login.php?event=fail");
       }
