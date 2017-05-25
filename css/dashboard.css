@@ -8,10 +8,18 @@
   flex: 0 0 31%;                       /* don't grow, don't shrink, width */
   height: 180px;
   margin-bottom: 5px;
-  background-color: #999;
   border: 3px solid #cc6600;
   border-radius: 5px;
 }
+
+.emptyCell {
+  background-color: #1f1f1f;
+}
+
+.filledCell {
+  background-color: #999;
+}
+
 .cell:nth-child(3n) {
   
 }

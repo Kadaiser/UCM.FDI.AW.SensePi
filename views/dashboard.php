@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
     <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/dashboard.js"></script>
+    <script type="text/javascript" src="../js/ajaxbasic.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
+    
   </head>
 
   <body>
@@ -25,22 +27,22 @@
       <div id="content">
 
         <div class="grid">
-          <div class="cell" id="11"></div>
-          <div class="cell" id="12"></div>
-          <div class="cell" id="13"></div>
-          <div class="cell" id="21"></div>
-          <div class="cell" id="22"></div>
-          <div class="cell" id="23"></div>
-          <div class="cell" id="31"></div>
-          <div class="cell" id="32"></div>
-          <div class="cell" id="33"></div>
+          <div class="cell emptyCell" id="11"></div>
+          <div class="cell emptyCell" id="12"></div>
+          <div class="cell emptyCell" id="13"></div>
+          <div class="cell emptyCell" id="21"></div>
+          <div class="cell emptyCell" id="22"></div>
+          <div class="cell emptyCell" id="23"></div>
+          <div class="cell emptyCell" id="31"></div>
+          <div class="cell emptyCell" id="32"></div>
+          <div class="cell emptyCell" id="33"></div>
         </div>
 
       </div>
 
 			<!-- FOOTER CLASS -->
 	  	<?php
-	      include '../php/footer.php';
+	      include '../views/viewModule/footer.php';
 	   	?>
 
 		<!-- END WRAPPER CLASS -->
