@@ -19,28 +19,16 @@
   <nav class="mainNav rightNav">
     <ul>
 	<?php
-		if (isset($_SESSION["login"])) {  //Usuario
+		if (isset($_SESSION["login"])) {
 			?>
 			<li id="navLogout">
 				<a href="../php/logout.php"><span>LOGOUT</span></a>
 			</li>
-	<?php
-		
-			if ($_SESSION['isAdmin']===1) { //Usuario administrador
-	?>
-				<li id="navAdmin">
-					<a href="../views/adminview.php"><span><?php echo $_SESSION['nick'];?></span></a>
-				</li>
-	<?php
-			}
-			else {  //Usuario
-	?>
-				<li id="navUser">
-					<a href="../views/userView.php"><span><?php echo $_SESSION['nick'];?></span></a>
-				</li>
-	<?php
-			}
 
+      <li id="navUser">
+        <a href="../views/dashboard.php"><span><?php echo $_SESSION['nick'];?></span></a>
+      </li>
+	<?php
 		}
 		else{
 	?>

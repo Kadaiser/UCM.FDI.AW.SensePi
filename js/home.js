@@ -1,3 +1,5 @@
+var userlogged, usernick;
+
 window.onresize = function(){
   imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
 }
@@ -9,6 +11,15 @@ window.onload = function() {
 
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
+  ajax.post('../php/sessionRetriever.php',{},setSessionDashboard,true);
+
+  //Parse session variables and get the user  nick
+  function setSessionDashboard(sessionVariables){
+    var obj = JSON.parse(sessionVariables);
+    userlogged = obj.login;
+    usernick = obj.nick;
+  }
+
   //Chart initialization
   google.charts.load('current', {'packages':['corechart']});
 
@@ -124,21 +135,47 @@ function drawChart() {
 
 function mySpanAppear(str)
 {
+  ajax.post('../php/sessionRetriever.php',{},setSessionDashboard,true);
+
   //VISUAL EFFECT
-  var fog = document.getElementById('Fog');
-  fog.style.visibility = "visible";
-  fog.style.transition = "opacity 0.4s ease-out";
-  var div = document.getElementById("Span");
-  div.style.visibility = "visible";
-  div.style.transition = "opacity 0.7s ease-out";
-  div.style.opacity = "1";
+  if(userlogged || str==="Pasillos" || str==="Cafetería"){
+    var fog = document.getElementById('Fog');
+    fog.style.visibility = "visible";
+    fog.style.transition = "opacity 0.4s ease-out";
+    var div = document.getElementById("Span");
+    div.style.visibility = "visible";
+    div.style.transition = "opacity 0.7s ease-out";
+    div.style.opacity = "1";
 
-  document.getElementById("Area").innerHTML = str;
+    document.getElementById("Area").innerHTML = str
+    //Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
+    //2017-05-01 19:10:58
+    ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
 
-  //TODO: Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
-  //2017-05-01 19:10:58
-  ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+    ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: usernick},createFavoriteMark,true);
 
+  }else{
+    alert("Registrate si deseas consultar esta sala del plano");
+  }
+}
+
+function createFavoriteMark(rawMeasures){
+  var obj = JSON.parse(rawMeasures);
+  if(obj[0]==="true"){
+    document.getElementById("Area").innerHTML = "VAMONOS!!";
+  }else{
+    document.getElementById("Area").innerHTML = "PUTA MIERDA!!";
+  }
+}
+
+function addToFavorite()
+{
+  var roomName = document.getElementById("Area").innerHTML;
+  ajax.post('../php/addToFavorite.php',{roomName: roomName, userNick: usernick},verifyFavorite,true);
+}
+
+function verifyFavorite(){
+  document.getElementById('verifyFavorite').innerHTML = "Sala añadida a tus favoritos"
 }
 
 function mySpanHide()
@@ -148,12 +185,9 @@ function mySpanHide()
   var div = document.getElementById("Span");
   div.style.opacity = "0";
   div.style.visibility = "hidden";
+  document.getElementById('verifyFavorite').innerHTML="";
 }
 
-
-function AddToFavorite(){
-
-}
 
 
 function switchFloorState(chosenFloor) {

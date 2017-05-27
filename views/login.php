@@ -23,7 +23,7 @@
 
         $tempEmail = test_input($_POST['userEmail']);
         $tempPW = test_input($_POST['userPassword']);
-        
+
         if (!preg_match("/^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$/",$tempEmail)) {
           $tempEmailErr = "Introduce tu cuenta institucional";
           $formReady = FALSE;
@@ -84,7 +84,7 @@
             <p>Wrong username email and/or password.</p>
             <p>Try again.</p>
           </div>
-          
+
           <?php
             };
           ?>
@@ -95,7 +95,6 @@
                     id="mainButton"
                     value="Log in">
               <span class="ripples ripplesCircle"></span>
-            </input>
           </div>
 
           <div class="group">
