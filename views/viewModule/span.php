@@ -10,11 +10,12 @@
   <div id="chart_div"></div>
 
   <?php if (isset($_SESSION['login'])){ ?>
-    <div class="favoriteMark">
-      <label>Add to favorite </label>
+    <div class="favoriteMark" id="favoriteArea">
+    <!--
+      <label id= >Add to favorite </label>
       <img class="staticImg" src="../images/icons/slimStar.png" alt="Add to favorite">
       <img class="hoverImg" src="../images/icons/fatStar.png" alt="Add to favorite" onclick='addToFavorite()'>
-      <label id="verifyFavorite"></label>
+    -->
     </div>
   <?php }?>
 

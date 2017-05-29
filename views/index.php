@@ -23,7 +23,7 @@
     <!-- FOG SPAN-->
     <div class="fog" id="Fog" onclick='mySpanHide()'>
     </div>
-    
+
   	<!-- WRAPPER CLASS -->
   	<div id="wrapper">
 

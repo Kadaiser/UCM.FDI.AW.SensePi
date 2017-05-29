@@ -1,4 +1,5 @@
-var userlogged, usernick;
+var userlogged;
+var userNick;
 
 window.onresize = function(){
   imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
@@ -17,7 +18,7 @@ function init(/*param1,param2*/){
   function setSessionDashboard(sessionVariables){
     var obj = JSON.parse(sessionVariables);
     userlogged = obj.login;
-    usernick = obj.nick;
+    userNick = obj.nick;
   }
 
   //Chart initialization
@@ -135,8 +136,6 @@ function drawChart() {
 
 function mySpanAppear(str)
 {
-  ajax.post('../php/sessionRetriever.php',{},setSessionDashboard,true);
-
   //VISUAL EFFECT
   if(userlogged || str==="Pasillos" || str==="Cafetería"){
     var fog = document.getElementById('Fog');
@@ -152,26 +151,36 @@ function mySpanAppear(str)
     //2017-05-01 19:10:58
     ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
 
-    ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: usernick},createFavoriteMark,true);
-
+    if(userlogged){
+      ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
+    }
   }else{
     alert("Registrate si deseas consultar esta sala del plano");
   }
 }
 
 function createFavoriteMark(rawMeasures){
-  var obj = JSON.parse(rawMeasures);
-  if(obj[0]==="true"){
-    document.getElementById("Area").innerHTML = "VAMONOS!!";
+  var btn, p, t;
+  var ele = document.getElementById('favoriteArea');
+  ele.innerHTML="";
+
+  if(JSON.parse(rawMeasures) < 1){
+    btn = document.createElement("BUTTON");
+    t = document.createTextNode("Add favorite");
+    btn.appendChild(t); 
+    ele.appendChild(btn);
   }else{
-    document.getElementById("Area").innerHTML = "PUTA MIERDA!!";
+    p = document.createElement("p");
+    t = document.createTextNode("Ya en favoritos");
+    p.appendChild(t);
+    ele.appendChild(p);
   }
 }
 
 function addToFavorite()
 {
   var roomName = document.getElementById("Area").innerHTML;
-  ajax.post('../php/addToFavorite.php',{roomName: roomName, userNick: usernick},verifyFavorite,true);
+  ajax.post('../php/addToFavorite.php',{roomName: roomName, userNick: userNick},verifyFavorite,true);
 }
 
 function verifyFavorite(){
@@ -185,7 +194,6 @@ function mySpanHide()
   var div = document.getElementById("Span");
   div.style.opacity = "0";
   div.style.visibility = "hidden";
-  document.getElementById('verifyFavorite').innerHTML="";
 }
 
 
