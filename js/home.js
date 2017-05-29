@@ -165,10 +165,20 @@ function createFavoriteMark(rawMeasures){
   ele.innerHTML="";
 
   if(JSON.parse(rawMeasures) < 1){
+    /*
     btn = document.createElement("BUTTON");
+    btn.onclick = addToFavorite;
     t = document.createTextNode("Add favorite");
     btn.appendChild(t); 
     ele.appendChild(btn);
+    */
+    var label = document.createElement("LABEL");
+    label.appendChild(document.createTextNode("Añadir a favoritos"));
+    ele.appendChild(label);
+    var imgDiv = document.createElement("DIV");
+    imgDiv.id="addFavoriteSpan";
+    imgDiv.onclick = addToFavorite;
+    ele.appendChild(imgDiv);
   }else{
     p = document.createElement("p");
     t = document.createTextNode("Ya en favoritos");
@@ -184,7 +194,7 @@ function addToFavorite()
 }
 
 function verifyFavorite(){
-  document.getElementById('verifyFavorite').innerHTML = "Sala añadida a tus favoritos"
+  document.getElementById('favoriteArea').innerHTML = "Sala añadida a tus favoritos"
 }
 
 function mySpanHide()

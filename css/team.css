@@ -39,13 +39,6 @@
 	border: solid #cc6600 8px;
 }
 
-#azahara{
-	background: url("../images/as1045x1045.jpg");
-}
-#azahara:hover{
-	background: url("../images/ah1045x1045.jpg");
-}
-
 #diego{
 	background: url("../images/ds10333x1033.jpg");
 }
@@ -58,20 +51,6 @@
 }
 #sergio:hover{
 	background: url("../images/sh1133x1133.jpg");
-}
-
-#julio{
-	background: url("../images/js1235x1235.jpg");
-}
-#julio:hover{
-	background: url("../images/jh1235x1235.jpg");
-}
-
-#javier{
-	background: url("../images/jas744x744.jpg");
-}
-#javier:hover{
-	background: url("../images/jah744x744.jpg");
 }
 
 .descripcionPersonal {

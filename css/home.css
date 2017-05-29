@@ -89,28 +89,47 @@ input:checked + .slider:before {
   padding: 10px;
 }
 
-.span img{
+.closeSpam{
   position: absolute;
   left: 95%;
   height: 25px;
   width: 25px;
-  padding:2px 2px 2px 2px;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
+  background:url("../images/icons/xOn.png");
+  background-size: contain;
+	background-repeat: no-repeat;
 }
 
-.span img.hoverImg:hover{
-  opacity: 0;
+.closeSpam:hover{
+  background:url("../images/icons/xOff.png") no-repeat;
+  background-size: contain;
+	background-repeat: no-repeat;
 }
 
-.span .favoriteMark{
+#addFavoriteSpan{
+  position: relative;
+  left: 95%;
+  height: 30px;
+  width: 30px;
+  bottom: 25px;
+  background:url("../images/icons/slimStar.png");
+  background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#addFavoriteSpan:hover{
+  background:url("../images/icons/fatStar.png")no-repeat;
+  background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+.span #favoriteArea{
   position: absolute;
   right: 5%;
   bottom: 5%;
 }
 
-.span .favoriteMark label{
+.span #favoriteArea label{
   padding: 15px;
 }
 
