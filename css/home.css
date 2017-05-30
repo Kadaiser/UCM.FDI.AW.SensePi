@@ -217,3 +217,15 @@ input:checked + .slider:before {
   height: 90px;
   border-radius: 3px;
 }
+
+#firstVisit{
+         position: absolute;
+         top: 200px;
+         left: 200px;
+         width: 200px;
+         height: 200px;
+         background: black;
+         color: orange;
+         z-index: 5;
+         display: none;
+}

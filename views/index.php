@@ -9,12 +9,19 @@
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/home.css"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="../js/ajaxbasic.js"></script>
+    <script type="text/javascript" src="../js/annoy.js"></script>
     <script type="text/javascript" src="../js/canvas.js"></script>
     <script type="text/javascript" src="../js/home.js"></script>
-    <script type="text/javascript" src="../js/ajaxbasic.js"></script>
   </head>
 
   <body>
+
+    <div id="firstVisit">
+              <p>This is the "holi" box</p>
+              <p>it should only show once </p>
+    </div>
 
     <canvas id='canvasBorderArea'></canvas>
 

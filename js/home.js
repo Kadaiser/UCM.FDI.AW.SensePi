@@ -222,3 +222,7 @@ function switchFloorState(chosenFloor) {
 
   }
 }
+
+function tutorialBox() {
+    $('#firstVisit').toggle();
+}

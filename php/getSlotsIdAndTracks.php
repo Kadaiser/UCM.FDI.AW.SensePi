@@ -2,7 +2,7 @@
 
 include '../php/DBconnection.php';
 
-$roomId = $_POST['roomId'];
+$roomId = $_REQUEST['roomId'];
 
 $sql = "SELECT roomslotid, measuretrack
                   FROM  roomslots JOIN measurelogs
