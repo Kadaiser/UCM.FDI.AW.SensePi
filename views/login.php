@@ -6,7 +6,6 @@
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css"/>
     <link rel="stylesheet" type="text/css" href="../css/login.css"/>
-    <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/login.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>

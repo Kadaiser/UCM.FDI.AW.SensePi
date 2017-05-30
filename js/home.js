@@ -6,14 +6,10 @@ window.onresize = function(){
 }
 
 window.onload = function() {
-  this.init(/*param1,param2*/);
+
   imageCanvasBorderArea(document.getElementById('PBMap'),document.getElementById('canvasBorderArea'),'#cc6600','8');
-};
 
-/*ON DOCUMENT LOAD*/
-function init(/*param1,param2*/){
   ajax.post('../php/sessionRetriever.php',{},setSessionDashboard,true);
-
   //Parse session variables and get the user  nick
   function setSessionDashboard(sessionVariables){
     var obj = JSON.parse(sessionVariables);
@@ -33,7 +29,6 @@ function init(/*param1,param2*/){
     fp4: false,
   }
 }
-
 
 /*DIRECT METHODS*/
 
@@ -136,8 +131,17 @@ function drawChart() {
 
 function mySpanAppear(str)
 {
-  //VISUAL EFFECT
-  if(userlogged || str==="Pasillos" || str==="Cafetería"){
+  if(userlogged || str==="Pasillos" || str==="Cafetería")
+  {
+    document.getElementById("Area").innerHTML = str
+    //Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
+    //2017-05-01 19:10:58
+    ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+
+    if(userlogged)
+    {
+      ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
+    }
     var fog = document.getElementById('Fog');
     fog.style.visibility = "visible";
     fog.style.transition = "opacity 0.4s ease-out";
@@ -145,45 +149,34 @@ function mySpanAppear(str)
     div.style.visibility = "visible";
     div.style.transition = "opacity 0.7s ease-out";
     div.style.opacity = "1";
-
-    document.getElementById("Area").innerHTML = str
-    //Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
-    //2017-05-01 19:10:58
-    ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
-
-    if(userlogged){
-      ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
-    }
-  }else{
+  }
+  else
+  {
     alert("Registrate si deseas consultar esta sala del plano");
   }
 }
 
-function createFavoriteMark(rawMeasures){
-  var btn, p, t;
-  var ele = document.getElementById('favoriteArea');
-  ele.innerHTML="";
+function createFavoriteMark(rawMeasures)
+{
+  var label, t, imgDiv;
+  var elem = document.getElementById('favoriteArea');
+  elem.innerHTML="";
 
-  if(JSON.parse(rawMeasures) < 1){
-    /*
-    btn = document.createElement("BUTTON");
-    btn.onclick = addToFavorite;
-    t = document.createTextNode("Add favorite");
-    btn.appendChild(t); 
-    ele.appendChild(btn);
-    */
-    var label = document.createElement("LABEL");
+  if(JSON.parse(rawMeasures) < 1)
+  {
+    label = document.createElement("LABEL");
     label.appendChild(document.createTextNode("Añadir a favoritos"));
-    ele.appendChild(label);
-    var imgDiv = document.createElement("DIV");
+    elem.appendChild(label);
+    imgDiv = document.createElement("DIV");
     imgDiv.id="addFavoriteSpan";
     imgDiv.onclick = addToFavorite;
-    ele.appendChild(imgDiv);
-  }else{
-    p = document.createElement("p");
-    t = document.createTextNode("Ya en favoritos");
-    p.appendChild(t);
-    ele.appendChild(p);
+    elem.appendChild(imgDiv);
+  }
+  else
+  {
+    label = document.createElement("LABEL");
+    label.appendChild(document.createTextNode("En favoritos"));
+    elem.appendChild(label);
   }
 }
 
@@ -194,8 +187,11 @@ function addToFavorite()
 }
 
 function verifyFavorite(){
-  document.getElementById('favoriteArea').innerHTML = "Sala añadida a tus favoritos"
+  var elem = document.getElementById('favoriteArea');
+  elem.innerHTML = ""
+  elem.appendChild(document.createElement("LABEL").appendChild(document.createTextNode("Sala añadida a tus favoritos")));
 }
+
 
 function mySpanHide()
 {

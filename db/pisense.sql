@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2017 a las 00:40:01
+-- Tiempo de generación: 30-05-2017 a las 02:45:02
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.1.4
 
@@ -106,8 +106,7 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`id`, `idUser`, `idRoom`) VALUES
-(22, 2, 2),
-(23, 1, 2);
+(24, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -255,7 +254,18 @@ INSERT INTO `measures` (`id`, `track`, `Date`, `stationname`, `temperature`, `hu
 (95, 'THN10-2017-05-14', '2017-05-12 12:00:00', 'THN10', '21.0', '37.0', 15),
 (96, 'THN10-2017-05-14', '2017-05-13 12:00:00', 'THN10', '17.0', '39.0', 12),
 (97, 'THN10-2017-05-14', '2017-05-14 12:00:00', 'THN10', '15.0', '39.0', 10),
-(98, '1234567890abcdef', '2017-05-16 19:38:16', 'testacion1', '25.0', '43.0', 22);
+(98, '1234567890abcdef', '2017-05-16 19:38:16', 'testacion1', '25.0', '43.0', 22),
+(99, '1234567890abcdef', '2017-05-15 12:00:00', 'testacion1', '26.0', '32.0', 16),
+(100, 'THN1-2017-05-14', '2017-05-15 12:00:00', 'THN1', '24.0', '30.0', 16),
+(101, 'THN2-2017-05-14', '2017-05-15 12:00:00', 'THN2', '25.0', '32.0', 12),
+(102, 'THN3-2017-05-14', '2017-05-15 12:00:00', 'THN3', '24.0', '27.0', 10),
+(103, 'THN4-2017-05-14', '2017-05-15 12:00:00', 'THN4', '25.0', '31.0', 17),
+(104, 'THN5-2017-05-14', '2017-05-15 12:00:00', 'THN5', '25.0', '30.0', 21),
+(105, 'THN6-2017-05-14', '2017-05-15 12:00:00', 'THN6', '24.0', '35.0', 10),
+(106, 'THN7-2017-05-14', '2017-05-15 12:00:00', 'THN7', '23.0', '28.0', 14),
+(107, 'THN8-2017-05-14', '2017-05-15 12:00:00', 'THN8', '24.0', '35.0', 25),
+(108, 'THN9-2017-05-14', '2017-05-15 12:00:00', 'THN9', '23.0', '31.0', 16),
+(109, 'THN10-2017-05-14', '2017-05-15 12:00:00', 'THN10', '22.0', '36.0', 12);
 
 -- --------------------------------------------------------
 
@@ -265,26 +275,27 @@ INSERT INTO `measures` (`id`, `track`, `Date`, `stationname`, `temperature`, `hu
 
 CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL
+  `name` varchar(30) NOT NULL,
+  `visits` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `name`) VALUES
-(1, 'Cafetería'),
-(2, 'Aula 1'),
-(3, 'Aula 2'),
-(4, 'Aula 3'),
-(5, 'Aula 4'),
-(6, 'Aula 5'),
-(7, 'Sala de conferencias'),
-(8, 'Delegación de alumnos'),
-(9, 'Pasillos'),
-(10, 'W.C norte'),
-(11, 'W.C sur'),
-(12, 'W.C biblioteca');
+INSERT INTO `rooms` (`id`, `name`, `visits`) VALUES
+(1, 'Cafetería', 14),
+(2, 'Aula 1', 3),
+(3, 'Aula 2', 1),
+(4, 'Aula 3', 0),
+(5, 'Aula 4', 2),
+(6, 'Aula 5', 3),
+(7, 'Sala de conferencias', 0),
+(8, 'Delegación de alumnos', 2),
+(9, 'Pasillos', 0),
+(10, 'W.C norte', 1),
+(11, 'W.C sur', 1),
+(12, 'W.C biblioteca', 0);
 
 -- --------------------------------------------------------
 
@@ -506,12 +517,12 @@ ALTER TABLE `dashboardprofiles`
 -- AUTO_INCREMENT de la tabla `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT de la tabla `measures`
 --
 ALTER TABLE `measures`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 --
 -- AUTO_INCREMENT de la tabla `rooms`
 --

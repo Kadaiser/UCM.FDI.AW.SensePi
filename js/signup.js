@@ -1,15 +1,9 @@
 window.onload = function() {
-  basicLoad();
-  this.init(/*param1,param2*/);
-};
-
-/*ON DOCUMENT LOAD*/
-function init(){
-
   var mainButton = document.getElementById("mainButton");
 
   mainButton.addEventListener("submit", () => inputLock());
-}
+};
+
 
 /*DIRECT METHODS*/
 

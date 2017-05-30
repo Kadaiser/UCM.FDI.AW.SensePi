@@ -8,9 +8,7 @@
     <link rel="icon" type="image/png" href="../images/icons/0.ico"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/project.css">
-    <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/project.js"></script>
-    <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
   <body>

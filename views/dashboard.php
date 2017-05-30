@@ -14,8 +14,7 @@ if(!isset($_SESSION['login'])){
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css" />
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/contact.css"/>
-    <script type="text/javascript" src="../js/basic.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/card.css"/>
     <script type="text/javascript" src="../js/dashboard.js"></script>
     <script type="text/javascript" src="../js/ajaxbasic.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>

@@ -1,13 +1,3 @@
-window.onload = function() {
-  basicLoad();
-  this.init(/*param1,param2*/);
-};
-
-/*ON DOCUMENT LOAD*/
-function init(/*param1,param2*/){
-
-}
-
 function loadText(a){
 
   var xhttp =new XMLHttpRequest();

@@ -17,52 +17,52 @@
     </div>
 
     <div class="galleryFloorList" id="fpb">
-        <div class="galleryFloorElement" onclick="mySpanAppear('cafeteria');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Cafetería');">
           <img src="../images/gallery/coffee.png" alt="Cafetería"/>
           <span>Cafetería</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('sala de conferencias');">
-          <img src="../images/gallery/conference.png" alt="Sala de Grados"/>
+        <div class="galleryFloorElement" onclick="mySpanAppear('Sala de conferencias');">
+          <img src="../images/gallery/conference.png" alt="Sala de conferencias"/>
           <span>Sala de Grados</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('pasillos');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Pasillos');">
           <img src="../images/gallery/pasillos.png" alt="Pasillos"/>
           <span>Pasillos</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('wc biblioteca');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('W.C biblioteca');">
           <img src="../images/gallery/wc.png" alt="W.C Biblioteca"/>
           <span>W.C Biblioteca</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('wc norte');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('W.C norte');">
           <img src="../images/gallery/wc.png" alt="W.C Norte"/>
           <span>W.C Norte</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('wc sur');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('W.C sur');">
           <img src="../images/gallery/wc.png" alt="W.C Sur"/>
           <span>W.C Sur</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('aula 1');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Aula 1');">
           <img src="../images/gallery/aula.png" alt="Aula 1"/>
           <span>Aula 1</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('aula 2');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Aula 2');">
           <img src="../images/gallery/aula.png" alt="Aula 2"/>
           <span>Aula 2</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('aula 3');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Aula 3');">
           <img src="../images/gallery/aula.png" alt="Aula 3"/>
           <span>Aula 3</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('aula 4');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Aula 4');">
           <img src="../images/gallery/aula.png" alt="Aula 4"/>
           <span>Aula 4</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('aula 5');">
+        <div class="galleryFloorElement" onclick="mySpanAppear('Aula 5');">
           <img src="../images/gallery/aula.png" alt="Aula 5"/>
           <span>Aula 5</span>
         </div>
-        <div class="galleryFloorElement" onclick="mySpanAppear('delegacion de alumnos');">
-          <img src="../images/gallery/delegacion.png" alt="Delegación"/>
+        <div class="galleryFloorElement" onclick="mySpanAppear('Delegación de alumnos');">
+          <img src="../images/gallery/delegacion.png" alt="Delegación de alumnos"/>
           <span>Delegación</span>
         </div>
     </div>

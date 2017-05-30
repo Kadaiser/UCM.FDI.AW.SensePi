@@ -3,38 +3,40 @@
 
   function loginProcess($userEmail,$userPassword) {
 
-    include '../php/DBconnection.php';
+  include '../php/DBconnection.php';
 
-    //string de request
-    $sqlString = "SELECT nick, isadmin, avatar,pw
-                  FROM users
-                  WHERE email='".$userEmail."'
-                  ";
+  $sqlString = "SELECT nick, isadmin, avatar,pw
+                FROM users
+                WHERE email='".$userEmail."'
+                ";
 
-    //lanzar request a la BD
-    $query = mysqli_query($connection,$sqlString)
-    or die(header("Location: ../views/error.php"));
+  $query = mysqli_query($connection,$sqlString)
+  or die(header("Location: ../views/error.php"));
 
-    //cierre de conexión con BD
-    mysqli_close($connection);
+  mysqli_close($connection);
 
-    $user=mysqli_fetch_object($query);
+  $user=mysqli_fetch_object($query);
 
-    if (password_verify($userPassword,$user->pw)) {
-      if(mysqli_num_rows($query)!==0){
-        $_SESSION['login']=true;
-        $_SESSION['isAdmin']=$user->isadmin;
-        $_SESSION['nick']=$user->nick;
-        $_SESSION['userEmail']=$userEmail;
-        $_SESSION['userAvatar']=$user->avatar;
-        unset($user);
+  if (password_verify($userPassword,$user->pw))
+  {
+    if(mysqli_num_rows($query)!==0){
+      $_SESSION['login']=true;
+      $_SESSION['isAdmin']=$user->isadmin;
+      $_SESSION['nick']=$user->nick;
+      $_SESSION['userEmail']=$userEmail;
+      $_SESSION['userAvatar']=$user->avatar;
+      unset($user);
 
         header("Location: ../views/dashboard.php");
 
-      }else{
+      }
+      else
+      {
         header("Location: ../views/login.php?event=fail");
       }
-    }else{
+    }
+    else
+    {
       unset($user);
       header("Location: ../views/login.php?event=fail");
     }

@@ -3,8 +3,8 @@
 var canvasBorder;
 var canvasLine;
 
-function imageCanvasBorderArea(element,canvas,color,lineWidth){
-
+function imageCanvasBorderArea(element,canvas,color,lineWidth)
+{
     var x,y, w,h;
     // get it's position and width+height
     x = element.offsetLeft;
@@ -40,7 +40,10 @@ function imageCanvasBorderArea(element,canvas,color,lineWidth){
 //INNER METHODS
 
 // shorthand func
-function byId(e){return document.getElementById(e);}
+function byId(e)
+{
+  return document.getElementById(e);
+}
 
 
 function drawPoly(coOrdStr)

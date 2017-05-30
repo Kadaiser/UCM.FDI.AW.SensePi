@@ -8,9 +8,7 @@
     <link rel="icon" type="image/png" href="../images/icons/zero.png"/>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
     <link rel="stylesheet" type="text/css" href="../css/contact.css"/>
-    <script type="text/javascript" src="../js/basic.js"></script>
     <script type="text/javascript" src="../js/contact.js"></script>
-    <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
   </head>
 
   <body>
@@ -75,7 +73,7 @@
              <input type="text"
                    name="name" id="nameContac" class="field" autofocus>
              <span class="highlight"></span><span class="bar"></span>
-             <label id="nicknameLabel">Nickname</label>
+             <label>Nickname</label>
 
            </div>
 
@@ -84,7 +82,7 @@
              <input type="text"
                    name="email" id="emailLabel" class="field" autofocus>
              <span class="highlight"></span><span class="bar"></span>
-             <label id="emailLabel">Email</label>
+             <label>Email</label>
 
            </div>
           </fieldset>
@@ -92,19 +90,19 @@
           <div class="groupType">
             <fieldset>
               <legend>Type of contact:</legend>
-              <input type="radio" name="classMail" class="field" value="male" checked><label id="evaluation"></label>
-              <input type="radio" name="classMail" class="field" value="male"><label id="suggest"></label>
-              <input type="radio" name="classMail" class="field" value="male"><label id="review"></label>
+              <input type="radio" name="classMail" class="field" value="male" checked><label>Evaluación</label>
+              <input type="radio" name="classMail" class="field" value="male"><label>Sugerencia</label>
+              <input type="radio" name="classMail" class="field" value="male"><label>Revisión</label>
             </fieldset>
           </div>
 
           <div class="groupText">
-            <textarea id="emailText" name="text" maxlength="300" rows="10" cols="60" placeholder="We want to read your opinion!"></textarea>
+            <textarea name="text" maxlength="300" rows="10" cols="60" placeholder="We want to read your opinion!"></textarea>
           </div>
 
           <div class="groupConform">
             <span class="error"><?php echo $conformErr;?></span><br>
-            <input type="checkbox" name="conform" value="conformity"/><label id="accordance" ></label>
+            <input type="checkbox" name="conform" value="conformity"/><label>Marque esta casilla para verificar  que ha leído nuestros términos y condiciones del servicio</label>
 
           </div>
 

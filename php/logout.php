@@ -1,9 +1,6 @@
-<?php 
-	session_start(); 
-
+<?php
+	session_start();
 	unset($_SESSION);
-
-	session_destroy(); 
-
+	session_destroy();
   header("Location: ../views/index.php");
 ?>

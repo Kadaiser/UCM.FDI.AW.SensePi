@@ -1,16 +1,8 @@
 window.onload = function() {
-  basicLoad();
-  this.init(/*param1,param2*/);
-};
-
-/*ON DOCUMENT LOAD*/
-function init(){
-  document.getElementById("emailLabel").innerHTML=EmailText;
-  document.getElementById("mainButton").innerHTML=logInButtonText;
   this.recoverDisabled = false;
   var isInputLocked = false;
   var userEmail = "";
-}
+};
 
 /*DIRECT METHODS*/
 

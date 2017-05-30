@@ -26,7 +26,7 @@
         $tempEmail = test_input($_POST['userEmail']);
         $tempPW = test_input($_POST['userPassword']);
         $tempPWConfirm = test_input($_POST['userConfirmPassword']);
-        
+
         if (!preg_match("/^[a-z0-9](\.?[a-z0-9_-]){0,}@([a-z]{3}\.)?ucm\.es$/",$tempEmail)) {
           $tempEmailErr = "Introduce tu cuenta institucional";
           $formReady = FALSE;
@@ -108,7 +108,6 @@
                     id="mainButton"
                     value="Sign up">
               <span class="ripples ripplesCircle"></span>
-            </input>
           </div>
 
           <?php
@@ -119,7 +118,7 @@
             <p>This email is not available.</p>
             <p>Try again.</p>
           </div>
-          
+
           <?php
             };
           ?>

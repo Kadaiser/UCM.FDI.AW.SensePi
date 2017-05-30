@@ -4,9 +4,6 @@
   $roomName = $_POST['roomName'];
   $userNick = $_POST['userNick'];
 
-  
-//  $roomName = "Aula 1";
-//$userNick = "dvalbuen";
 
   $sql= "SELECT * FROM favorites WHERE idUser = (SELECT id
                                                 FROM users
