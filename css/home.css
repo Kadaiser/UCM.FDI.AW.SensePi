@@ -74,8 +74,7 @@ input:checked + .slider:before {
 
 
 .span{
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   position: absolute;
   z-index: 3;
   width: 840px;
@@ -134,7 +133,7 @@ input:checked + .slider:before {
 }
 
 .fog{
-  visibility: collapse;
+  display: none;
   position: fixed;
   z-index: 2;
   opacity: 0.7;
@@ -142,6 +141,7 @@ input:checked + .slider:before {
   height: 100%;
   background: #000000;
   overflow: visible;
+
 }
 
 #mapContainer{
@@ -219,13 +219,56 @@ input:checked + .slider:before {
 }
 
 #firstVisit{
-         position: absolute;
-         top: 200px;
-         left: 200px;
-         width: 200px;
-         height: 200px;
-         background: black;
-         color: orange;
-         z-index: 5;
-         display: none;
+   display: none;
+   position: absolute;
+   left: 15%;
+   top: 15%;
+   width: 75%;
+   height: 75%;
+   background: #1b1b1b;
+   z-index: 5;
+   border: 20px double #cc6600;
+   border-radius: 10px;
+   text-align: left;
+   background: #0d0d0d;
+ 	 color: #cc6600;
+   padding: 10px 10px 10px 10px;
+   -webkit-transition: .5s;
+}
+
+.tutorial{
+  position: absolute;
+  min-height: 100%;
+  min-width: : 100%;
+  margin: 10px auto;
+}
+
+#tutorial2{
+  display: none;
+}
+
+#tutorial1{
+  display: block;
+}
+
+#next{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  height: 30px;
+  width: 30px;
+  background:url("../images/icons/biggerthan.png");
+  background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#last{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  height: 30px;
+  width: 30px;
+  background:url("../images/icons/lessthan.png");
+  background-size: contain;
+	background-repeat: no-repeat;
 }

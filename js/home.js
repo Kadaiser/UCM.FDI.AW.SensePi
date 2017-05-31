@@ -32,27 +32,21 @@ window.onload = function() {
 
 /*DIRECT METHODS*/
 
-
-var mapView = true;
-
 function switchBetweenView(){
-  if(mapView){switchToGalleryView();}
-  else {switchToMapView();}
-  mapView = !mapView;
+  $('#mapContainer').toggle();
+  $('#galleryBlock').toggle();
+}
+
+function tutorialBox() {
+    $('#Fog').toggle();
+    $('#firstVisit').toggle();
+}
+
+function toggleTutorial() {
+  $('.tutorial').toggle();
 }
 
 /* INSIDE METHODS*/
-
-
-function switchToMapView() {
-  document.getElementById("mapContainer").style.display = "block";
-  document.getElementById("galleryBlock").style.display = "none";
-}
-
-function switchToGalleryView() {
-  document.getElementById("galleryBlock").style.display = "block";
-  document.getElementById("mapContainer").style.display = "none";
-}
 
 var dataFromDB = [
     [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'],
@@ -142,13 +136,17 @@ function mySpanAppear(str)
     {
       ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
     }
-    var fog = document.getElementById('Fog');
-    fog.style.visibility = "visible";
-    fog.style.transition = "opacity 0.4s ease-out";
-    var div = document.getElementById("Span");
-    div.style.visibility = "visible";
-    div.style.transition = "opacity 0.7s ease-out";
-    div.style.opacity = "1";
+    /*
+    $('#Fog').animate({
+      display: 'toggle'
+    });
+    $('#Span').animate({
+      display: 'toggle'
+    });
+    */
+    $('#Fog').toggle();
+    $('#Span').toggle();
+
   }
   else
   {
@@ -192,17 +190,11 @@ function verifyFavorite(){
   elem.appendChild(document.createElement("LABEL").appendChild(document.createTextNode("Sala añadida a tus favoritos")));
 }
 
-
 function mySpanHide()
 {
-  var fog = document.getElementById('Fog');
-  fog.style.visibility = "collapse";
-  var div = document.getElementById("Span");
-  div.style.opacity = "0";
-  div.style.visibility = "hidden";
+  $('#Span').toggle();
+  $('#Fog').toggle();
 }
-
-
 
 function switchFloorState(chosenFloor) {
   var element = document.getElementById(chosenFloor);
@@ -219,10 +211,5 @@ function switchFloorState(chosenFloor) {
     element.style.zIndex="1";
   }else{
     element.style.zIndex="-1";
-
   }
-}
-
-function tutorialBox() {
-    $('#firstVisit').toggle();
 }
