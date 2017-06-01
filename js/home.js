@@ -40,6 +40,7 @@ function switchBetweenView(){
 function tutorialBox() {
     $('#Fog').toggle();
     $('#firstVisit').toggle();
+
 }
 
 function toggleTutorial() {
@@ -61,7 +62,6 @@ function measuresFormatting(rawMeasures){
   var measureList = obj[1];
   measureList.forEach(function(measure) {
     var tempArray=[];
-
     var date_test = new Date("2011-07-14 11:23:00".replace(/-/g,"/"));
     splittedDate = measure.Date.split(" ");
     splittedDate = splittedDate[0].replace(/"/,"'");
@@ -119,6 +119,7 @@ function drawChart() {
 
   var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
   chart.draw(data, options);
+
 }
 
 /* INSIDE METHODS*/
