@@ -2,7 +2,7 @@
   <nav class="mainNav">
     <ul>
       <li id="navHome">
-        <a href="../views/index.php"><span>HOME</span></a>
+        <a href="../views/home.php"><span>HOME</span></a>
       </li>
       <li id="navTeam">
         <a href="../views/team.php"><span>TEAM</span></a>

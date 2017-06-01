@@ -1,17 +1,17 @@
 <?php
 
-include '../php/DBconnection.php';
+include '../DBconnection.php';
 
 $roomId = $_REQUEST['roomId'];
 
 $sql = "SELECT roomslotid, measuretrack
-                  FROM  roomslots JOIN measurelogs
-                  ON roomslots.id = measurelogs.roomslotid
-                  WHERE roomslots.roomid = '".$roomId."'
-                ";
+        FROM  roomslots JOIN measurelogs
+        ON roomslots.id = measurelogs.roomslotid
+        WHERE roomslots.roomid = '".$roomId."'
+       ";
 
 $result = mysqli_query($connection,$sql)
-or die(header("Location: ../views/error.php"));
+or die(header("Location: ../../views/error.php"));
 
 $array = array();
 while ($row = mysqli_fetch_assoc($result)) {

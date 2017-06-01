@@ -1,16 +1,16 @@
 <?php
-  $room = htmlspecialchars(trim(strip_tags($_POST['Room'])));
-  $track = htmlspecialchars(trim(strip_tags($_POST['MeasureTrack'])));
-  $temp = htmlspecialchars(trim(strip_tags($_POST['temp'])));
-  $hum = htmlspecialchars(trim(strip_tags($_POST['hum'])));
-  $noise = htmlspecialchars(trim(strip_tags($_POST['noise'])));
+  $room = htmlspecialchars(trim(strip_tags($_REQUEST['Room'])));
+  $track = htmlspecialchars(trim(strip_tags($_REQUEST['MeasureTrack'])));
+  $temp = htmlspecialchars(trim(strip_tags($_REQUEST['temp'])));
+  $hum = htmlspecialchars(trim(strip_tags($_REQUEST['hum'])));
+  $noise = htmlspecialchars(trim(strip_tags($_REQUEST['noise'])));
 
-  include '../php/DBconnection.php';
+  include '../DBconnection.php';
 
   $sqlRoomId  = "SELECT roomslotid FROM measurelogs WHERE measuretrack = '".$track."'";
 
   $resultSlotid = mysqli_query($connection,$sqlRoomId)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   $sqlName = "SELECT name FROM stations JOIN assignments
           ON stations.id = assignments.stationid
@@ -27,8 +27,8 @@
   ";
 
   $name = mysqli_query($connection,$sqlMeasure)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   mysqli_close($connection);
-  header("Location: ../php/setMeasure.php");
+  header("Location: ../dashboard.php");
 ?>

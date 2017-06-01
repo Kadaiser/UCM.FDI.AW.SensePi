@@ -3,7 +3,7 @@
     var dropDown = document.getElementById("RoomDropdown");
     var IdRoom = dropDown.options[dropDown.selectedIndex].value;
 
-    ajax.post('../php/getSlotsIdAndTracks.php',{roomId: IdRoom},fullfillOptions,true);
+    ajax.post('../php/services/getSlotsIdAndTracks.php',{roomId: IdRoom},fullfillOptions,true);
   }
 
   function fullfillOptions(rawMeasuresTrack){
@@ -34,10 +34,10 @@
 
   </head>
 
-  <div onload="ajax.post('../php/getRooms.php',null,populateRoomDropdown,true);">
+  <div onload="ajax.post('../php/services/getRooms.php',null,populateRoomDropdown,true);">
 
 
-    <form class="injector" method="post" action="../php/setMeasureOnStation.php">
+    <form class="injector" method="post" action="../php/services/setMeasureOnStation.php">
 
       <div class="group">
         <label>Room</label>

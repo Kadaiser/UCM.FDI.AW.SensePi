@@ -11,7 +11,7 @@ function init(/*param1,param2*/){
     var obj = JSON.parse(sessionVariables);
     userEmail = obj.userEmail;
     userNick = obj.nick;
-    ajax.post('../php/getUserDashboard.php',{email: userEmail},setUserDashboard,true);
+    ajax.post('../php/services/getUserDashboard.php',{email: userEmail},setUserDashboard,true);
   }
 
   //Use the user dashboard profile to load both js and php cards into right cells

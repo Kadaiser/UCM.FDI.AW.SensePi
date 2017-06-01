@@ -1,9 +1,9 @@
 <?php
-  include '../php/DBconnection.php';
+  include '../DBconnection.php';
 
-  $sql= "SELECT * FROM stations";
+  $sql= "SELECT id,name,currentTrack,currentTrackSince,operative FROM stations";
   $result = mysqli_query($connection,$sql)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   $array = array();
 

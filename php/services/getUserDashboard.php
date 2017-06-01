@@ -1,5 +1,5 @@
 <?php
-  include '../php/DBconnection.php';
+  include '../DBconnection.php';
   $userEmail = $_POST['email'];
 
   $sqlDashboardGrid = "SELECT cell,cardIdentity
@@ -8,7 +8,7 @@
                        ";
 
 $queryForDashboardGrid = mysqli_query($connection,$sqlDashboardGrid)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   mysqli_close($connection);
 

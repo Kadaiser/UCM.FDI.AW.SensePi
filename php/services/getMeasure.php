@@ -1,15 +1,15 @@
 <?php
-  include '../php/DBconnection.php';
+  include '../DBconnection.php';
 
-  $roomName = $_POST['roomName'];
-  $sinceDate = $_POST['sinceDate'];
+  $roomName = $_REQUEST['roomName'];
+  $sinceDate = $_REQUEST['sinceDate'];
 
   $sqlUp = "UPDATE rooms
             SET visits = visits + 1
             WHERE name ='".$roomName."'
           ";
   mysqli_query($connection,$sqlUp)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   $sqlroomslotid = "SELECT roomslots.id
                     FROM rooms JOIN roomslots
@@ -18,7 +18,7 @@
                     ";
 
   $queryForRoomSlots = mysqli_query($connection,$sqlroomslotid)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   $slotsArray = $queryForRoomSlots->fetch_all(MYSQLI_ASSOC);
 
@@ -41,7 +41,7 @@
                     ";
 
   $queryForMeasures = mysqli_query($connection,$sqlmeasures)
-  or die(header("Location: ../views/error.php"));
+  or die(header("Location: ../../views/error.php"));
 
   $measuresArray[$tempSlotId] = $queryForMeasures->fetch_all(MYSQLI_ASSOC);
   }

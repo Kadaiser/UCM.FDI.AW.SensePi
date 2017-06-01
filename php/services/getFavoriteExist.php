@@ -1,8 +1,8 @@
 <?php
-  include '../php/DBconnection.php';
+  include '../DBconnection.php';
 
-  $roomName = $_POST['roomName'];
-  $userNick = $_POST['userNick'];
+  $roomName = $_REQUEST['roomName'];
+  $userNick = $_REQUEST['userNick'];
 
 
   $sql= "SELECT * FROM favorites WHERE idUser = (SELECT id
@@ -13,7 +13,7 @@
                                                 WHERE name = '".$roomName."')
           ";
 
-  $result = mysqli_query($connection,$sql) or die(header("Location: ../views/error.php"));
+  $result = mysqli_query($connection,$sql) or die(header("Location: ../../views/error.php"));
 
   mysqli_close($connection);
   echo json_encode(mysqli_num_rows($result));

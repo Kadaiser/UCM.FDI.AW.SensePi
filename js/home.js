@@ -131,11 +131,11 @@ function mySpanAppear(str)
     document.getElementById("Area").innerHTML = str
     //Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
     //2017-05-01 19:10:58
-    ajax.post('../php/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+    ajax.post('../php/services/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
 
     if(userlogged)
     {
-      ajax.post('../php/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
+      ajax.post('../php/services/getFavoriteExist.php',{roomName: str, userNick: userNick},createFavoriteMark,true);
     }
     /*
     $('#Fog').animate({
@@ -182,7 +182,7 @@ function createFavoriteMark(rawMeasures)
 function addToFavorite()
 {
   var roomName = document.getElementById("Area").innerHTML;
-  ajax.post('../php/addToFavorite.php',{roomName: roomName, userNick: userNick},verifyFavorite,true);
+  ajax.post('../php/services/addToFavorite.php',{roomName: roomName, userNick: userNick},verifyFavorite,true);
 }
 
 function verifyFavorite(){

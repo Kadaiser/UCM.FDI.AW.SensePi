@@ -45,7 +45,7 @@
     </script>
 
 
-  <div onload="ajax.post('../php/getStations.php',null,populationStationDropdown,true);">
+  <div onload="ajax.post('../php/services/getStations.php',null,populationStationDropdown,true);">
 
     <form class="injector" method="post" action="#">
 

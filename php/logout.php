@@ -2,5 +2,5 @@
 	session_start();
 	unset($_SESSION);
 	session_destroy();
-  header("Location: ../views/index.php");
+  header("Location: ../views/home.php");
 ?>
