@@ -272,3 +272,21 @@ input:checked + .slider:before {
   background-size: contain;
 	background-repeat: no-repeat;
 }
+
+#cookie-law {
+    min-width:100%;
+    background:#1f1f1f;
+    margin:10px auto 0;
+    border-radius: 17px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    z-index: 10px;
+}
+ 
+#cookie-law p {
+    padding:10px;
+    font-weight:bold;
+    text-align:center;
+    color: #cc6600;
+    margin:0;
+}
