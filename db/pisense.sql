@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2017 a las 02:45:02
--- Versión del servidor: 10.1.22-MariaDB
--- Versión de PHP: 7.1.4
+-- Tiempo de generación: 20-06-2017 a las 23:03:12
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 7.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -41,7 +39,9 @@ CREATE TABLE `cards` (
 
 INSERT INTO `cards` (`id`, `identity`, `name`, `forAdmin`) VALUES
 (1, 'G_STATIONS', 'Get Stations Info', 1),
-(2, 'S_MEASURE', 'Set Measure on Slot', 1);
+(2, 'S_MEASURE', 'Set Measure on Slot', 1),
+(3, 'G_SLOTS', 'Get Slots of a given Room', 1),
+(4, 'G_ROOMS', 'Get Rooms', 0);
 
 -- --------------------------------------------------------
 
@@ -86,8 +86,10 @@ CREATE TABLE `dashboardprofiles` (
 --
 
 INSERT INTO `dashboardprofiles` (`id`, `userEmail`, `cell`, `cardIdentity`) VALUES
-(5, 'secalero@ucm.es', '11', 'G_STATIONS'),
-(6, 'secalero@ucm.es', '22', 'S_MEASURE');
+(5, 'secalero@ucm.es', '12', 'G_STATIONS'),
+(8, 'secalero@ucm.es', '11', 'G_ROOMS'),
+(10, 'secalero@ucm.es', '21', 'G_SLOTS'),
+(11, 'secalero@ucm.es', '22', 'S_MEASURE');
 
 -- --------------------------------------------------------
 
@@ -284,7 +286,7 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `name`, `visits`) VALUES
-(1, 'Cafetería', 14),
+(1, 'Cafetería', 28),
 (2, 'Aula 1', 3),
 (3, 'Aula 2', 1),
 (4, 'Aula 3', 0),
@@ -507,17 +509,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `dashboardprofiles`
 --
 ALTER TABLE `dashboardprofiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `measures`
 --
@@ -580,7 +582,6 @@ ALTER TABLE `measures`
 --
 ALTER TABLE `roomslots`
   ADD CONSTRAINT `roomslots_ibfk_1` FOREIGN KEY (`roomid`) REFERENCES `rooms` (`id`) ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

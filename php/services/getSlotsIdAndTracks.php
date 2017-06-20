@@ -4,8 +4,8 @@ include '../DBconnection.php';
 
 $roomId = $_REQUEST['roomId'];
 
-$sql = "SELECT roomslotid, measuretrack
-        FROM  roomslots JOIN measurelogs
+$sql = "SELECT roomslots.id, measuretrack, slot
+        FROM  roomslots LEFT OUTER JOIN measurelogs
         ON roomslots.id = measurelogs.roomslotid
         WHERE roomslots.roomid = '".$roomId."'
        ";

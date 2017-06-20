@@ -2,6 +2,12 @@ window.onload = function() {
   this.init(/*param1,param2*/);
 };
 
+var dashboard = {
+  selectedRoom : null,
+  selectedSlot : null,
+  selectedTrack : null
+};
+
 /*ON DOCUMENT LOAD*/
 function init(/*param1,param2*/){
   ajax.post('../php/sessionRetriever.php',{},setSessionDashboard,true);

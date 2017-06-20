@@ -1,12 +1,12 @@
 function init_G_STATIONS(){
-  ajax.post('../php/services/getStations.php',null,populationStationDropdown,true);
+  ajax.post('../php/services/getStations.php',null,populateStationDropdown,true);
 }
 
-function populationStationDropdown(rawMeasuresTrack){
-  var dropDown = document.getElementById('stationDropdown');
-  var obj = JSON.parse(rawMeasuresTrack);
+function populateStationDropdown(rawStations){
+  var stationDropDown = document.getElementById('stationDropdown');
+  var obj = JSON.parse(rawStations);
   for(var i = 0; i< obj.length; i++){
-    dropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
+    stationDropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
   }
 }
 
