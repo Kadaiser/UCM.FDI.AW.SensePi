@@ -40,8 +40,8 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`id`, `identity`, `name`, `forAdmin`) VALUES
-(1, 'G-STATIONS', 'Get Stations Info', 1),
-(2, 'S-MEASURE', 'Set Measure on Slot', 1);
+(1, 'G_STATIONS', 'Get Stations Info', 1),
+(2, 'S_MEASURE', 'Set Measure on Slot', 1);
 
 -- --------------------------------------------------------
 
@@ -86,8 +86,8 @@ CREATE TABLE `dashboardprofiles` (
 --
 
 INSERT INTO `dashboardprofiles` (`id`, `userEmail`, `cell`, `cardIdentity`) VALUES
-(5, 'secalero@ucm.es', '11', 'G-STATIONS'),
-(6, 'secalero@ucm.es', '22', 'S-MEASURE');
+(5, 'secalero@ucm.es', '11', 'G_STATIONS'),
+(6, 'secalero@ucm.es', '22', 'S_MEASURE');
 
 -- --------------------------------------------------------
 

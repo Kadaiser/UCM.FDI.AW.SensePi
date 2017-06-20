@@ -1,10 +1,10 @@
 <?php session_start();
 
-if(!isset($_SESSION['login'])){
-  header("Location: ../error.php");
-}
+  if(!isset($_SESSION['login'])){
+    header("Location: ../error.php");
+  }
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">

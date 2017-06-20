@@ -34,10 +34,11 @@
                                 SELECT date
                                 FROM measureLogs
                                 WHERE roomslotid = ".$tempSlotId." AND date < '".$sinceDate."'
-                                ORDER BY date DESC
+                                ORDER BY Date DESC
                                 LIMIT 1
                                 )
                           )
+                    ORDER BY Date DESC
                     ";
 
   $queryForMeasures = mysqli_query($connection,$sqlmeasures)
