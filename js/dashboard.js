@@ -52,9 +52,7 @@ function placeCardInCell(cardId,cell){
   ajax.post(cardPHPURL,{},appendCard,true);
 
   function appendCard(cardPHP){
-    var cardDiv = document.createElement('div');
-    cardDiv.innerHTML=cardPHP;
-    dashboardCell.appendChild(cardDiv);
+    dashboardCell.innerHTML=cardPHP;
   }
 }
 

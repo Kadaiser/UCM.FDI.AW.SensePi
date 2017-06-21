@@ -5,6 +5,7 @@ function init_G_SLOTS(){
       if(this.value!='on' && this.value!='off'){
         dashboard.selectedSlot = this.value;
         dashboard.selectedTrack = this.measuretrack;
+        dashboard.selectedIsOperative = this.active ;
       }else{
         alert("Please, first select a room");
       }
@@ -27,26 +28,26 @@ function populateSlotsDropdown(rawSlotsAndTracks){
   var tracksArray = [];
 
   for(var i = 0; i< obj.length; i++){
+    var currentInput;
     switch(obj[i]['slot']){
       case '1':
-        inputNW.value = obj[i]['id'];
-        inputNW.measuretrack = obj[i]['measuretrack'];
+        currentInput = inputNW;
         break;
       case '2':
-        inputNE.value = obj[i]['id'];
-        inputNE.measuretrack = obj[i]['measuretrack'];
+        currentInput = inputNE;
         break;
       case '3':
-        inputSW.value = obj[i]['id'];
-        inputSW.measuretrack = obj[i]['measuretrack'];
+        currentInput = inputSW;
         break;
       case '4':
-        inputSE.value = obj[i]['id'];
-        inputSE.measuretrack = obj[i]['measuretrack'];
+        currentInput = inputSE;
         break;
       default:
         break;
     }
+    currentInput.checked = false;
+    currentInput.value = obj[i]['id'];
+    currentInput.measuretrack = obj[i]['measuretrack'];
     tracksArray.push(obj[i]['measuretrack']);
   }
 
@@ -65,36 +66,28 @@ function showOperativeIds(rawOperativeSlots){
     var cssClass = 'noStation';
     if(station!=null){
       stationId = station.id;
-      operative = station.operative;
-      cssClass = (!!station.operative)?'stationOn':'stationOff';
+      operative = !!(parseInt(station.operative));
+      cssClass = (parseInt(station.operative))?'stationOn':'stationOff';
     }
+    var currentInput;
     switch(index+1){
       case 1:
-        inputNW.station = stationId;
-        inputNW.active = operative;
-        inputNW.className = cssClass;
+        currentInput = inputNW;
         break;
       case 2:
-        inputNE.station = stationId
-        inputNE.active = operative;
-        inputNE.className = cssClass;
+        currentInput = inputNE;
         break;
       case 3:
-        inputSW.station = stationId
-        inputSW.active = operative;
-        inputSW.className = cssClass;
+        currentInput = inputSW;
         break;
       case 4:
-        inputSE.station = stationId;
-        inputSE.active = operative;
-        inputSE.className = cssClass;
+        currentInput = inputSE;
         break;
       default:
         break;
     }
+    currentInput.station = stationId;
+    currentInput.active = operative;
+    currentInput.className = cssClass;
   }, this);
-}
-
-function loadSlot(slotId){
-  alert('Selected slot ' + slotId);
 }

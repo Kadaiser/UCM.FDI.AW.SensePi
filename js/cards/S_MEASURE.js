@@ -3,23 +3,35 @@ function init_S_MEASURE(){
 }
 
 function submitMeasure(){
-  if(dashboard.selectedRoom && dashboard.selectedTrack){
-    var tempInput = document.getElementById(measureTemp).value;
-    var humInput = document.getElementById(measureHum).value;
-    var noiseInput = document.getElementById(measureNoise).value;
-    ajax.post('../php/services/setMeasureOnStation.php',
-    {
-      Room: dashboard.selectedRoom,
-      MeasureTrack: dashboard.selectedTrack,
-      temp: tempInput,
-      hum: humInput,
-      noise: noiseInput
-    },
-    measureSubmitted,true);
+  if(dashboard.selectedRoom){
+    if(dashboard.selectedTrack){
+      if(dashboard.selectedIsOperative){
+        if(tempInput && humInput && noiseInput){
+          var tempInput = document.getElementById(measureTemp).value;
+          var humInput = document.getElementById(measureHum).value;
+          var noiseInput = document.getElementById(measureNoise).value;
+          ajax.post('../php/services/setMeasureOnStation.php',
+          {
+            Room: dashboard.selectedRoom,
+            MeasureTrack: dashboard.selectedTrack,
+            temp: tempInput,
+            hum: humInput,
+            noise: noiseInput
+          },
+          measureSubmitted,true);
+        }else{
+          alert("Please, fill all the fields");
+        }
+      }else{
+        alert('The station in this slot is disabled');
+      }
+    }else{
+      alert('Please, first select a slot with an operative station');
+    }
   }else{
-    alert('Please, first select a room and a slot');
+    alert('Please, first select a room');
   }
-
+  return false;
 }
 
 function measureSubmitted(rawResponse){

@@ -1,6 +1,6 @@
 <div class="cardContainer">
 
-  <form class="injector" method="post" onsubmit="submitMeasure()" action="#">
+  <form class="injector" method="post" onsubmit="event.preventDefault(); submitMeasure(); return false">
 
     <div id="measureSetDiv">
 

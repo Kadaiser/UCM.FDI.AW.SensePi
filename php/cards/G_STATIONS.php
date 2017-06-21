@@ -5,7 +5,7 @@
     <div class="group">
       <Span>Station</Span>
       <select onchange="report(this.value)"  class="mesureTrackSelect" name="Room" id="stationDropdown">
-        <option disabled selected value>select device</option>
+        <option disabled selected value>-- Select a station --</option>
       </select>
       <div class="StationInfo" id="stationInfo"></div>
       <!--

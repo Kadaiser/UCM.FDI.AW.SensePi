@@ -24,14 +24,14 @@
   
 }
 
-.noStation {
+input.noStation + span {
   color: #333333;
 }
 
-.stationOn {
+input.stationOn + span {
   color: #227722;
 }
 
-.stationOff {
+input.stationOff + span {
   color: #772222;
 }
