@@ -53,3 +53,15 @@ function report(id){
     field.appendChild(labelState);
   }
 }
+
+function disableStation(){
+  if(confirm("Are you sure you want to disable this station? This will prevent from getting new measures from current slot.")){
+    //ajax call to set operative to 0
+  }
+}
+
+function addStationToSlot(){
+  if(confirm("Are you sure you want to add this station to current slot?")){
+    //ajax call to add it. Control there is no previous operative station on the slot
+  }
+}

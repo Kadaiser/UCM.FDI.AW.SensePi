@@ -8,12 +8,16 @@
         <option disabled selected value>-- Select a station --</option>
       </select>
       <div class="StationInfo" id="stationInfo"></div>
-      <!--
-      <input type="submit">
-      -->
     </div>
 
-
   </form>
+
+  <div class="group">
+    <button type="button" onclick="disableStation()">Disable station</button>
+  </div>
+
+  <div class="group">
+    <button type="button" onclick="addStationToSlot()">Add to current room slot</button>
+  </div>
 
 </div>
