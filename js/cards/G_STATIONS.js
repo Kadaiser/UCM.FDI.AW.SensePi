@@ -4,9 +4,18 @@ function init_G_STATIONS(){
 
 function populateStationDropdown(rawStations){
   var stationDropDown = document.getElementById('stationDropdown');
-  var obj = JSON.parse(rawStations);
+  obj = JSON.parse(rawStations);
   for(var i = 0; i< obj.length; i++){
     stationDropDown.options[i]= new Option(obj[i]['name'],obj[i]['id']);
+  }
+  var radios = document.forms["slotsForm"].elements["slot"];
+  for(var i = 0, max = radios.length; i < max; i++) {
+    radios[i].addEventListener("click",function(){
+      //if(this.station!=null){
+        stationDropDown.value = this.station;
+        report(this.station);
+      //}
+    });
   }
 }
 
@@ -43,3 +52,5 @@ function report(id){
   }
   document.getElementById('stationInfo').appendChild(field);
 }
+
+var obj;

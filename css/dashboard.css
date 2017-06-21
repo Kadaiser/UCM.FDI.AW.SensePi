@@ -23,3 +23,15 @@
 .cell:nth-child(3n) {
   
 }
+
+.noStation {
+  color: #333333;
+}
+
+.stationOn {
+  color: #227722;
+}
+
+.stationOff {
+  color: #772222;
+}
