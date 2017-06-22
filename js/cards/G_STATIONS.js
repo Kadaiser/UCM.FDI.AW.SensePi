@@ -15,7 +15,7 @@ function populateStationDropdown(rawStations){
     radios[i].addEventListener("click",function(){
       if(dashboard.selectedRoom!=null){
         stationDropDown.value = this.station;
-        report(this.station);
+        if(this.station!=null){report(this.station)};
       }
     });
   }
@@ -29,6 +29,7 @@ function report(id){
   while(id != stationObject[i]['id']){
     i++;
   }
+  dashboard.selectedStation = stationObject[i];
 
   label = document.createElement('span');
   label.appendChild(document.createTextNode("Operative: "));
@@ -55,13 +56,57 @@ function report(id){
 }
 
 function disableStation(){
-  if(confirm("Are you sure you want to disable this station? This will prevent from getting new measures from current slot.")){
-    //ajax call to set operative to 0
+  if(!!parseInt(dashboard.selectedStation.operative)){
+    if(confirm("Are you sure you want to disable this station? This will prevent from getting new measures from current slot.")){
+      var id = dashboard.selectedStation.id;
+      ajax.post('../php/services/setDisabledStation.php',{stationId : id},alert('Station ' + id + ' disabled'),true);
+      dashboard.selectedStation.operative = '0';
+    }
+  }else{
+    alert('This station is already disabled.');
   }
 }
 
 function addStationToSlot(){
-  if(confirm("Are you sure you want to add this station to current slot?")){
-    //ajax call to add it. Control there is no previous operative station on the slot
+
+  if(dashboard.selectedRoom){
+    if(!!parseInt(dashboard.selectedStation.operative)==false){
+      if(dashboard.selectedSlotIsOperative!=true){
+        if(confirm("Are you sure you want to add this station to current slot?")){
+
+          var newTrack = generateNewTrack(); //Un nuevo track entre 10^18 posibilidades. Se asume irrepetible.
+
+          ajax.post('../php/services/setStationInSlot.php',
+            {
+              slotId: dashboard.selectedSlot,
+              measureTrack: newTrack,
+              stationId: dashboard.selectedStation.id,
+            },
+            stationAssignment,true);
+
+        }
+      }else{
+        alert('The selected slot already has a station in it. First disable that station.');
+      }
+    }else{
+      alert('The selected station is already in use.');
+    }
+  }else{
+    alert('Please, first select a room.');
   }
+}
+
+function stationAssignment(){
+  //TODO: Results and dashboard control/update
+}
+
+function generateNewTrack(){
+  var alphabet = '0123456789abcdef';
+  var generatedTrack = '';
+  for (var i = 0; i < 16; ++i) {
+    var random= Math.floor((Math.random() * 16));
+    var charToAdd = alphabet.charAt(random);
+    generatedTrack += charToAdd;
+  }
+  return generatedTrack;
 }

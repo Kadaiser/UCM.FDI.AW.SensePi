@@ -26,36 +26,46 @@ function setSessionDashboard(sessionVariables){
 function setUserDashboard(cardsProfile){
   var cellCardList = JSON.parse(cardsProfile);
   cellCardList.forEach(function(cellCard) {
-    addCardJSScript(cellCard.cardIdentity);
-    placeCardInCell(cellCard.cardIdentity,cellCard.cell);
+    var callbackFunction = null;
+    var addedScript = addCardJSScript(cellCard.cardIdentity);
+    addedScript.script.addEventListener("load",function(){
+      placeCardInCell(cellCard.cardIdentity,cellCard.cell,addedScript.callback);
+    });
   }, this);
-}
 
-//Load needed card js
-function addCardJSScript(cardId){
-  var newScript = document.createElement('script');
-  newScript.setAttribute("type","text/javascript");
-  newScript.setAttribute("src","../js/cards/".concat(cardId,".js"));
-  newScript.setAttribute("onload","init_".concat(cardId,"()"));
-  //get all script elements
-  var allScriptsArray = document.getElementsByTagName("script");
-  //get last script
-  var currentLastScript = allScriptsArray[allScriptsArray.length-1];
-  //append newScript after that one
-  currentLastScript.insertAdjacentElement('afterend',newScript);
-}
 
-//get respective cell
-function placeCardInCell(cardId,cell){
-  var dashboardCell = document.getElementById(cell);
-  dashboardCell.style.backgroundColor = '#999';
-  var cardPHPURL = '../php/cards/'.concat(cardId,'.php');
-  ajax.post(cardPHPURL,{},appendCard,true);
+  //Load needed card js
+  function addCardJSScript(cardId){
+    var newScript = document.createElement('script');
+    newScript.setAttribute("type","text/javascript");
+    newScript.setAttribute("src","../js/cards/".concat(cardId,".js"));
+    callbackFunction = "init_".concat(cardId,"()");
+    //get all script elements
+    var allScriptsArray = document.getElementsByTagName("script");
+    //get last script
+    var currentLastScript = allScriptsArray[allScriptsArray.length-1];
+    //append newScript after that one
+    currentLastScript.insertAdjacentElement('afterend',newScript);
+    return {script: newScript, callback: callbackFunction};
+  }
 
-  function appendCard(cardPHP){
-    dashboardCell.innerHTML=cardPHP;
+  //get respective cell
+  function placeCardInCell(cardId,cell,callbackFunction){
+    var dashboardCell = document.getElementById(cell);
+    dashboardCell.style.backgroundColor = '#999';
+    var cardPHPURL = '../php/cards/'.concat(cardId,'.php');
+    ajax.post(cardPHPURL,{},appendCard,true);
+
+    function appendCard(cardPHP){
+      dashboardCell.innerHTML=cardPHP;
+      setTimeout(callbackFunction,0);
+    }
   }
 }
+
+
+//onload, placeCardInCell. y luego init
+
 
 var userEmail, userNick;
 

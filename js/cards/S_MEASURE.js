@@ -5,11 +5,11 @@ function init_S_MEASURE(){
 function submitMeasure(){
   if(dashboard.selectedRoom){
     if(dashboard.selectedTrack){
-      if(dashboard.selectedIsOperative){
+      if(dashboard.selectedSlotIsOperative){
+        var tempInput = document.getElementById(measureTemp).value;
+        var humInput = document.getElementById(measureHum).value;
+        var noiseInput = document.getElementById(measureNoise).value;
         if(tempInput && humInput && noiseInput){
-          var tempInput = document.getElementById(measureTemp).value;
-          var humInput = document.getElementById(measureHum).value;
-          var noiseInput = document.getElementById(measureNoise).value;
           ajax.post('../php/services/setMeasureOnStation.php',
           {
             Room: dashboard.selectedRoom,

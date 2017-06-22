@@ -1,11 +1,12 @@
 function init_G_SLOTS(){
+
   var radios = document.forms["slotsForm"].elements["slot"];
   for(var i = 0, max = radios.length; i < max; i++) {
     radios[i].addEventListener("click",function(){
       if(this.value!='on' && this.value!='off'){
         dashboard.selectedSlot = this.value;
         dashboard.selectedTrack = this.measuretrack;
-        dashboard.selectedIsOperative = this.active ;
+        dashboard.selectedSlotIsOperative = this.operative ;
       }else{
         alert("Please, first select a room");
       }
@@ -67,7 +68,7 @@ function showOperativeIds(rawOperativeSlots){
     if(station!=null){
       stationId = station.id;
       operative = !!(parseInt(station.operative));
-      cssClass = (parseInt(station.operative))?'stationOn':'stationOff';
+      cssClass = !!(parseInt(station.operative))?'stationOn':'stationOff';
     }
     var currentInput;
     switch(index+1){
@@ -87,7 +88,7 @@ function showOperativeIds(rawOperativeSlots){
         break;
     }
     currentInput.station = stationId;
-    currentInput.active = operative;
+    currentInput.operative = operative;
     currentInput.className = cssClass;
   }, this);
 }
