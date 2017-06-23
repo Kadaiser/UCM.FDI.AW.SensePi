@@ -49,15 +49,18 @@ function toggleTutorial() {
 
 /* INSIDE METHODS*/
 
-var dataFromDB = [
-    [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'],
-];
-/*  [new Date('2017-03-08'),          16,         0.18],
+var measureHeader = [{type: 'date', label: 'Día'}, 'Temperatura', 'Humedad'];
+/*
+    [new Date('2017-03-08'),          16,         0.18],
     [new Date('2017-03-09'),          16,         0.29],
     [new Date('2017-03-10'),          16,         0.30],
 */
+var dataFromDB = [
+];
 
 function measuresFormatting(rawMeasures){
+  dataFromDB = [];
+  dataFromDB.push(measureHeader);
   var obj = JSON.parse(rawMeasures);
   var measureList = obj[1];
   measureList.forEach(function(measure) {
