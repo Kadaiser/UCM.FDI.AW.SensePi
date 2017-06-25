@@ -25,11 +25,26 @@
                       );
       $password_hash = password_hash($userPassword, PASSWORD_BCRYPT, $options);
 
-      $sqlInsert = "
+      $userNick = (preg_split('/@/', $userEmail))[0];
+
+      $sqlNewUser = "
                     INSERT INTO users (`email`, `pw`, `nick`, `isadmin`, `sinceDate`, `avatar`, `id`)
-                    VALUES ('$userEmail', '$password_hash', '$userEmail', 0, CURRENT_TIMESTAMP, NULL, NULL);
+                    VALUES ('$userEmail', '$password_hash', '$userNick', 0, CURRENT_TIMESTAMP, NULL, NULL);
                   ";
-      $insertQuery = mysqli_query($connection,$sqlInsert)
+
+      $queryForNewUser = mysqli_query($connection,$sqlNewUser)
+      or die(header("Location: ../views/error.php"));
+
+      $sqlNewDashBoard = "
+                          INSERT INTO `dashboardprofiles` (`userEmail`, `cell`, `cardIdentity`)
+                          VALUES ('$userEmail', '11', 'G_FAVORITE'),
+                                 ('$userEmail', '12', 'G_FAVORITE'),
+                                 ('$userEmail', '13', 'G_FAVORITE'),
+                                 ('$userEmail', '21', 'G_ROOMS'),
+                                 ('$userEmail', '22', 'G_TOP');
+                         ";
+
+      $queryForNewDashboard = mysqli_query($connection,$sqlNewDashBoard)
       or die(header("Location: ../views/error.php"));
 
       mysqli_close($connection);

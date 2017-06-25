@@ -21,6 +21,7 @@ function setSessionDashboard(sessionVariables){
   userEmail = obj.userEmail;
   userNick = obj.nick;
   ajax.post('../php/services/getUserDashboard.php',{email: userEmail},setUserDashboard,true);
+  ajax.post('../php/services/getFavorites.php',{userNick: userNick},setUserFavorites,true);
 }
 
 //Use the user dashboard profile to load both js and php cards into right cells
@@ -33,7 +34,6 @@ function setUserDashboard(cardsProfile){
       placeCardInCell(cellCard.cardIdentity,cellCard.cell,addedScript.callback);
     });
   }, this);
-
 
   //Load needed card js
   function addCardJSScript(cardId){
@@ -64,11 +64,14 @@ function setUserDashboard(cardsProfile){
   }
 }
 
+function setUserFavorites(rawFavorites){
+  userFavorites = JSON.parse(rawFavorites);
+}
 
 //onload, placeCardInCell. y luego init
 
 
-var userEmail, userNick;
+var userEmail, userNick, userFavorites;
 
 /*DIRECT METHODS*/
 

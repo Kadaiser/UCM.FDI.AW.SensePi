@@ -74,12 +74,17 @@ function disableStation(){
   if(!!parseInt(dashboard.selectedStation.operative)){
     if(confirm("Are you sure you want to disable this station? This will prevent from getting new measures from current slot.")){
       var id = dashboard.selectedStation.id;
-      ajax.post('../php/services/setDisabledStation.php',{stationId : id},alert('Station ' + id + ' disabled'),true);
+      ajax.post('../php/services/setDisabledStation.php',{stationId : id},stationDisabled(id),true);
       dashboard.selectedStation.operative = '0';
     }
   }else{
     alert('This station is already disabled.');
   }
+}
+
+function stationDisabled(){
+  alert('Station ' + id + ' disabled');
+  location.reload();
 }
 
 function addStationToSlot(){
@@ -121,8 +126,8 @@ function addStationToSlot(){
 }
 
 function stationAssignment(rawResults){
-  alert(rawResults);
-  //TODO: Results and dashboard control/update
+  alert("Station assigned correctly.");
+  location.reload();
 }
 
 function generateNewTrack(){

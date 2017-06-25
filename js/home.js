@@ -61,11 +61,17 @@ var dataFromDB = [
 function measuresFormatting(rawMeasures){
   dataFromDB = [];
   dataFromDB.push(measureHeader);
-  var obj = JSON.parse(rawMeasures);
-  var measureList = obj[1];
-  measureList.forEach(function(measure) {
+  var measuresMatrix = JSON.parse(rawMeasures);
+  var slotLists = [
+    slot1List = measuresMatrix[Object.keys(measuresMatrix)[0]],
+    slot2List = measuresMatrix[Object.keys(measuresMatrix)[1]],
+    slot3List = measuresMatrix[Object.keys(measuresMatrix)[2]],
+    slot4List = measuresMatrix[Object.keys(measuresMatrix)[3]]
+  ];
+
+  //Current version uses the default most used slot to get the overall measure of the room.
+  slot1List.forEach(function(measure, index) {
     var tempArray=[];
-    var date_test = new Date("2011-07-14 11:23:00".replace(/-/g,"/"));
     splittedDate = measure.Date.split(" ");
     splittedDate = splittedDate[0].replace(/"/,"'");
     tempArray[0]=new Date(splittedDate);
@@ -134,7 +140,7 @@ function mySpanAppear(str)
     document.getElementById("Area").innerHTML = str
     //Arreglar la fecha según necesitemos. get selected time range? mapa clave-valor con intervalo de fechas y/o frecuencias?
     //2017-05-01 19:10:58
-    ajax.post('../php/services/getMeasure.php',{roomName: str, sinceDate: '2017-05-01 19:10:58'},measuresFormatting,true);
+    ajax.post('../php/services/getMeasure.php',{roomName: str, sinceDate: '2017-05-28 19:10:58'},measuresFormatting,true);
 
     if(userlogged)
     {

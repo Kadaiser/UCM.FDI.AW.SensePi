@@ -11,7 +11,7 @@
                                   AND idRoom = (SELECT id
                                                 FROM rooms
                                                 WHERE name = '".$roomName."')
-          ";
+        ";
 
   $result = mysqli_query($connection,$sql) or die(header("Location: ../../views/error.php"));
 

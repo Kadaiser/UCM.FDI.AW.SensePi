@@ -34,6 +34,7 @@
 
       <div id="content">
 
+
         <div class="grid">
           <div class="cell emptyCell" id="11"></div>
           <div class="cell emptyCell" id="12"></div>
@@ -41,10 +42,19 @@
           <div class="cell emptyCell" id="21"></div>
           <div class="cell emptyCell" id="22"></div>
           <div class="cell emptyCell" id="23"></div>
+
+        <?php
+          if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin']==1){
+        ?>
+
           <div class="cell emptyCell" id="31"></div>
           <div class="cell emptyCell" id="32"></div>
           <div class="cell emptyCell" id="33"></div>
         </div>
+
+        <?php
+          }
+        ?>
 
       </div>
 

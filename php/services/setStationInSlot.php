@@ -5,8 +5,8 @@
   $track = htmlspecialchars(trim(strip_tags($_REQUEST['measureTrack'])));
   $stationId  = htmlspecialchars(trim(strip_tags($_REQUEST['stationId'])));
 
-  //TODO:-insertar nuevo measureLog con ese roomslotid y generatedTrack
-  //TODO:-actualizar station con el generatedTrack
+  //-insertar nuevo measureLog con ese roomslotid y generatedTrack
+  //-actualizar station con el generatedTrack
 
   $sqlMeasure= "INSERT INTO `measurelogs` (`roomslotid`, `measuretrack`)
                 VALUES ('".$slotId."', '".$track."')
