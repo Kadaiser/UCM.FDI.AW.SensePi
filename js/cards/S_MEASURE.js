@@ -6,14 +6,15 @@ function submitMeasure(){
   if(dashboard.selectedRoom){
     if(dashboard.selectedTrack){
       if(dashboard.selectedSlotIsOperative){
-        var tempInput = document.getElementById(measureTemp).value;
-        var humInput = document.getElementById(measureHum).value;
-        var noiseInput = document.getElementById(measureNoise).value;
+        var tempInput = document.getElementById('measureTemp').value;
+        var humInput = document.getElementById('measureHum').value;
+        var noiseInput = document.getElementById('measureNoise').value;
         if(tempInput && humInput && noiseInput){
           ajax.post('../php/services/setMeasureOnStation.php',
           {
             Room: dashboard.selectedRoom,
             MeasureTrack: dashboard.selectedTrack,
+            stationName: dashboard.selectedStation.name,
             temp: tempInput,
             hum: humInput,
             noise: noiseInput
@@ -36,5 +37,5 @@ function submitMeasure(){
 
 function measureSubmitted(rawResponse){
   //TODO: format Response?
-  alert("value was submitted correctly (or not)");
+  alert("value was submitted correctly");
 }
