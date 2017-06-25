@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-06-2017 a las 18:29:28
+-- Tiempo de generación: 25-06-2017 a las 20:25:00
 -- Versión del servidor: 10.1.21-MariaDB
--- Versión de PHP: 5.6.30
+-- Versión de PHP: 7.0.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,7 +41,10 @@ INSERT INTO `cards` (`id`, `identity`, `name`, `forAdmin`) VALUES
 (1, 'G_STATIONS', 'Get Stations Info', 1),
 (2, 'S_MEASURE', 'Set Measure on Slot', 1),
 (3, 'G_SLOTS', 'Get Slots of a given Room', 1),
-(4, 'G_ROOMS', 'Get Rooms', 0);
+(4, 'G_ROOMS', 'Get Rooms', 0),
+(5, 'S_NEWSTATION', 'Add a brand new station', 1),
+(6, 'G_TOP', 'Get the 5 most visited rooms', 0),
+(7, 'G_FAVORITE', 'Get favorite rooms from user', 0);
 
 -- --------------------------------------------------------
 
@@ -86,10 +89,17 @@ CREATE TABLE `dashboardprofiles` (
 --
 
 INSERT INTO `dashboardprofiles` (`id`, `userEmail`, `cell`, `cardIdentity`) VALUES
-(5, 'secalero@ucm.es', '12', 'G_STATIONS'),
-(8, 'secalero@ucm.es', '11', 'G_ROOMS'),
-(10, 'secalero@ucm.es', '21', 'G_SLOTS'),
-(11, 'secalero@ucm.es', '22', 'S_MEASURE');
+(13, 'secalero@ucm.es', '32', 'G_TOP'),
+(14, 'secalero@ucm.es', '12', 'G_STATIONS'),
+(15, 'secalero@ucm.es', '11', 'G_ROOMS'),
+(16, 'secalero@ucm.es', '21', 'G_SLOTS'),
+(17, 'secalero@ucm.es', '22', 'S_MEASURE'),
+(18, 'secalero@ucm.es', '13', 'S_NEWSTATION'),
+(22, 'user.basic@ucm.es', '11', 'G_FAVORITE'),
+(23, 'user.basic@ucm.es', '12', 'G_FAVORITE'),
+(24, 'user.basic@ucm.es', '13', 'G_FAVORITE'),
+(25, 'user.basic@ucm.es', '22', 'G_TOP'),
+(26, 'user.basic@ucm.es', '21', 'G_ROOMS');
 
 -- --------------------------------------------------------
 
@@ -108,7 +118,12 @@ CREATE TABLE `favorites` (
 --
 
 INSERT INTO `favorites` (`id`, `idUser`, `idRoom`) VALUES
-(24, 2, 1);
+(24, 2, 1),
+(25, 1, 8),
+(26, 1, 1),
+(27, 3, 8),
+(28, 3, 2),
+(29, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +153,8 @@ INSERT INTO `measurelogs` (`roomslotid`, `measuretrack`, `date`) VALUES
 (29, 'THN7-2017-05-14', '2017-05-06 17:45:07'),
 (33, 'THN8-2017-05-14', '2017-05-06 17:45:07'),
 (37, 'THN9-2017-05-14', '2017-05-06 17:45:07'),
-(41, 'THN10-2017-05-14', '2017-05-06 17:45:07');
+(41, 'THN10-2017-05-14', '2017-05-06 17:45:07'),
+(48, '51eb6dba2c915dd9', '2017-06-24 19:19:33');
 
 -- --------------------------------------------------------
 
@@ -703,17 +719,17 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `name`, `visits`) VALUES
-(1, 'Cafetería', 39),
-(2, 'Aula 1', 3),
-(3, 'Aula 2', 2),
-(4, 'Aula 3', 2),
-(5, 'Aula 4', 4),
-(6, 'Aula 5', 4),
-(7, 'Sala de conferencias', 2),
-(8, 'Delegación de alumnos', 2),
-(9, 'Pasillos', 7),
-(10, 'W.C norte', 2),
-(11, 'W.C sur', 2),
+(1, 'Cafetería', 85),
+(2, 'Aula 1', 36),
+(3, 'Aula 2', 5),
+(4, 'Aula 3', 8),
+(5, 'Aula 4', 7),
+(6, 'Aula 5', 8),
+(7, 'Sala de conferencias', 8),
+(8, 'Delegación de alumnos', 41),
+(9, 'Pasillos', 13),
+(10, 'W.C norte', 3),
+(11, 'W.C sur', 3),
 (12, 'W.C biblioteca', 1);
 
 -- --------------------------------------------------------
@@ -792,7 +808,7 @@ CREATE TABLE `stations` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `currentTrack` varchar(16) DEFAULT NULL,
-  `currentTrackSince` datetime DEFAULT CURRENT_TIMESTAMP,
+  `currentTrackSince` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `operative` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -813,7 +829,7 @@ INSERT INTO `stations` (`id`, `name`, `currentTrack`, `currentTrackSince`, `oper
 (10, 'THN8', 'THN8-2017-05-14', '2017-05-14 17:35:23', 1),
 (11, 'THN9', 'THN9-2017-05-14', '2017-05-14 17:35:23', 1),
 (12, 'THN10', 'THN10-2017-05-14', '2017-05-14 17:35:23', 1),
-(13, 'abandonHadware', NULL, NULL, 0);
+(13, 'abandonHadware', '51eb6dba2c915dd9', '2017-06-24 19:19:33', 1);
 
 -- --------------------------------------------------------
 
@@ -837,7 +853,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`email`, `pw`, `nick`, `isadmin`, `sinceDate`, `avatar`, `id`) VALUES
 ('secalero@ucm.es', '$2y$12$8b0w73wqoKGU4zzXa/uKfuAdkhvu/KmOyvD1bGycOQK9MUs6A7B3W', 'secalero', 1, '2017-04-25 00:00:00', NULL, 1),
-('dvalbuen@ucm.es', '$2y$12$1QNtTDsbcMVkk7C6WrSuC.8C54kUEBG4cHnRDLaUE6A2YP.pS/nwO', 'dvalbuen', 0, '2017-04-25 00:00:00', NULL, 2);
+('dvalbuen@ucm.es', '$2y$12$1QNtTDsbcMVkk7C6WrSuC.8C54kUEBG4cHnRDLaUE6A2YP.pS/nwO', 'dvalbuen', 0, '2017-04-25 00:00:00', NULL, 2),
+('user.basic@ucm.es', '$2y$12$lcZNmSwZB/Qzwp35D4rx8ugAsOPZMjDivKhG6Bxay3isva9YMKli.', 'user.basic', 0, '2017-06-25 16:44:23', NULL, 3);
 
 --
 -- Índices para tablas volcadas
@@ -926,17 +943,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `dashboardprofiles`
 --
 ALTER TABLE `dashboardprofiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT de la tabla `favorites`
 --
 ALTER TABLE `favorites`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de la tabla `measures`
 --
@@ -961,7 +978,7 @@ ALTER TABLE `stations`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
