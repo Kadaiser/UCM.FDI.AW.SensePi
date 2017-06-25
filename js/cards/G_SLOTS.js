@@ -4,6 +4,9 @@ function init_G_SLOTS(){
   for(var i = 0, max = radios.length; i < max; i++) {
     radios[i].addEventListener("click",function(){
       if(this.value!='on' && this.value!='off'){
+        dashboard.selectedSlot = null;
+        dashboard.selectedTrack = null;
+        dashboard.selectedSlotIsOperative = null ;
         dashboard.selectedSlot = this.value;
         dashboard.selectedTrack = this.measuretrack;
         dashboard.selectedSlotIsOperative = this.operative ;
@@ -13,7 +16,7 @@ function init_G_SLOTS(){
     });
   }
   var roomDropDown = document.getElementById('roomDropdown');
-  roomDropDown.addEventListener("change",function(){
+  $('#roomDropdown').on('change',function(){
     ajax.post('../php/services/getSlotsIdAndTracks.php',{roomId: roomDropDown.value},populateSlotsDropdown,true);
   });
 }

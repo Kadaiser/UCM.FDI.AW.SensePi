@@ -16,8 +16,9 @@
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css"/>
     <link rel="stylesheet" type="text/css" href="../css/card.css"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="../js/dashboard.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/ajaxbasic.js"></script>
+    <script type="text/javascript" src="../js/dashboard.js"></script>
     <script type="text/javascript" src="../js/lit/lit-EN.js"></script>
 
   </head>

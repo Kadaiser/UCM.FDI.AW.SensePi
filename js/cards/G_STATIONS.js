@@ -14,8 +14,13 @@ function populateStationDropdown(rawStations){
   for(var i = 0, max = radios.length; i < max; i++) {
     radios[i].addEventListener("click",function(){
       if(dashboard.selectedRoom!=null){
+        stationDropDown.value = null;
         stationDropDown.value = this.station;
-        if(this.station!=null){report(this.station)};
+        if(this.station!=null){
+          report(this.station);
+        }else{
+          report(null);
+        }
       }
     });
   }
@@ -26,31 +31,41 @@ function report(id){
   var field = document.getElementById('stationInfo');
   field.innerHTML = "";
 
-  while(id != stationObject[i]['id']){
-    i++;
-  }
-  dashboard.selectedStation = stationObject[i];
-
   label = document.createElement('span');
   label.appendChild(document.createTextNode("Operative: "));
   field.appendChild(label);
 
   labelState = document.createElement('span');
-  if(parseInt(stationObject[i].operative)){
-    labelState.appendChild(document.createTextNode("ENABLED"));
-    labelState.id= "enable";
-    field.appendChild(labelState);
 
-    p = document.createElement('p');
-    p.appendChild(document.createTextNode("Actual track: "));
-    p.appendChild(document.createTextNode(stationObject[i]['currentTrack']));
-    p.appendChild(document.createElement("br"))
-    p.appendChild(document.createTextNode("Working since: "));
-    p.appendChild(document.createTextNode(stationObject[i]['currentTrackSince']));
-    field.appendChild(p);
-  }else{
-    labelState.appendChild(document.createTextNode("DISABLED"));
-    labelState.id= "disable";
+  if(id!=null){
+
+    while(id != stationObject[i]['id']){
+      i++;
+    }
+    dashboard.selectedStation = stationObject[i];
+
+    if(parseInt(stationObject[i].operative)){
+      labelState.appendChild(document.createTextNode("ENABLED"));
+      labelState.id= "enable";
+      field.appendChild(labelState);
+
+      p = document.createElement('p');
+      p.appendChild(document.createTextNode("Actual track: "));
+      p.appendChild(document.createTextNode(stationObject[i]['currentTrack']));
+      p.appendChild(document.createElement("br"))
+      p.appendChild(document.createTextNode("Working since: "));
+      p.appendChild(document.createTextNode(stationObject[i]['currentTrackSince']));
+      field.appendChild(p);
+    }else{
+      labelState.appendChild(document.createTextNode("DISABLED"));
+      labelState.id= "disable";
+      field.appendChild(labelState);
+    }
+    
+  }
+  else{
+    labelState.appendChild(document.createTextNode("NO STATION"));
+    labelState.id= "noStation";
     field.appendChild(labelState);
   }
 }
@@ -69,34 +84,44 @@ function disableStation(){
 
 function addStationToSlot(){
 
-  if(dashboard.selectedRoom){
-    if(!!parseInt(dashboard.selectedStation.operative)==false){
-      if(dashboard.selectedSlotIsOperative!=true){
-        if(confirm("Are you sure you want to add this station to current slot?")){
+  if(dashboard.selectedStation){
+    if(dashboard.selectedRoom){
+      if(!!parseInt(dashboard.selectedStation.operative)==false){
+        if(dashboard.selectedSlotIsOperative!=undefined){
+          if(dashboard.selectedSlotIsOperative!=true){
+            if(confirm("Are you sure you want to add this station to current slot?")){
 
-          var newTrack = generateNewTrack(); //Un nuevo track entre 10^18 posibilidades. Se asume irrepetible.
+              var newTrack = generateNewTrack(); //Un nuevo track entre 10^18 posibilidades. Se asume irrepetible.
 
-          ajax.post('../php/services/setStationInSlot.php',
-            {
-              slotId: dashboard.selectedSlot,
-              measureTrack: newTrack,
-              stationId: dashboard.selectedStation.id,
-            },
-            stationAssignment,true);
+              ajax.post('../php/services/setStationInSlot.php',
+                {
+                  slotId: dashboard.selectedSlot,
+                  measureTrack: newTrack,
+                  stationId: dashboard.selectedStation.id,
+                },
+                stationAssignment,true);
 
+            }
+          }else{
+            alert('The selected slot already has a station in it. First disable that station.');
+          }
+        }else{
+          alert('Please, First select a slot.');
         }
       }else{
-        alert('The selected slot already has a station in it. First disable that station.');
+        alert('The selected station is already in use.');
       }
     }else{
-      alert('The selected station is already in use.');
+      alert('Please, first select a room.');
     }
   }else{
-    alert('Please, first select a room.');
+    alert('Please, first select a station.');
   }
+
 }
 
-function stationAssignment(){
+function stationAssignment(rawResults){
+  alert(rawResults);
   //TODO: Results and dashboard control/update
 }
 

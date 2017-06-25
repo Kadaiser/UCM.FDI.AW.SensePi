@@ -5,6 +5,7 @@ window.onload = function() {
 var dashboard = {
   selectedRoom : null,
   selectedSlot : null,
+  selectedSlotIsOperative : null,
   selectedTrack : null,
   selectedStation : null,
 };
